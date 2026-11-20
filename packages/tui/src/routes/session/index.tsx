@@ -130,6 +130,7 @@ import { isRecord } from "../../util/record"
 import { parseTodos } from "../../util/todo"
 import { createHistoryPrepend } from "./history"
 import { context, use, type PendingAction, type StickyGroup } from "./render-context"
+import { FadeInText } from "../../component/fade-in-text"
 import { INLINE_TOOL_ICON_WIDTH, InlineToolRow, ReasoningPart, TextPart, toolDisplay } from "./message-parts"
 import { defaultVerbosity, type GroupKind, type SessionEntry } from "./grouping/session"
 import { SessionGroupView } from "./group-view"
@@ -1647,17 +1648,40 @@ export function Session(props: {
                     zIndex={10}
                     backgroundColor={theme.background.base}
                   >
-                    <InlineToolRow
-                      icon={item().group.icon()}
-                      color={stickyHovered() ? theme.text.base : theme.text.muted}
-                      complete={true}
-                      pending={item().group.label()}
+                    <box
+                      flexDirection="row"
                       onMouseOver={() => setStickyHovered(true)}
                       onMouseOut={() => setStickyHovered(false)}
                       onMouseUp={collapseSticky}
                     >
-                      {item().group.label()}
-                    </InlineToolRow>
+                      {/* A thin accent bar in the gutter marks the header as pinned. */}
+                      <text
+                        width={3}
+                        fg={stickyHovered() ? theme.text.action.primary.base : theme.border.base}
+                        selectable={false}
+                      >
+                        ▎
+                      </text>
+                      <text
+                        width={INLINE_TOOL_ICON_WIDTH}
+                        fg={stickyHovered() ? theme.text.base : theme.text.muted}
+                        selectable={false}
+                      >
+                        {item().group.icon()}
+                      </text>
+                      <Show when={item().group} keyed>
+                        {(group) => (
+                          <FadeInText
+                            fg={stickyHovered() ? theme.text.base : theme.text.muted}
+                            backdrop={theme.background.base}
+                            wrapMode="none"
+                            selectable={false}
+                          >
+                            {group.label()}
+                          </FadeInText>
+                        )}
+                      </Show>
+                    </box>
                   </box>
                 )}
               </Show>
@@ -1674,11 +1698,12 @@ export function Session(props: {
                   onMouseOut={() => setLatestHovered(false)}
                   onMouseUp={toBottom}
                 >
-                  <text
+                  <FadeInText
                     fg={latestHovered() ? theme.text.action.secondary.hovered : theme.text.action.secondary.base}
+                    backdrop={theme.background.base}
                   >
                     Jump to latest ↓
-                  </text>
+                  </FadeInText>
                 </box>
               </Show>
             </box>
