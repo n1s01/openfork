@@ -129,28 +129,28 @@ test("global --server and --standalone flags parse in any position for server-co
 
   const url = "http://127.0.0.1:43210"
   const serverCases: ReadonlyArray<readonly [ReadonlyArray<string>, string]> = [
-    [["--server", url, "session", "list"], "opencode session list"],
-    [["session", "--server", url, "list"], "opencode session list"],
-    [["session", "list", "--server", url], "opencode session list"],
-    [["session", "--server", url, "delete", "ses_123"], "opencode session delete"],
-    [["--server", url, "plugin", "list"], "opencode plugin list"],
-    [["plugin", "--server", url, "list"], "opencode plugin list"],
-    [["plugin", "list", "--server", url], "opencode plugin list"],
-    [["plugin", "--server", url, "check"], "opencode plugin check"],
-    [["plugin", "--server", url, "update"], "opencode plugin update"],
-    [["--server", url, "mcp", "list"], "opencode mcp list"],
-    [["mcp", "--server", url, "list"], "opencode mcp list"],
-    [["mcp", "list", "--server", url], "opencode mcp list"],
-    [["mcp", "--server", url, "auth", "linear"], "opencode mcp auth"],
-    [["mcp", "--server", url, "logout", "linear"], "opencode mcp logout"],
-    [["auth", "--server", url, "list"], "opencode auth list"],
-    [["debug", "--server", url, "config"], "opencode debug config"],
-    [["debug", "--server", url, "agents"], "opencode debug agents"],
-    [["debug", "--server", url, "heap-dump"], "opencode debug heap-dump"],
-    [["--server", url, "models"], "opencode models"],
-    [["models", "--server", url], "opencode models"],
-    [["--server", url, "run", "hello"], "opencode run"],
-    [["run", "hello", "--server", url], "opencode run"],
+    [["--server", url, "session", "list"], "openfork session list"],
+    [["session", "--server", url, "list"], "openfork session list"],
+    [["session", "list", "--server", url], "openfork session list"],
+    [["session", "--server", url, "delete", "ses_123"], "openfork session delete"],
+    [["--server", url, "plugin", "list"], "openfork plugin list"],
+    [["plugin", "--server", url, "list"], "openfork plugin list"],
+    [["plugin", "list", "--server", url], "openfork plugin list"],
+    [["plugin", "--server", url, "check"], "openfork plugin check"],
+    [["plugin", "--server", url, "update"], "openfork plugin update"],
+    [["--server", url, "mcp", "list"], "openfork mcp list"],
+    [["mcp", "--server", url, "list"], "openfork mcp list"],
+    [["mcp", "list", "--server", url], "openfork mcp list"],
+    [["mcp", "--server", url, "auth", "linear"], "openfork mcp auth"],
+    [["mcp", "--server", url, "logout", "linear"], "openfork mcp logout"],
+    [["auth", "--server", url, "list"], "openfork auth list"],
+    [["debug", "--server", url, "config"], "openfork debug config"],
+    [["debug", "--server", url, "agents"], "openfork debug agents"],
+    [["debug", "--server", url, "heap-dump"], "openfork debug heap-dump"],
+    [["--server", url, "models"], "openfork models"],
+    [["models", "--server", url], "openfork models"],
+    [["--server", url, "run", "hello"], "openfork run"],
+    [["run", "hello", "--server", url], "openfork run"],
   ]
 
   for (const [args, expectedPath] of serverCases) {
@@ -161,7 +161,7 @@ test("global --server and --standalone flags parse in any position for server-co
 
   captured.length = 0
   await runArgs(["session", "--standalone", "list"])
-  expect(captured).toEqual([{ path: "opencode session list", server: undefined, standalone: true }])
+  expect(captured).toEqual([{ path: "openfork session list", server: undefined, standalone: true }])
 
   await expect(runArgs(["plugin", "add", "some-plugin", "--server", url])).rejects.toThrow()
   await expect(runArgs(["plugin", "remove", "some-plugin", "--server", url])).rejects.toThrow()

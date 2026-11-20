@@ -3,7 +3,7 @@ import { EffectFlock } from "@opencode/util/effect-flock"
 import { LayerNode } from "@opencode/util/effect/layer-node"
 import { Global } from "@opencode/util/global"
 import { AppProcess } from "@opencode/util/process"
-import { expect, spyOn, test } from "bun:test"
+import { afterAll, beforeAll, expect, spyOn, test } from "bun:test"
 import { Effect, FileSystem, Layer, PlatformError, Stream } from "effect"
 import { ChildProcessSpawner } from "effect/process"
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs"
@@ -12,6 +12,17 @@ import { Updater } from "../src/services/updater"
 import { testEffect } from "../../core/test/lib/effect"
 
 const it = testEffect(NodeServices.layer)
+
+// OpenFork refuses upstream self-updates unless this is set; these tests cover the install
+// machinery behind that gate. The spawned compile-time-name test inherits it through process.env.
+const allowUpstream = process.env.OPENFORK_ALLOW_UPSTREAM_UPDATES
+beforeAll(() => {
+  process.env.OPENFORK_ALLOW_UPSTREAM_UPDATES = "1"
+})
+afterAll(() => {
+  if (allowUpstream === undefined) delete process.env.OPENFORK_ALLOW_UPSTREAM_UPDATES
+  else process.env.OPENFORK_ALLOW_UPSTREAM_UPDATES = allowUpstream
+})
 
 declare const OPENCODE_CLI_NAME: string | undefined
 
@@ -176,6 +187,22 @@ const installs = [
   { method: "vp", command: () => ["vp", "update", "-g", "@opencode/cli@2.3.4-beta.1"] },
 ] as const
 
+it.live("upstream updates are refused unless explicitly allowed", () =>
+  Effect.gen(function* () {
+    const test = yield* fixture()
+    delete process.env.OPENFORK_ALLOW_UPSTREAM_UPDATES
+    const error = yield* test.updater
+      .upgrade("npm", "2.3.4")
+      .pipe(Effect.flip, Effect.ensuring(Effect.sync(() => (process.env.OPENFORK_ALLOW_UPSTREAM_UPDATES = "1"))))
+    expect(error).toBeInstanceOf(Updater.UpgradeError)
+    expect(error.message).toBe(
+      "OpenFork is built from source; the upstream update service would install the original OpenCode.",
+    )
+    expect(test.commands).toEqual([])
+    expect(test.requests).toEqual([])
+  }),
+)
+
 installs.forEach(({ method, command }) => {
   it.live(`${method} installs the explicit V2 package version without a leading v`, () =>
     Effect.gen(function* () {
@@ -289,11 +316,11 @@ managers.forEach((manager) => {
       expect(yield* test.updater.method()).toBeUndefined()
       const latest = yield* test.updater.managed()
       const pinned = yield* test.updater.managed("v2.2.6")
-      expect(latest?.title).toBe(`OpenCode is managed by ${manager.name}`)
+      expect(latest?.title).toBe(`OpenFork is managed by ${manager.name}`)
       expect(latest?.command).toBe(`${manager.command}@2.3.4`)
       expect(pinned?.command).toBe(`${manager.command}@2.2.6`)
       const applied = yield* test.updater.apply("2.3.4").pipe(Effect.flip)
-      expect(applied.message).toBe(`OpenCode is managed by ${manager.name}. Update it with ${manager.command}@2.3.4`)
+      expect(applied.message).toBe(`OpenFork is managed by ${manager.name}. Update it with ${manager.command}@2.3.4`)
       // An explicit --method keeps its existing command, and the version check reports the untouched copy.
       const explicit = yield* test.updater.upgrade("npm", "2.3.4").pipe(Effect.flip)
       expect(explicit.message).toContain("is still version 2.2.7")
