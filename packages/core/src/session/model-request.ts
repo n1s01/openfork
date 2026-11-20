@@ -63,6 +63,8 @@ const ESTIMATE_ERROR = 0.15
 const WINDOW_HEADROOM = 0.01
 // Never ask for less; only reachable with automatic compaction off, since it keeps the window from filling this far.
 const OUTPUT_TOKEN_MIN = 1_024
+// The hook that receives the tool definitions for each request kind; titles get no tools.
+const TOOL_HOOKS = { primary: "context", compaction: "compaction", generate: "generate" } as const
 
 /** Tool errors, plus the user declining a permission or dismissing a question. */
 export type ExecuteError = Tool.Error | Permission.DeclinedError | QuestionTool.CancelledError
@@ -283,10 +285,16 @@ export const layer = Layer.effect(
       // Remember which tool each definition object came from. Hooks rename a tool by moving
       // its definition to a new key, so after the hook we find the tool by object identity.
       // Definitions are shared across steps and sessions, and hooks may edit schemas in place,
-      // so each hook gets a deep copy.
+      // so each hook gets a deep copy. Without a hook nothing can edit them, and copying every
+      // schema on every step would be wasted work.
+      const editable = kind !== "title" && (yield* hooks.has("session", TOOL_HOOKS[kind], model.ref.providerID))
       const given = new Map(
         tools.definitions.map(
-          (t) => [{ description: t.description, input: JSON.parse(JSON.stringify(t.inputSchema)) }, t] as const,
+          (t) =>
+            [
+              { description: t.description, input: editable ? JSON.parse(JSON.stringify(t.inputSchema)) : t.inputSchema },
+              t,
+            ] as const,
         ),
       )
       // Hooks see the default output limit and may change or remove it. Titles and generate keep the provider default,

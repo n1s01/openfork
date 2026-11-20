@@ -190,52 +190,89 @@ export const decodeMessageRowsWithRefs = Effect.fnUntraced(function* (
   )
 })
 
-const messageEntries = Effect.fnUntraced(function* (
+type MessageRow = typeof SessionMessageTable.$inferSelect
+
+/**
+ * The rows a history read decodes, read without decoding them. Callers that hold a transaction for a
+ * consistent snapshot read these inside it and decode afterwards with {@link decodeEntries}, so the
+ * process's single SQLite connection is not held while every message is decoded.
+ */
+const messageRows = Effect.fnUntraced(function* (
   db: DatabaseService,
   sessionID: SessionSchema.ID,
   boundary: Boundary,
   before?: number,
 ): Effect.fn.Return<
-  ReadonlyArray<{ readonly seq: number; readonly message: SessionMessage.Info }>,
+  {
+    readonly rows: ReadonlyArray<MessageRow>
+    readonly compaction?: { readonly row: MessageRow; readonly message: SessionMessage.Info }
+    readonly kept?: ReadonlyArray<MessageRow>
+    readonly epoch: number
+  },
   MessageDecodeError
 > {
   const compaction = yield* latestCompaction(db, sessionID, boundary, before)
-  const rows = yield* db
-    .select()
-    .from(SessionMessageTable)
-    .where(
-      and(
-        eq(SessionMessageTable.session_id, sessionID),
-        compaction ? gte(SessionMessageTable.seq, compaction.seq) : undefined,
-      ),
-    )
-    .orderBy(asc(SessionMessageTable.seq))
-    .all()
-    .pipe(Effect.orDie)
+  const rows = yield* withParts(
+    db,
+    yield* db
+      .select()
+      .from(SessionMessageTable)
+      .where(
+        and(
+          eq(SessionMessageTable.session_id, sessionID),
+          compaction ? gte(SessionMessageTable.seq, compaction.seq) : undefined,
+        ),
+      )
+      .orderBy(asc(SessionMessageTable.seq))
+      .all()
+      .pipe(Effect.orDie),
+  )
+  // Compaction rows carry no media, so the boundary row decodes before blobs are restored.
+  const first = compaction ? rows[0] : undefined
+  const start = first ? { row: first, message: yield* decodeMessageRow(first) } : undefined
+  // A window that cannot replay leaves nothing to start from, so read from the compaction before it.
+  if (compaction && start && !replayable(start.message, boundary))
+    return yield* messageRows(db, sessionID, boundary, compaction.seq)
+  return {
+    rows,
+    compaction: start,
+    kept: start ? yield* keptRows(db, sessionID, start) : undefined,
+    // The instruction baseline covers every update before its epoch. A committed revert that removes an
+    // update clears the state, so the next baseline is rendered fresh and covers every surviving update.
+    epoch: (yield* InstructionState.epochStart(db, sessionID)) ?? Number.POSITIVE_INFINITY,
+  }
+})
+
+/**
+ * Decodes what {@link messageRows} read. Blobs are content-addressed and only removed once unreferenced; one removed
+ * by a concurrent revert after the read restores as the same unavailable placeholder a missing blob always gives.
+ */
+const decodeEntries = Effect.fnUntraced(function* (
+  db: DatabaseService,
+  read: Effect.Success<ReturnType<typeof messageRows>>,
+  boundary: Boundary,
+) {
   const decoded = yield* Effect.forEach(
-    yield* SessionBlob.hydrate(db, yield* withParts(db, rows)),
+    yield* SessionBlob.hydrate(db, read.rows),
     (row) => decodeMessageRow(row).pipe(Effect.map((message) => ({ seq: row.seq, message }))),
     { concurrency: 1 },
   )
-  // A window that cannot replay leaves nothing to start from, so read from the compaction before it.
-  const start = decoded[0]
-  if (compaction && start && !replayable(start.message, boundary))
-    return yield* messageEntries(db, sessionID, boundary, compaction.seq)
-  const entries = compaction ? yield* withRecentText(db, sessionID, decoded) : decoded
+  const entries = read.compaction ? yield* withRecentText(decoded, read.kept) : decoded
   // Re-expansion may cross a native checkpoint whose completion already advanced the instruction
   // epoch: the baseline supersedes the chronological updates before it. Forks seed their baseline
   // at sequence 0 but retain parent sequences, so the copied checkpoint still retires them.
   const native = entries.findLast((entry) => isNativeCompaction(entry.message))
-  // The instruction baseline covers every update before its epoch. A committed revert that removes an
-  // update clears the state, so the next baseline is rendered fresh and covers every surviving update.
-  const epoch = (yield* InstructionState.epochStart(db, sessionID)) ?? Number.POSITIVE_INFINITY
   // Skipped native checkpoints are not textual summaries. Their original transcript remains available.
   return entries.filter(
     (entry) =>
       !(entry.message.type === "system" && native && entry.seq < native.seq) &&
-      !(entry.message.type === "system" && entry.message.metadata?.notice === "instructions" && entry.seq < epoch) &&
+      !(entry.message.type === "system" && entry.message.metadata?.notice === "instructions" && entry.seq < read.epoch) &&
       replayable(entry.message, boundary),
   )
+})
+
+const messageEntries = Effect.fnUntraced(function* (db: DatabaseService, sessionID: SessionSchema.ID, boundary: Boundary) {
+  return yield* decodeEntries(db, yield* messageRows(db, sessionID, boundary), boundary)
 })
 
 /**
@@ -243,39 +280,49 @@ const messageEntries = Effect.fnUntraced(function* (
  * history rebuilds their text from the messages between that one and the compaction, in memory only (see
  * `SessionRecentText.kept`). Compactions written before the reference have none and keep the text they stored.
  */
-const withRecentText = Effect.fnUntraced(function* (
+const keptRows = Effect.fnUntraced(function* (
   db: DatabaseService,
   sessionID: SessionSchema.ID,
-  entries: ReadonlyArray<{ readonly seq: number; readonly message: SessionMessage.Info }>,
+  compaction: { readonly row: MessageRow; readonly message: SessionMessage.Info },
 ) {
-  const first = entries[0]
-  const compaction = first?.message
-  if (compaction?.type !== "compaction" || compaction.status !== "completed") return entries
-  const keepID = compaction.metadata?.keepID
-  if (!Schema.is(SessionMessage.ID)(keepID)) return entries
+  if (compaction.message.type !== "compaction" || compaction.message.status !== "completed") return undefined
+  const keepID = compaction.message.metadata?.keepID
+  if (!Schema.is(SessionMessage.ID)(keepID)) return undefined
   const start = yield* db
     .select({ seq: SessionMessageTable.seq })
     .from(SessionMessageTable)
     .where(and(eq(SessionMessageTable.session_id, sessionID), eq(SessionMessageTable.id, keepID)))
     .get()
     .pipe(Effect.orDie)
-  if (!start) return entries
-  const rows = yield* db
-    .select()
-    .from(SessionMessageTable)
-    .where(
-      and(
-        eq(SessionMessageTable.session_id, sessionID),
-        gte(SessionMessageTable.seq, start.seq),
-        lt(SessionMessageTable.seq, first.seq),
-      ),
-    )
-    .orderBy(asc(SessionMessageTable.seq))
-    .all()
-    .pipe(Effect.orDie)
+  if (!start) return undefined
+  return yield* withParts(
+    db,
+    yield* db
+      .select()
+      .from(SessionMessageTable)
+      .where(
+        and(
+          eq(SessionMessageTable.session_id, sessionID),
+          gte(SessionMessageTable.seq, start.seq),
+          lt(SessionMessageTable.seq, compaction.row.seq),
+        ),
+      )
+      .orderBy(asc(SessionMessageTable.seq))
+      .all()
+      .pipe(Effect.orDie),
+  )
+})
+
+const withRecentText = Effect.fnUntraced(function* (
+  entries: ReadonlyArray<{ readonly seq: number; readonly message: SessionMessage.Info }>,
+  kept: ReadonlyArray<MessageRow> | undefined,
+) {
+  const first = entries[0]
+  const compaction = first?.message
+  if (!kept || compaction?.type !== "compaction" || compaction.status !== "completed") return entries
   // The recent text names attachments by mime and name only, so their bytes are never read.
-  const kept = yield* Effect.forEach(yield* withParts(db, rows), decodeStoredRow, { concurrency: 1 })
-  const recent = kept.map(SessionRecentText.messageToText).filter(Boolean).join("\n\n")
+  const decoded = yield* Effect.forEach(kept, decodeStoredRow, { concurrency: 1 })
+  const recent = decoded.map(SessionRecentText.messageToText).filter(Boolean).join("\n\n")
   return [{ ...first, message: { ...compaction, metadata: { ...compaction.metadata, recent } } }, ...entries.slice(1)]
 })
 
@@ -293,17 +340,18 @@ export const entriesForRunner = Effect.fn("SessionHistory.entriesForRunner")(fun
   instructions: Instructions.List,
   boundary: Boundary,
 ) {
-  return yield* db
+  // Rows and instruction state come from one snapshot; decoding happens after the connection is released.
+  const read = yield* db
     .transaction(() =>
       Effect.gen(function* () {
-        const messages = yield* messageEntries(db, sessionID, boundary)
         return {
+          rows: yield* messageRows(db, sessionID, boundary),
           initial: yield* InstructionState.initial(db, sessionID, instructions),
-          entries: messages,
         }
       }),
     )
     .pipe(Effect.orDie)
+  return { initial: read.initial, entries: yield* decodeEntries(db, read.rows, boundary).pipe(Effect.orDie) }
 })
 
 export const preview = Effect.fn("SessionHistory.preview")(function* (
