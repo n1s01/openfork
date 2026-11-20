@@ -3,7 +3,7 @@ import { SessionPreview } from "./story-model"
 import { SettingsExperimental } from "@/settings/experimental/experimental"
 
 export default {
-  title: "OpenCode/Session/Question switch",
+  title: "OpenFork/Session/Question switch",
   id: "session-question-switch",
   component: SessionPreview,
   parameters: {
@@ -261,7 +261,7 @@ const longMobileOptions = [
     value: "opt-11",
     label: "11. Offline CLI migration subcommand with progress bar",
     description:
-      "Require explicit operator confirmation via opencode db migrate and refuse automatic background writes on startup.",
+      "Require explicit operator confirmation via openfork db migrate and refuse automatic background writes on startup.",
   },
   {
     value: "opt-12",

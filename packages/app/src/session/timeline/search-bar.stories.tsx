@@ -105,7 +105,7 @@ function FindStory(props: Args) {
 }
 
 export default {
-  title: "OpenCode/Session/Find in transcript",
+  title: "OpenFork/Session/Find in transcript",
   id: "session-transcript-find",
   args: { query: "trail", open: true, empty: false } satisfies Args,
   render: (args: Args) => <FindStory {...args} />,

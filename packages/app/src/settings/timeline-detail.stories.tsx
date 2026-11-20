@@ -7,7 +7,7 @@ import { TimelineDetailControl } from "./timeline-detail"
 import "./settings.css"
 
 export default {
-  title: "OpenCode/Settings/Timeline detail",
+  title: "OpenFork/Settings/Timeline detail",
   id: "settings-timeline-detail",
   args: { preset: "compact" },
   argTypes: { preset: { options: [...timelinePresets.map((preset) => preset.id), "custom"] } },

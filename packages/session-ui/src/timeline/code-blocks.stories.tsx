@@ -6,7 +6,7 @@ import { CurrentSessionProviders } from "../storybook/current-session-story"
 import { SessionTimeline } from "./session-timeline"
 
 export default {
-  title: "OpenCode/Conversation/Code blocks",
+  title: "OpenFork/Conversation/Code blocks",
   id: "current-session-code-blocks",
   component: SessionTimeline,
   parameters: { layout: "fullscreen" },

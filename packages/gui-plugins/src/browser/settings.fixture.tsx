@@ -42,7 +42,7 @@ const sampleExtensionEntries: readonly (readonly [string, readonly SampleExtensi
       },
       {
         id: "opencodebrowseextension000000000",
-        name: "OpenCode Browse",
+        name: "OpenFork Browse",
         version: "1.0.2",
         icon: badge("#1f2328", "#ffffff", '<rect x="5" y="5" width="10" height="10" rx="2" fill="none" stroke="FG" stroke-width="1.8"/>'),
         compatibility: { level: "unsupported", cause: "startup", missing: ["native", "sidePanel"] },

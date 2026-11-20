@@ -16,7 +16,7 @@ import { replayScript, replaySession, scenarios, sessionSteps, ticks } from "./s
  * address, so a link opens on the same session, setting and step.
  */
 export default {
-  title: "OpenCode/Timeline/Compare",
+  title: "OpenFork/Timeline/Compare",
   id: "timeline-compare",
   parameters: { layout: "fullscreen" },
 }

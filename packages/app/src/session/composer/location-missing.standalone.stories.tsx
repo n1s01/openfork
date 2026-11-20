@@ -126,7 +126,7 @@ function Replay(props: Args) {
 }
 
 export default {
-  title: "OpenCode/Session/Missing location",
+  title: "OpenFork/Session/Missing location",
   id: "session-missing-location",
   args: { directory: `${STORY_DIRECTORY}-old`, git: true, worktrees: "available", failFirstMove: false } satisfies Args,
   argTypes: { worktrees: { options: ["available", "none"] } },

@@ -88,7 +88,7 @@ function MediaReview(props: Args) {
 }
 
 export default {
-  title: "OpenCode/Review/File media",
+  title: "OpenFork/Review/File media",
   id: "review-file-media",
   args: { kind: "image", state: "ready" } satisfies Args,
   argTypes: { kind: { options: ["image", "audio"] }, state: { options: states } },

@@ -64,7 +64,7 @@ function PanelStory(props: Args) {
 }
 
 export default {
-  title: "OpenCode/Session/Server unavailable",
+  title: "OpenFork/Session/Server unavailable",
   id: "session-server-unavailable",
   args: { reason: "unreachable", closable: true } satisfies Args,
   argTypes: { reason: { options: reasons } },

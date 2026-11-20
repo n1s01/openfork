@@ -24,8 +24,8 @@ export const dict = {
   "server.connect.failed":
     "Kunne ikke oprette forbindelse. Tjek serveradressen og adgangskoden, og prøv derefter igen.",
   "server.connect.scan": "Scan QR kode",
-  "server.connect.scan.description": "Ret dit kamera mod QR-koden vist af opencode pair.",
-  "server.connect.scan.invalid": "Dette er ikke en OpenCode-parringskode. Scan koden vist af opencode pair.",
+  "server.connect.scan.description": "Ret dit kamera mod QR-koden vist af openfork pair.",
+  "server.connect.scan.invalid": "Dette er ikke en OpenCode-parringskode. Scan koden vist af openfork pair.",
   "server.connect.camera": "Parring af kamera",
   "server.connect.camera.starting": "Åbner kamera...",
   "server.connect.mixedContent":
@@ -60,7 +60,7 @@ export const dict = {
   "settings.server.preferences.websearch.description": "Vælg den søgeudbyder, som agenter bruger til at søge på nettet",
   "settings.projects.search.placeholder": "Søg efter projekter",
   "project.settings.name.title": "Projektnavn",
-  "project.settings.name.description": "Navnet vist for dette projekt i hele OpenCode",
+  "project.settings.name.description": "Navnet vist for dette projekt i hele OpenFork",
   "project.settings.icon.description": "Anbefalet: 128×128px. Klik eller træk for at uploade et billede.",
   "project.settings.color.description":
     "Bruges til projektikonet, når der ikke er indstillet et brugerdefineret billede",
@@ -68,11 +68,11 @@ export const dict = {
   "project.settings.worktree.startup.hint.base": "Brug $OPENCODE_WORKTREE_BASE til basisarbejdsområdet.",
   "project.settings.worktree.startup.hint.new": "Brug $OPENCODE_WORKTREE_PATH til det nye arbejdsområde.",
   "project.settings.extensions.empty.mcps.title": "Ingen MCPs endnu",
-  "project.settings.extensions.empty.mcps.description": "MCPs tilgængelig for OpenCode vises her",
+  "project.settings.extensions.empty.mcps.description": "MCPs tilgængelig for OpenFork vises her",
   "project.settings.extensions.empty.plugins.title": "Ingen plugins endnu",
-  "project.settings.extensions.empty.plugins.description": "Plugins, der er tilgængelige for OpenCode, vises her",
+  "project.settings.extensions.empty.plugins.description": "Plugins, der er tilgængelige for OpenFork, vises her",
   "project.settings.extensions.empty.skills.title": "Ingen færdigheder endnu",
-  "project.settings.extensions.empty.skills.description": "De færdigheder, der er tilgængelige for OpenCode, vises her",
+  "project.settings.extensions.empty.skills.description": "De færdigheder, der er tilgængelige for OpenFork, vises her",
   "project.settings.extensions.lsp.configured": "Konfigurerede sprogservere",
   "project.settings.extensions.lsp.status.enabled": "Aktiveret i config",
   "project.settings.extensions.lsp.status.disabled": "Deaktiveret i config",
@@ -92,7 +92,7 @@ export const dict = {
   "settings.timeline.collapsed.label": "{{activity}} kollapsede",
   "session.new.workspace.search.empty": "Ingen matchende arbejdsområder",
   "settings.workspaces.description": "Gennemgå arbejdsområder og administrer diskbrug",
-  "settings.workspaces.empty.description": "Arbejdstræer oprettet i OpenCode vises her",
+  "settings.workspaces.empty.description": "Arbejdstræer oprettet i OpenFork vises her",
   "settings.workspaces.sessions.filtered.one": "{{count}} session",
   "settings.workspaces.sessions.filtered.other": "{{count}} sessioner",
   "settings.workspaces.deleteAll.confirm.one": "Dette vil permanent slette {{count}} valgte arbejdsområde.",
@@ -143,8 +143,8 @@ export const dict = {
   "settings.about.firstPublished": "Først udgivet i Missouri, USA",
   "settings.about.firstIllustrated": "Først illustreret i London, England",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, open source-kodningsagenten",
-  "settings.about.trademark": "OpenCode er et registreret varemærke tilhørende Anomaly Innovations, Inc.",
+  "settings.about.description": "OpenFork, open source-kodningsagenten",
+  "settings.about.trademark": "OpenFork er et registreret varemærke tilhørende Anomaly Innovations, Inc.",
   "settings.about.typeset": "Sat med Inter og IBM Plex Mono",
   "settings.about.tagline": "AI kan ikke bygge fantastisk software uden dig",
   "settings.about.copyright": "© Anomaly Innovations, Inc.",
@@ -285,7 +285,7 @@ export const dict = {
   "dialog.model.manage": "Administrer modeller",
   "dialog.model.manage.description": "Tilpas hvilke modeller der vises i modelvælgeren.",
 
-  "dialog.model.unpaid.freeModels.title": "Gratis modeller leveret af OpenCode",
+  "dialog.model.unpaid.freeModels.title": "Gratis modeller leveret af OpenFork",
   "dialog.model.unpaid.addMore.title": "Tilføj flere modeller fra populære udbydere",
   "dialog.model.unpaid.viewMoreProviders": "Se mere end 70 yderligere udbydere",
 
@@ -297,7 +297,7 @@ export const dict = {
   "provider.connect.status.waiting": "Venter på godkendelse",
   "provider.connect.status.failed": "Godkendelse mislykkedes: {{error}}",
   "provider.connect.apiKey.description":
-    "Indtast din API-nøgle til {{provider}} for at forbinde din konto og bruge modeller fra {{provider}} i OpenCode.",
+    "Indtast din API-nøgle til {{provider}} for at forbinde din konto og bruge modeller fra {{provider}} i OpenFork.",
   "provider.connect.apiKey.label": "API-nøgle til {{provider}}",
   "provider.connect.apiKey.placeholder": "API-nøgle",
   "provider.connect.apiKey.required": "API-nøgle er påkrævet",
@@ -443,7 +443,7 @@ export const dict = {
   "error.chain.didYouMean": "Mente du: {{suggestions}}",
   "error.chain.modelNotFound": "Model ikke fundet: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Kontrollér udbyder- og modelnavnene i din konfiguration (opencode.json)",
-  "error.chain.mcpFailed": 'MCP-server "{{name}}" fejlede. Bemærk, OpenCode understøtter ikke MCP-godkendelse endnu.',
+  "error.chain.mcpFailed": 'MCP-server "{{name}}" fejlede. Bemærk, OpenFork understøtter ikke MCP-godkendelse endnu.',
   "error.chain.providerAuthFailed": "Udbydergodkendelse mislykkedes ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Kunne ikke initialisere udbyder "{{provider}}". Tjek legitimationsoplysninger og konfiguration.',
@@ -532,7 +532,7 @@ export const dict = {
   "settings.general.section.sounds": "Lydeffekter",
 
   "settings.general.row.language.title": "Sprog",
-  "settings.general.row.language.description": "Ændr visningssproget for OpenCode",
+  "settings.general.row.language.description": "Ændr visningssproget for OpenFork",
   "settings.general.row.shell.title": "Terminalshell",
   "settings.general.row.shell.description":
     "Vælg den shell, der bruges i din terminal. Kompatible shells bruges også til agentens værktøjskald.",
@@ -540,7 +540,7 @@ export const dict = {
   "settings.general.row.shell.terminalOnly": "kun terminal",
   "settings.general.row.colorScheme.title": "Farveskema",
   "settings.general.row.colorScheme.description":
-    "Vælg, om OpenCode skal følge systemtemaet eller bruge et lyst eller mørkt tema",
+    "Vælg, om OpenFork skal følge systemtemaet eller bruge et lyst eller mørkt tema",
   "settings.general.row.theme.title": "Tema",
   "settings.general.row.theme.description": "Tilpas OpenCodes tema.",
   "settings.general.row.font.title": "Kode-skrifttype",
@@ -731,7 +731,7 @@ export const dict = {
   "error.childStore.persistedProjectMetadataCreateFailed": "Kunne ikke oprette vedvarende projektmetadata",
   "error.childStore.storeCreateFailed": "Kunne ikke oprette lager",
 
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "OpenFork",
   "desktop.menu.file": "Arkiv",
   "desktop.menu.edit": "Rediger",
   "desktop.menu.view": "Oversigt",
@@ -780,9 +780,9 @@ export const dict = {
   "desktop.recovery.action.exportLogs": "Eksportér logfiler",
   "desktop.recovery.action.keepWaiting": "Vent fortsat",
   "desktop.recovery.action.quit": "Afslut",
-  "desktop.recovery.loadFailed": "OpenCode kunne ikke indlæses",
+  "desktop.recovery.loadFailed": "OpenFork kunne ikke indlæses",
   "desktop.recovery.terminated": "OpenCode-vinduet blev uventet afsluttet",
-  "desktop.recovery.unresponsive": "OpenCode svarer ikke",
+  "desktop.recovery.unresponsive": "OpenFork svarer ikke",
   "desktop.recovery.unresponsive.detail": "Du kan starte appen igen, åbne logfilerne eller fortsætte med at vente.",
   "desktop.recovery.loadFailed.detail": "Vindue: {{window}}\nURL: {{url}}\nFejl: {{code}} {{description}}",
   "desktop.recovery.terminated.detail": "Vindue: {{window}}\nÅrsag: {{reason}}\nKode: {{code}}",
@@ -863,7 +863,7 @@ export const dict = {
   "command.project.copyID": "Kopier projekt-id",
   "command.session.copyID": "Kopier sessions-id",
   "server.row.incompatible":
-    "Denne server kører OpenCode {{version}}, som ikke er kompatibel med denne app. Opgrader den til OpenCode V2 for at fortsætte.",
+    "Denne server kører OpenFork {{version}}, som ikke er kompatibel med denne app. Opgrader den til OpenFork V2 for at fortsætte.",
   "toast.session.copyID.failed.title": "Sessions-id'et kunne ikke kopieres",
   "toast.session.copyID.failed.description": "Der opstod en fejl under kopiering af sessions-id'et",
   "toast.project.copyID.failed.title": "Projekt-id'et kunne ikke kopieres",
@@ -873,7 +873,7 @@ export const dict = {
   "error.page.action.reload": "Genindlæs",
   "session.error.incompatible": "Denne serverversion understøttes ikke",
   "session.error.incompatible.description":
-    "{{server}} kører OpenCode {{version}}, som ikke er kompatibel med denne app. Opgrader serveren til OpenCode V2 for at fortsætte.",
+    "{{server}} kører OpenFork {{version}}, som ikke er kompatibel med denne app. Opgrader serveren til OpenFork V2 for at fortsætte.",
   "session.background.moveInline": "Tryk på {{keybind}} for at flytte igangværende arbejde til baggrunden",
   "command.session.location.cycle": "Skift mellem sessionsplaceringer",
   "dialog.provider.anthropic.note": "Direkte adgang til Claude-modeller via API-nøgle",
@@ -892,22 +892,22 @@ export const dict = {
   "voice.captions.hide": "Skjul undertekster",
   "voice.connecting": "Opretter forbindelse…",
   "voice.you": "Du:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Stemmeopkald kræver en OpenAI API-nøgle på denne server.",
   "voice.failure.microphone": "Der kræves adgang til mikrofonen for at ringe op.",
   "voice.failure.dropped": "Opkaldet blev afbrudt.",
   "voice.failure.connection": "Kunne ikke forbinde opkaldet.",
-  "desktop.microphoneUsage": "OpenCode bruger din mikrofon til stemmeopkald.",
+  "desktop.microphoneUsage": "OpenFork bruger din mikrofon til stemmeopkald.",
   "desktop.documentsFolderUsage":
-    "OpenCode bruger filer i din Dokumenter-mappe til projekter, du åbner, og kommandoer, du kører der.",
+    "OpenFork bruger filer i din Dokumenter-mappe til projekter, du åbner, og kommandoer, du kører der.",
   "desktop.desktopFolderUsage":
-    "OpenCode bruger filer på dit skrivebord til projekter, du åbner, og kommandoer, du kører der.",
+    "OpenFork bruger filer på dit skrivebord til projekter, du åbner, og kommandoer, du kører der.",
   "desktop.downloadsFolderUsage":
-    "OpenCode bruger filer i din Overførsler-mappe til projekter, du åbner, og kommandoer, du kører der.",
+    "OpenFork bruger filer i din Overførsler-mappe til projekter, du åbner, og kommandoer, du kører der.",
   "desktop.networkVolumesUsage":
-    "OpenCode bruger filer på netværksdrev til projekter, du åbner, og kommandoer, du kører der.",
+    "OpenFork bruger filer på netværksdrev til projekter, du åbner, og kommandoer, du kører der.",
   "desktop.removableVolumesUsage":
-    "OpenCode bruger filer på flytbare drev til projekter, du åbner, og kommandoer, du kører der.",
+    "OpenFork bruger filer på flytbare drev til projekter, du åbner, og kommandoer, du kører der.",
   "desktop.contextMenu.spellcheck": "Stavekontrol",
   "desktop.contextMenu.spellcheckLanguages": "Sprog til stavekontrol",
   "session.location.unavailable": "Sessionens placering er ikke tilgængelig",
@@ -949,7 +949,7 @@ export const dict = {
   "palette.group.settings": "Indstillinger",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Integrationer",
-  "dialog.provider.description": "Forbind tjenester, så OpenCode kan bruge dem.",
+  "dialog.provider.description": "Forbind tjenester, så OpenFork kan bruge dem.",
   "dialog.provider.group.services": "Tjenester",
   "dialog.provider.environmentOnly": "Kun miljø",
   "dialog.provider.signInRequired": "Login påkrævet →",
@@ -1001,7 +1001,7 @@ export const dict = {
   "provider.connect.models.available": "Tilgængelige modeller",
   "provider.connect.chatgptWelcome.title": "ChatGPT forbundet",
   "provider.connect.chatgptWelcome.description":
-    "Berettigede forespørgsler i OpenCode kan bruge dit ChatGPT-abonnement.",
+    "Berettigede forespørgsler i OpenFork kan bruge dit ChatGPT-abonnement.",
   "provider.connect.chatgptWelcome.usage": "Administrer forbrug i ChatGPT-indstillingerne",
   "provider.connect.chatgptWelcome.confirm": "Forstået",
   "provider.connect.models.list": "Modeller tilgængelige fra {{provider}}",
@@ -1011,7 +1011,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Luk",
   "provider.connect.console.refreshFailed":
     "Din konto er forbundet, men vi kunne ikke indlæse dine modeller. Prøv igen for at opdatere dem.",
-  "provider.connect.console.connected": "OpenCode forbundet",
+  "provider.connect.console.connected": "OpenFork forbundet",
   "provider.connect.console.noModels":
     "Din konto er forbundet, men dette Console-arbejdsområde har ingen tilgængelige modeller. Tjek opsætningen i Console, og opdater derefter.",
   "provider.connect.console.modelsLoading": "Dine modeller indlæses stadig. Opdater for at tjekke igen.",
@@ -1052,7 +1052,7 @@ export const dict = {
   "provider.connect.oauth.browserFailed": "Vi kunne ikke åbne din browser. Vælg Åbn browser for at prøve igen.",
   "provider.connect.oauth.paste.toggle": "Logger du ind fra en anden enhed?",
   "provider.connect.oauth.paste.description":
-    "Hvis din browser ikke kan nå den maskine, der kører OpenCode, så indsæt den URL, den blev omdirigeret til.",
+    "Hvis din browser ikke kan nå den maskine, der kører OpenFork, så indsæt den URL, den blev omdirigeret til.",
   "provider.connect.oauth.expired": "Godkendelsen er udløbet",
   "model.details.input.text": "Tekst",
   "model.details.input.image": "Billede",
@@ -1089,7 +1089,7 @@ export const dict = {
   "dialog.mcp.signIn": "Log ind",
   "dialog.mcp.signIn.open": "Log ind på {{name}}",
   "dialog.mcp.signIn.description":
-    "Din browser åbnes, så du kan logge ind på {{name}}. Hvis den ikke kan nå den maskine, der kører OpenCode, så indsæt den URL, den blev omdirigeret til, nedenfor.",
+    "Din browser åbnes, så du kan logge ind på {{name}}. Hvis den ikke kan nå den maskine, der kører OpenFork, så indsæt den URL, den blev omdirigeret til, nedenfor.",
   "dialog.mcp.signIn.syncFailed": "Logget ind, men kunne ikke opdatere {{name}}: {{error}}",
   "dialog.mcp.error.details":
     "MCP-server: {{name}}\nStatus: fejlede\nKonfiguration: mcp.servers.{{name}}\nFejl: {{error}}",
@@ -1117,19 +1117,19 @@ export const dict = {
   "server.connect.link": "Parringslink",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "Indsæt hele parringslinket fra opencode pair eller fra Indstillinger → Parring på serverens computer.",
+    "Indsæt hele parringslinket fra openfork pair eller fra Indstillinger → Parring på serverens computer.",
   "server.connect.password.prompt": "Intet parringslink?",
   "server.connect.password.use": "Brug adgangskode",
-  "server.connect.password.hint": "Kør opencode service get password på serverens computer for at se den.",
+  "server.connect.password.hint": "Kør openfork service get password på serverens computer for at se den.",
   "server.connect.link.prompt": "Har du et parringslink?",
   "server.connect.link.use": "Brug parringslink",
   "server.connect.pair.link": "Kør denne kommando på serverens computer for at få et parringslink og en QR-kode.",
   "server.connect.scan.failed": "Denne browser kunne ikke læse QR-koden. Indtast dine forbindelsesoplysninger manuelt.",
   "server.connect.link.expired":
-    "Dette parringslink er udløbet eller allerede brugt. Kør opencode pair for at få et nyt.",
+    "Dette parringslink er udløbet eller allerede brugt. Kør openfork pair for at få et nyt.",
   "server.connect.link.unreachable": "Kunne ikke nå {{url}}. Tjek, at denne enhed kan nå serveren, og prøv igen.",
   "server.connect.link.legacy":
-    "Denne parringskode er fra en ældre version af OpenCode. Opdater OpenCode på serveren, og kør derefter opencode pair igen.",
+    "Denne parringskode er fra en ældre version af OpenFork. Opdater OpenFork på serveren, og kør derefter openfork pair igen.",
   "server.connect.camera.native": "Denne side kan ikke bruge kameraet over HTTP. Indsæt parringslinket ovenfor.",
   "dialog.server.signedOut":
     "Dit login til denne server er ikke længere gyldigt. Indsæt et nyt parringslink, eller indtast serverens adgangskode.",
@@ -1149,7 +1149,7 @@ export const dict = {
   "home.sessions.load.failed": "Kunne ikke indlæse sessioner",
   "home.sessions.load.timeout": "Serveren var for længe om at svare",
   "tips.browse.title": "Styr din browser",
-  "tips.browse.description": "Lad OpenCode arbejde i din browser med dine faner, logins og udvidelser.",
+  "tips.browse.description": "Lad OpenFork arbejde i din browser med dine faner, logins og udvidelser.",
   "tips.browse.install": "Installer",
   "tips.hex.title": "Brug din stemme",
   "tips.hex.description":
@@ -1341,7 +1341,7 @@ export const dict = {
     'Kontakterne slår kun et plugins desktop-UI fra. Tilføj "-<id>" til plugins i din globale opencode.json for at slå dets serverdel fra, eller "-" og dets TUI-plugins ID til plugins i cli.json for at slå dets TUI-del fra.',
   "settings.about.copyVersionFailed": "Kunne ikke kopiere version",
   "settings.about.notices.title": "Tredjepartsmeddelelser",
-  "settings.about.notices.description": "OpenCode indeholder følgende open source-software.",
+  "settings.about.notices.description": "OpenFork indeholder følgende open source-software.",
   "settings.about.notices.license": "Licenstekst",
   "settings.about.notices.fonts.title": "Skrifttyper i Office-forhåndsvisningerne",
   "settings.about.notices.fonts.description":

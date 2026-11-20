@@ -360,7 +360,7 @@ function resolutionError(ref: Model.Ref, type: string, error: ModelResolver.Erro
       providerID: ref.providerID,
       modelID: ref.id,
       capability: type,
-      message: `${ref.providerID}/${ref.id} has no ${type} API opencode can call (package ${error.package})`,
+      message: `${ref.providerID}/${ref.id} has no ${type} API openfork can call (package ${error.package})`,
     })
   return new InvalidRequestError({ message: error.message, field: "model" })
 }

@@ -1,5 +1,5 @@
 export const dict = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "OpenFork",
   "desktop.menu.file": "Faýl",
   "desktop.menu.edit": "Redaktirläň",
   "desktop.menu.view": "Gör",
@@ -38,18 +38,18 @@ export const dict = {
   "desktop.menu.nextProject": "Indiki taslama",
   "desktop.menu.minimize": "Minimallaşdyryň",
   "desktop.menu.maximize": "Ulaltmak",
-  "desktop.menu.documentation": "OpenCode Resminamalar",
+  "desktop.menu.documentation": "OpenFork Resminamalar",
   "desktop.menu.supportForum": "Goldaw forumy",
   "desktop.menu.shareFeedback": "Pikir alyşma",
   "desktop.menu.reportBug": "Bug barada habar beriň",
-  "desktop.menu.ariaLabel": "OpenCode menýusy",
+  "desktop.menu.ariaLabel": "OpenFork menýusy",
   "desktop.recovery.action.relaunch": "Gaýtadan işlediň",
   "desktop.recovery.action.exportLogs": "Surnallary eksport ediň",
   "desktop.recovery.action.keepWaiting": "Garaşmagy dowam ediň",
   "desktop.recovery.action.quit": "Taşla",
-  "desktop.recovery.loadFailed": "OpenCode ýükläp bilmedi",
-  "desktop.recovery.terminated": "OpenCode penjiresi garaşylmadyk ýagdaýda bes edildi",
-  "desktop.recovery.unresponsive": "OpenCode jogap berenok",
+  "desktop.recovery.loadFailed": "OpenFork ýükläp bilmedi",
+  "desktop.recovery.terminated": "OpenFork penjiresi garaşylmadyk ýagdaýda bes edildi",
+  "desktop.recovery.unresponsive": "OpenFork jogap berenok",
   "desktop.recovery.unresponsive.detail":
     "Programmany täzeden açyp bilersiňiz, surnallary açyp ýa-da garaşyp bilersiňiz.",
   "desktop.recovery.loadFailed.detail": "Penjire: {{window}}\nURL: {{url}}\nRoralňyşlyk: {{code}} {{description}}",
@@ -142,7 +142,7 @@ export const dict = {
   "dialog.model.empty": "Hiç hili model netijesi ýok",
   "dialog.model.manage": "Modelleri dolandyryň",
   "dialog.model.manage.description": "Model saýlaýjysynda haýsy modelleriň peýda bolýandygyny düzüň.",
-  "dialog.model.unpaid.freeModels.title": "OpenCode tarapyndan mugt modeller",
+  "dialog.model.unpaid.freeModels.title": "OpenFork tarapyndan mugt modeller",
   "dialog.model.unpaid.addMore.title": "Meşhur üpjün edijilerden has köp model goşuň",
   "dialog.model.unpaid.viewMoreProviders": "Moreene-de 70+ üpjün edijä serediň",
   "dialog.provider.viewAll": "Has köp üpjün edijini görkeziň",
@@ -266,7 +266,7 @@ export const dict = {
   "error.page.action.checkUpdates": "Täzelenmeleri barlaň",
   "error.page.action.updateTo": "{{version}} täzeläň",
   "error.page.circular": "[Tegelek]",
-  "error.page.report.prefix": "Bu ýalňyşlygy OpenCode toparyna habar bermegiňizi haýyş edýäris",
+  "error.page.report.prefix": "Bu ýalňyşlygy OpenFork toparyna habar bermegiňizi haýyş edýäris",
   "error.page.report.discord": "Diskord",
   "error.page.version": "Wersiýa: {{version}}",
   "error.dev.rootNotFound":
@@ -287,7 +287,7 @@ export const dict = {
   "error.chain.didYouMean": "Diýjek bolduňmy: {{suggestions}}",
   "error.chain.modelNotFound": "Model tapylmady: {{provider}} / {{model}}",
   "error.chain.checkConfig": "Konfigurasiýaňyzy (opencode.json) üpjün edijiniň / model atlaryny barlaň",
-  "error.chain.mcpFailed": 'MCP serweri "{{name}}" şowsuz. Üns beriň, OpenCode entek MCP tassyklamasyny goldamaýar.',
+  "error.chain.mcpFailed": 'MCP serweri "{{name}}" şowsuz. Üns beriň, OpenFork entek MCP tassyklamasyny goldamaýar.',
   "error.chain.providerAuthFailed": "Prowaýderiň tassyklamasy şowsuz ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     '"{{provider}}" üpjün edijini işe girizip bilmedi. Şahsyýetnamalary we konfigurasiýany barlaň.',
@@ -389,14 +389,14 @@ export const dict = {
   "settings.general.section.notifications": "Ulgam habarnamalary",
   "settings.general.section.sounds": "Ses effektleri",
   "settings.general.row.language.title": "Dil",
-  "settings.general.row.language.description": "OpenCode üçin displeý dilini üýtgediň",
+  "settings.general.row.language.description": "OpenFork üçin displeý dilini üýtgediň",
   "settings.general.row.shell.title": "Terminal shell-i",
   "settings.general.row.shell.description": "Terminal we agent gurallary tarapyndan ulanylýan shell",
   "settings.general.row.shell.autoDefault": "Awto (Bellenilen)",
   "settings.general.row.shell.terminalOnly": "Diňe terminal",
   "settings.general.row.colorScheme.title": "Reňk shemasy",
   "settings.general.row.colorScheme.description":
-    "OpenCode ulgamy, ýagtylygy ýa-da garaňky temany yzarlaýandygyny saýlaň",
+    "OpenFork ulgamy, ýagtylygy ýa-da garaňky temany yzarlaýandygyny saýlaň",
   "settings.general.row.theme.title": "Mowzuk",
   "settings.general.row.theme.description": "OpenCode-iň mowzuklydygyny düzüň.",
   "settings.general.row.font.title": "Kod şrifti",
@@ -605,7 +605,7 @@ export const dict = {
   "command.project.copyID": "Taslama ID-sini nusgala",
   "command.session.copyID": "Sessiýa ID-sini nusgala",
   "server.row.incompatible":
-    "Bu serwer şu programma bilen gabat gelmeýän OpenCode {{version}} wersiýasyny işledýär. Dowam etmek üçin ony OpenCode V2-ä täzeläň.",
+    "Bu serwer şu programma bilen gabat gelmeýän OpenFork {{version}} wersiýasyny işledýär. Dowam etmek üçin ony OpenFork V2-ä täzeläň.",
   "toast.session.copyID.failed.title": "Sessiýa ID-sini nusgalap bolmady",
   "toast.session.copyID.failed.description": "Sessiýa ID-si nusgalananda ýalňyşlyk ýüze çykdy",
   "toast.project.copyID.failed.title": "Taslama ID-sini nusgalap bolmady",
@@ -615,7 +615,7 @@ export const dict = {
   "error.page.action.reload": "Täzeden ýükle",
   "session.error.incompatible": "Bu serwer wersiýasy goldanylmaýar",
   "session.error.incompatible.description":
-    "{{server}} şu programma bilen gabat gelmeýän OpenCode {{version}} wersiýasyny işledýär. Dowam etmek üçin serweri OpenCode V2-ä täzeläň.",
+    "{{server}} şu programma bilen gabat gelmeýän OpenFork {{version}} wersiýasyny işledýär. Dowam etmek üçin serweri OpenFork V2-ä täzeläň.",
   "session.background.moveInline": "Işleýän işi fona geçirmek üçin {{keybind}} basyň",
   "dialog.server.menu.hide": "Taslama sanawyndan gizläň",
   "dialog.server.menu.show": "Taslama sanawynda görkeziň",
@@ -669,7 +669,7 @@ export const dict = {
   "settings.about.firstPublished": "Ilkinji gezek Missuri, ABŞ-da neşir edildi",
   "settings.about.firstIllustrated": "Ilkinji gezek London, Angliýada suratlandyryldy",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, açyk çeşmeli kodlaşdyrma agenti",
+  "settings.about.description": "OpenFork, açyk çeşmeli kodlaşdyrma agenti",
   "settings.about.trademark": "OpenCode Anomaly Innovations, Inc. kompaniýasynyň bellige alnan söwda nyşanydyr.",
   "settings.about.typeset": "Inter we IBM Plex Mono bilen düzüldi",
   "settings.about.tagline": "AI sizsiz ajaýyp programma üpjünçiligini döredip bilmez",
@@ -721,8 +721,8 @@ export const dict = {
   "server.connect.address.invalid": "Dogry HTTP ýa-da HTTPS serwer salgysyny giriziň.",
   "server.connect.failed": "Birikip bilmedim Serweriň salgysyny we parolyny barlaň, soňra gaýtadan synanyşyň.",
   "server.connect.scan": "QR koduny skanirläň",
-  "server.connect.scan.description": "Kamerany opencode pair görkezýän QR koda gönükdiriň.",
-  "server.connect.scan.invalid": "Bu OpenCode jübütleme kody däl. opencode pair görkezýän kody skanirläň.",
+  "server.connect.scan.description": "Kamerany openfork pair görkezýän QR koda gönükdiriň.",
+  "server.connect.scan.invalid": "Bu OpenFork jübütleme kody däl. openfork pair görkezýän kody skanirläň.",
   "server.connect.camera": "Jübüt kamera",
   "server.connect.camera.starting": "Kamerany açmak…",
   "server.connect.mixedContent":
@@ -768,9 +768,9 @@ export const dict = {
   "project.settings.worktree.startup.hint.base": "Esasy iş agajy üçin $OPENCODE_WORKTREE_BASE ulanyň.",
   "project.settings.worktree.startup.hint.new": "Täze iş agajy üçin $OPENCODE_WORKTREE_PATH ulanyň.",
   "project.settings.extensions.empty.mcps.title": "Entek MCP ýok",
-  "project.settings.extensions.empty.mcps.description": "OpenCode üçin elýeterli MCP-ler şu ýerde peýda bolar",
+  "project.settings.extensions.empty.mcps.description": "OpenFork üçin elýeterli MCP-ler şu ýerde peýda bolar",
   "project.settings.extensions.empty.plugins.title": "Entek plugin ýok",
-  "project.settings.extensions.empty.plugins.description": "OpenCode üçin elýeterli plaginler şu ýerde peýda bolar",
+  "project.settings.extensions.empty.plugins.description": "OpenFork üçin elýeterli plaginler şu ýerde peýda bolar",
   "project.settings.extensions.empty.skills.title": "Entek başarnyk ýok",
   "project.settings.extensions.empty.skills.description": "OpenCode-da bar bolan başarnyklar şu ýerde peýda bolar",
   "project.settings.extensions.lsp.configured": "Sazlanan dil serwerleri",
@@ -828,22 +828,22 @@ export const dict = {
   "voice.captions.hide": "Subtitrleri gizle",
   "voice.connecting": "Birikdirilýär…",
   "voice.you": "Siz:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Sesli jaňlar üçin bu serwerde OpenAI API açary gerek.",
   "voice.failure.microphone": "Jaň etmek üçin mikrofona rugsat gerek.",
   "voice.failure.dropped": "Jaň kesildi.",
   "voice.failure.connection": "Jaňy birikdirip bolmady.",
-  "desktop.microphoneUsage": "OpenCode sesli jaňlar üçin mikrofonyňyzy ulanýar.",
+  "desktop.microphoneUsage": "OpenFork sesli jaňlar üçin mikrofonyňyzy ulanýar.",
   "desktop.documentsFolderUsage":
-    "OpenCode açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin Resminamalar bukjaňyzdaky faýllary ulanýar.",
+    "OpenFork açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin Resminamalar bukjaňyzdaky faýllary ulanýar.",
   "desktop.desktopFolderUsage":
-    "OpenCode açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin Iş stolundaky faýllary ulanýar.",
+    "OpenFork açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin Iş stolundaky faýllary ulanýar.",
   "desktop.downloadsFolderUsage":
-    "OpenCode açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin Göçürip alnanlar bukjaňyzdaky faýllary ulanýar.",
+    "OpenFork açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin Göçürip alnanlar bukjaňyzdaky faýllary ulanýar.",
   "desktop.networkVolumesUsage":
-    "OpenCode açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin tor diskleridäki faýllary ulanýar.",
+    "OpenFork açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin tor diskleridäki faýllary ulanýar.",
   "desktop.removableVolumesUsage":
-    "OpenCode açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin aýrylýan diskleridäki faýllary ulanýar.",
+    "OpenFork açýan taslamalaryňyz we şol ýerde işledýän buýruklaryňyz üçin aýrylýan diskleridäki faýllary ulanýar.",
   "desktop.contextMenu.spellcheck": "Orfografiýa barlagy",
   "desktop.contextMenu.spellcheckLanguages": "Orfografiýa barlagynyň dilleri",
   "session.location.unavailable": "Sessiýanyň ýerleşişi elýeterli däl",
@@ -885,7 +885,7 @@ export const dict = {
   "palette.group.settings": "Sazlamalar",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Integrasiýalar",
-  "dialog.provider.description": "OpenCode ulanyp biler ýaly hyzmatlary birikdiriň.",
+  "dialog.provider.description": "OpenFork ulanyp biler ýaly hyzmatlary birikdiriň.",
   "dialog.provider.group.services": "Hyzmatlar",
   "dialog.provider.environmentOnly": "Diňe gurşaw",
   "dialog.provider.signInRequired": "Giriş gerek →",
@@ -947,7 +947,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Ýap",
   "provider.connect.console.refreshFailed":
     "Hasabyňyz birikdirildi, emma modelleriňizi ýükläp bolmady. Olary täzelemek üçin täzeden synanyşyň.",
-  "provider.connect.console.connected": "OpenCode birikdirildi",
+  "provider.connect.console.connected": "OpenFork birikdirildi",
   "provider.connect.console.noModels":
     "Hasabyňyz birikdirildi, emma bu Console workspace-inde elýeterli model ýok. Onuň sazlamalaryny Console-da barlaň, soňra täzeläň.",
   "provider.connect.console.modelsLoading": "Modelleriňiz entek ýüklenýär. Gaýtadan barlamak üçin täzeläň.",
@@ -955,7 +955,7 @@ export const dict = {
   "provider.connect.console.openingBrowser": "Brauzer açylýar",
   "provider.connect.remote.label": "{{server}} serwerinde",
   "provider.connect.remote.description":
-    "OpenCode giriş maglumatlaryňyz bu serwerde saklanar. Modeller şu serwer arkaly elýeterli bolar.",
+    "OpenFork giriş maglumatlaryňyz bu serwerde saklanar. Modeller şu serwer arkaly elýeterli bolar.",
   "provider.connect.claudeAgent.description":
     "Claude meýilnamaňyzy ýa-da başga Claude Code girişini ulanyň. Ilki Claude Code-y gurnaň we giriň.",
   "provider.connect.claudeAgent.install": "Claude Code-y gurnaň",
@@ -988,7 +988,7 @@ export const dict = {
   "provider.connect.oauth.browserFailed": "Brauzeriňizi açyp bolmady. Täzeden synanyşmak üçin «Brauzeri açyň» saýlaň.",
   "provider.connect.oauth.paste.toggle": "Başga enjamdan girýärsiňizmi?",
   "provider.connect.oauth.paste.description":
-    "Brauzeriňiz OpenCode işleýän kompýutere ýetip bilmese, onuň gönükdirilen URL-ini ýelmäň.",
+    "Brauzeriňiz OpenFork işleýän kompýutere ýetip bilmese, onuň gönükdirilen URL-ini ýelmäň.",
   "provider.connect.oauth.expired": "Ygtyýarlandyrmanyň möhleti geçdi",
   "model.details.input.text": "Tekst",
   "model.details.input.image": "Şekil",
@@ -1025,7 +1025,7 @@ export const dict = {
   "dialog.mcp.signIn": "Giriň",
   "dialog.mcp.signIn.open": "{{name}} ulgamyna giriň",
   "dialog.mcp.signIn.description":
-    "{{name}} ulgamyna girmegiňiz üçin brauzeriňiz açylýar. Eger ol OpenCode işleýän kompýutere ýetip bilmese, gönükdirilen URL-i aşakda ýelmäň.",
+    "{{name}} ulgamyna girmegiňiz üçin brauzeriňiz açylýar. Eger ol OpenFork işleýän kompýutere ýetip bilmese, gönükdirilen URL-i aşakda ýelmäň.",
   "dialog.mcp.signIn.syncFailed": "Girildi, emma {{name}} täzeläp bolmady: {{error}}",
   "dialog.mcp.error.details":
     "MCP serweri: {{name}}\nÝagdaýy: şowsuz\nKonfigurasiýa: mcp.servers.{{name}}\nÝalňyşlyk: {{error}}",
@@ -1053,21 +1053,21 @@ export const dict = {
   "server.connect.link": "Jübütleme baglanyşygy",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "opencode pair-dan ýa-da serwer kompýuterindäki Sazlamalar → Jübütleme bölüminden doly jübütleme baglanyşygyny ýelmäň.",
+    "openfork pair-dan ýa-da serwer kompýuterindäki Sazlamalar → Jübütleme bölüminden doly jübütleme baglanyşygyny ýelmäň.",
   "server.connect.password.prompt": "Jübütleme baglanyşygy ýokmy?",
   "server.connect.password.use": "Paroly ulanyň",
-  "server.connect.password.hint": "Ony görmek üçin serwer kompýuterinde opencode service get password işlediň.",
+  "server.connect.password.hint": "Ony görmek üçin serwer kompýuterinde openfork service get password işlediň.",
   "server.connect.link.prompt": "Jübütleme baglanyşygyňyz barmy?",
   "server.connect.link.use": "Jübütleme baglanyşygyny ulanyň",
   "server.connect.pair.link":
     "Jübütleme baglanyşygyny we QR koduny almak üçin bu buýrugy serwer kompýuterinde işlediň.",
   "server.connect.scan.failed": "Bu brauzer QR koduny okap bilmedi. Birikme maglumatlaryňyzy el bilen giriziň.",
   "server.connect.link.expired":
-    "Bu jübütleme baglanyşygynyň möhleti geçdi ýa-da eýýäm ulanyldy. Täzesini almak üçin opencode pair işlediň.",
+    "Bu jübütleme baglanyşygynyň möhleti geçdi ýa-da eýýäm ulanyldy. Täzesini almak üçin openfork pair işlediň.",
   "server.connect.link.unreachable":
     "{{url}} salgysyna ýetip bolmady. Bu enjamyň serwere ýetip bilýändigini barlaň, soňra täzeden synanyşyň.",
   "server.connect.link.legacy":
-    "Bu jübütleme kody OpenCode-yň köne wersiýasyndan. Serwerde OpenCode-y täzeläň, soňra opencode pair-y gaýtadan işlediň.",
+    "Bu jübütleme kody OpenCode-yň köne wersiýasyndan. Serwerde OpenCode-y täzeläň, soňra openfork pair-y gaýtadan işlediň.",
   "server.connect.camera.native":
     "Bu sahypa HTTP arkaly kamerany ulanyp bilmeýär. Jübütleme baglanyşygyny ýokarda ýelmäň.",
   "dialog.server.signedOut":
@@ -1282,7 +1282,7 @@ export const dict = {
     'Açarlar diňe pluginiň iş stoly interfeýsini öçürýär. Onuň serwer bölegini öçürmek üçin global opencode.json faýlyňyzdaky plugins-e "-<id>" goşuň, TUI bölegini öçürmek üçin bolsa cli.json-daky plugins-e "-" we onuň TUI plugininiň ID-sini goşuň.',
   "settings.about.copyVersionFailed": "Wersiýany göçürip bolmady",
   "settings.about.notices.title": "Üçünji tarap bildirişleri",
-  "settings.about.notices.description": "OpenCode aşakdaky açyk çeşmeli programma üpjünçiligini öz içine alýar.",
+  "settings.about.notices.description": "OpenFork aşakdaky açyk çeşmeli programma üpjünçiligini öz içine alýar.",
   "settings.about.notices.license": "Ygtyýarnamanyň teksti",
   "settings.about.notices.fonts.title": "Office deslapky synlaryndaky şriftler",
   "settings.about.notices.fonts.description":

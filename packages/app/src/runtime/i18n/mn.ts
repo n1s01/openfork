@@ -1,5 +1,5 @@
 export const dict = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "OpenFork",
   "desktop.menu.file": "Файл",
   "desktop.menu.edit": "Засварлах",
   "desktop.menu.view": "Харах",
@@ -38,18 +38,18 @@ export const dict = {
   "desktop.menu.nextProject": "Дараагийн төсөл",
   "desktop.menu.minimize": "Багасгах",
   "desktop.menu.maximize": "Томруулах",
-  "desktop.menu.documentation": "OpenCode Баримт бичиг",
+  "desktop.menu.documentation": "OpenFork Баримт бичиг",
   "desktop.menu.supportForum": "Дэмжих форум",
   "desktop.menu.shareFeedback": "Санал хүсэлтээ хуваалцах",
   "desktop.menu.reportBug": "Алдаа мэдээлэх",
-  "desktop.menu.ariaLabel": "OpenCode цэс",
+  "desktop.menu.ariaLabel": "OpenFork цэс",
   "desktop.recovery.action.relaunch": "Дахин эхлүүлэх",
   "desktop.recovery.action.exportLogs": "Экспортын бүртгэл",
   "desktop.recovery.action.keepWaiting": "Үргэлжлүүлэн хүлээ",
   "desktop.recovery.action.quit": "Гарах",
-  "desktop.recovery.loadFailed": "OpenCode ачаалж чадсангүй",
-  "desktop.recovery.terminated": "OpenCode цонх гэнэт хаагдсан",
-  "desktop.recovery.unresponsive": "OpenCode хариу өгөхгүй байна",
+  "desktop.recovery.loadFailed": "OpenFork ачаалж чадсангүй",
+  "desktop.recovery.terminated": "OpenFork цонх гэнэт хаагдсан",
+  "desktop.recovery.unresponsive": "OpenFork хариу өгөхгүй байна",
   "desktop.recovery.unresponsive.detail":
     "Та програмаа дахин ажиллуулж, бүртгэлийг нээж эсвэл үргэлжлүүлэн хүлээх боломжтой.",
   "desktop.recovery.loadFailed.detail": "Цонх: {{window}}\nURL: {{url}}\nАлдаа: {{code}} {{description}}",
@@ -142,7 +142,7 @@ export const dict = {
   "dialog.model.empty": "Загварын үр дүн алга",
   "dialog.model.manage": "Загваруудыг удирдах",
   "dialog.model.manage.description": "Загвар сонгогч дээр ямар загвар гарч ирэхийг тохируулна уу.",
-  "dialog.model.unpaid.freeModels.title": "OpenCode өгсөн үнэгүй загварууд",
+  "dialog.model.unpaid.freeModels.title": "OpenFork өгсөн үнэгүй загварууд",
   "dialog.model.unpaid.addMore.title": "Алдартай үйлчилгээ үзүүлэгчээс илүү олон загварыг нэмнэ үү",
   "dialog.model.unpaid.viewMoreProviders": "Өөр 70 гаруй үйлчилгээ үзүүлэгчийг харна уу",
   "dialog.provider.viewAll": "Илүү олон үйлчилгээ үзүүлэгчийг харуулах",
@@ -152,7 +152,7 @@ export const dict = {
   "provider.connect.status.waiting": "Зөвшөөрөл хүлээж байна",
   "provider.connect.status.failed": "Зөвшөөрөл амжилтгүй болсон: {{error}}",
   "provider.connect.apiKey.description":
-    "Бүртгэлээ холбохын тулд {{provider}} API түлхүүрээ оруулаад OpenCode-д {{provider}} загварыг ашиглана уу.",
+    "Бүртгэлээ холбохын тулд {{provider}} API түлхүүрээ оруулаад OpenFork-д {{provider}} загварыг ашиглана уу.",
   "provider.connect.apiKey.label": "{{provider}} API түлхүүр",
   "provider.connect.apiKey.placeholder": "API түлхүүр",
   "provider.connect.apiKey.required": "API түлхүүр шаардлагатай",
@@ -266,7 +266,7 @@ export const dict = {
   "error.page.action.checkUpdates": "Шинэчлэлт байгаа эсэхийг шалгана уу",
   "error.page.action.updateTo": "{{version}} руу шинэчлэх",
   "error.page.circular": "[Тойрог]",
-  "error.page.report.prefix": "Энэ алдааг OpenCode багт мэдэгдэнэ үү",
+  "error.page.report.prefix": "Энэ алдааг OpenFork багт мэдэгдэнэ үү",
   "error.page.report.discord": "Discord дээр",
   "error.page.version": "Хувилбар: {{version}}",
   "error.dev.rootNotFound":
@@ -288,7 +288,7 @@ export const dict = {
   "error.chain.modelNotFound": "Загвар олдсонгүй: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Өөрийн тохиргооны (opencode.json) үйлчилгээ үзүүлэгч/загварын нэрийг шалгана уу",
   "error.chain.mcpFailed":
-    'MCP сервер "{{name}}" амжилтгүй боллоо. OpenCode нь MCP баталгаажуулалтыг хараахан дэмждэггүйг анхаарна уу.',
+    'MCP сервер "{{name}}" амжилтгүй боллоо. OpenFork нь MCP баталгаажуулалтыг хараахан дэмждэггүйг анхаарна уу.',
   "error.chain.providerAuthFailed":
     "Үйлчилгээ үзүүлэгчийн баталгаажуулалт амжилтгүй болсон ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
@@ -392,16 +392,16 @@ export const dict = {
   "settings.general.section.notifications": "Системийн мэдэгдэл",
   "settings.general.section.sounds": "Дууны эффект",
   "settings.general.row.language.title": "Хэл",
-  "settings.general.row.language.description": "OpenCode дэлгэцийн хэлийг өөрчлөх",
+  "settings.general.row.language.description": "OpenFork дэлгэцийн хэлийг өөрчлөх",
   "settings.general.row.shell.title": "Терминал shell",
   "settings.general.row.shell.description": "Shell нь терминал болон агентын хэрэгслүүдэд ашиглагддаг",
   "settings.general.row.shell.autoDefault": "Автомат (Өгөгдмөл)",
   "settings.general.row.shell.terminalOnly": "зөвхөн терминал",
   "settings.general.row.colorScheme.title": "Өнгөний схем",
   "settings.general.row.colorScheme.description":
-    "OpenCode нь систем, цайвар эсвэл бараан загварт тохирох эсэхийг сонгоно уу",
+    "OpenFork нь систем, цайвар эсвэл бараан загварт тохирох эсэхийг сонгоно уу",
   "settings.general.row.theme.title": "Сэдэв",
-  "settings.general.row.theme.description": "OpenCode-г хэрхэн загварчлахыг тохируулна уу.",
+  "settings.general.row.theme.description": "OpenFork-г хэрхэн загварчлахыг тохируулна уу.",
   "settings.general.row.font.title": "Кодын фонт",
   "settings.general.row.font.description": "Кодын блокуудад ашигладаг фонтыг тохируулна уу",
   "settings.general.row.terminalFont.title": "Терминал фонт",
@@ -611,7 +611,7 @@ export const dict = {
   "command.project.copyID": "Төслийн ID-г хуулах",
   "command.session.copyID": "Сессийн ID-г хуулах",
   "server.row.incompatible":
-    "Энэ сервер уг апптай нийцэхгүй OpenCode {{version}} хувилбарыг ажиллуулж байна. Үргэлжлүүлэхийн тулд OpenCode V2 болгон шинэчилнэ үү.",
+    "Энэ сервер уг апптай нийцэхгүй OpenFork {{version}} хувилбарыг ажиллуулж байна. Үргэлжлүүлэхийн тулд OpenFork V2 болгон шинэчилнэ үү.",
   "toast.session.copyID.failed.title": "Сессийн ID-г хуулж чадсангүй",
   "toast.session.copyID.failed.description": "Сессийн ID-г хуулах үед алдаа гарлаа",
   "toast.project.copyID.failed.title": "Төслийн ID-г хуулж чадсангүй",
@@ -621,7 +621,7 @@ export const dict = {
   "error.page.action.reload": "Дахин ачаалах",
   "session.error.incompatible": "Энэ серверийн хувилбар дэмжигдэхгүй",
   "session.error.incompatible.description":
-    "{{server}} уг апптай нийцэхгүй OpenCode {{version}} хувилбарыг ажиллуулж байна. Үргэлжлүүлэхийн тулд серверийг OpenCode V2 болгон шинэчилнэ үү.",
+    "{{server}} уг апптай нийцэхгүй OpenFork {{version}} хувилбарыг ажиллуулж байна. Үргэлжлүүлэхийн тулд серверийг OpenFork V2 болгон шинэчилнэ үү.",
   "session.background.moveInline": "Ажиллаж буй ажлыг арын горимд шилжүүлэхийн тулд {{keybind}} дарна уу",
   "dialog.server.menu.hide": "Төслийн жагсаалтаас нуух",
   "dialog.server.menu.show": "Төслийн жагсаалтад харуулах",
@@ -675,8 +675,8 @@ export const dict = {
   "settings.about.firstPublished": "Анх АНУ-ын Миссури мужид хэвлэгдсэн",
   "settings.about.firstIllustrated": "Анх Английн Лондон хотод зурагласан",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, нээлттэй эхийн кодчиллын агент",
-  "settings.about.trademark": "OpenCode нь Anomaly Innovations, Inc.-ийн бүртгэлтэй барааны тэмдэг юм.",
+  "settings.about.description": "OpenFork, нээлттэй эхийн кодчиллын агент",
+  "settings.about.trademark": "OpenFork нь Anomaly Innovations, Inc.-ийн бүртгэлтэй барааны тэмдэг юм.",
   "settings.about.typeset": "Inter болон IBM Plex Mono үсгийн хэвээр өрсөн",
   "settings.about.tagline": "Тангүйгээр AI гайхалтай програм хангамж бүтээж чадахгүй",
   "settings.about.copyright": "© Anomaly Innovations, Inc.",
@@ -726,8 +726,8 @@ export const dict = {
   "server.connect.address.invalid": "Хүчинтэй HTTP эсвэл HTTPS серверийн хаягийг оруулна уу.",
   "server.connect.failed": "Холбогдож чадсангүй. Серверийн хаяг ба нууц үгийг шалгаад дахин оролдоно уу.",
   "server.connect.scan": "QR кодыг сканнердах",
-  "server.connect.scan.description": "Камераа opencode pair-ийн харуулсан QR код руу чиглүүлнэ үү.",
-  "server.connect.scan.invalid": "Энэ OpenCode холболтын код биш. opencode pair-ийн харуулсан кодыг уншуулна уу.",
+  "server.connect.scan.description": "Камераа openfork pair-ийн харуулсан QR код руу чиглүүлнэ үү.",
+  "server.connect.scan.invalid": "Энэ OpenFork холболтын код биш. openfork pair-ийн харуулсан кодыг уншуулна уу.",
   "server.connect.camera": "Камер холбох",
   "server.connect.camera.starting": "Камер нээж байна…",
   "server.connect.mixedContent":
@@ -767,18 +767,18 @@ export const dict = {
     "Агентууд вэбийг хайхад ашиглах хайлтын үйлчилгээ үзүүлэгчийг сонгоно уу",
   "settings.projects.search.placeholder": "Төслүүдийг хайх",
   "project.settings.name.title": "Төслийн нэр",
-  "project.settings.name.description": "Энэхүү төслийн нэрийг OpenCode-д бүхэлд нь харуулсан",
+  "project.settings.name.description": "Энэхүү төслийн нэрийг OpenFork-д бүхэлд нь харуулсан",
   "project.settings.icon.description": "Зөвлөж байна: 128×128 пиксел. Зураг оруулахын тулд дарж эсвэл чирнэ үү.",
   "project.settings.color.description": "Өөрчлөн зураг тогтоогоогүй үед төсөлд зориулсан дүрсэнд ашиглана",
   "project.settings.worktree.startup.description": "Шинэ ажлын мод үүсгэсний дараа нэг удаа ажиллана",
   "project.settings.worktree.startup.hint.base": "Үндсэн ажиллах модыг заахын тулд $OPENCODE_WORKTREE_BASE-ийг ашигла.",
   "project.settings.worktree.startup.hint.new": "Шинэ ажиллах модны хувьд $OPENCODE_WORKTREE_PATH-г ашиглана уу.",
   "project.settings.extensions.empty.mcps.title": "Одоогоор MCP байхгүй",
-  "project.settings.extensions.empty.mcps.description": "OpenCode-д зориулсан MCP-ууд энд гарч ирнэ",
+  "project.settings.extensions.empty.mcps.description": "OpenFork-д зориулсан MCP-ууд энд гарч ирнэ",
   "project.settings.extensions.empty.plugins.title": "Одоогоор нэмэлтүүд байхгүй",
-  "project.settings.extensions.empty.plugins.description": "OpenCode-д ашиглах боломжтой нэмэлтүүд энд гарч ирнэ",
+  "project.settings.extensions.empty.plugins.description": "OpenFork-д ашиглах боломжтой нэмэлтүүд энд гарч ирнэ",
   "project.settings.extensions.empty.skills.title": "Одоогоор ур чадваргүй",
-  "project.settings.extensions.empty.skills.description": "OpenCode-д ашиглах боломжтой ур чадварууд энд гарч ирнэ",
+  "project.settings.extensions.empty.skills.description": "OpenFork-д ашиглах боломжтой ур чадварууд энд гарч ирнэ",
   "project.settings.extensions.lsp.configured": "Тохируулагдсан хэлний серверүүд",
   "project.settings.extensions.lsp.status.enabled": "Тохиргоонд идэвхжүүлсэн",
   "project.settings.extensions.lsp.status.disabled": "Тохиргоонд идэвхгүй болсон",
@@ -799,7 +799,7 @@ export const dict = {
   "settings.timeline.collapsed.label": "{{activity}} нурсан",
   "session.new.workspace.search.empty": "Тохирох ажиллах мод байхгүй",
   "settings.workspaces.description": "Ажлын модыг шалгаж, дискний хэрэглээг удирдах",
-  "settings.workspaces.empty.description": "OpenCode-д үүсгэсэн Worktrees энд харагдана",
+  "settings.workspaces.empty.description": "OpenFork-д үүсгэсэн Worktrees энд харагдана",
   "settings.workspaces.sessions.filtered.one": "{{count}} хичээл",
   "settings.workspaces.sessions.filtered.other": "{{count}} хичээл",
   "settings.workspaces.deleteAll.confirm.one": "Энэ нь сонгогдсон {{count}} ажлын модыг байнгын устгана.",
@@ -836,22 +836,22 @@ export const dict = {
   "voice.captions.hide": "Хадмал нуух",
   "voice.connecting": "Холбогдож байна…",
   "voice.you": "Та:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Дуут дуудлагад энэ сервер дээр OpenAI API түлхүүр шаардлагатай.",
   "voice.failure.microphone": "Дуудлага хийхэд микрофоны хандалт шаардлагатай.",
   "voice.failure.dropped": "Дуудлага тасарлаа.",
   "voice.failure.connection": "Дуудлагыг холбож чадсангүй.",
-  "desktop.microphoneUsage": "OpenCode таны микрофоныг дуут дуудлагад ашигладаг.",
+  "desktop.microphoneUsage": "OpenFork таны микрофоныг дуут дуудлагад ашигладаг.",
   "desktop.documentsFolderUsage":
-    "OpenCode таны Documents хавтас дахь файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
+    "OpenFork таны Documents хавтас дахь файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
   "desktop.desktopFolderUsage":
-    "OpenCode таны Desktop дээрх файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
+    "OpenFork таны Desktop дээрх файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
   "desktop.downloadsFolderUsage":
-    "OpenCode таны Downloads хавтас дахь файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
+    "OpenFork таны Downloads хавтас дахь файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
   "desktop.networkVolumesUsage":
-    "OpenCode сүлжээний диск дээрх файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
+    "OpenFork сүлжээний диск дээрх файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
   "desktop.removableVolumesUsage":
-    "OpenCode зөөврийн диск дээрх файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
+    "OpenFork зөөврийн диск дээрх файлуудыг тэнд нээсэн төсөл болон ажиллуулсан командуудад ашигладаг.",
   "desktop.contextMenu.spellcheck": "Зөв бичгийн шалгалт",
   "desktop.contextMenu.spellcheckLanguages": "Зөв бичгийн шалгалтын хэлүүд",
   "session.location.unavailable": "Сессийн байршил боломжгүй",
@@ -894,7 +894,7 @@ export const dict = {
   "palette.group.settings": "Тохиргоо",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Интеграцууд",
-  "dialog.provider.description": "OpenCode ашиглаж болохоор үйлчилгээнүүдийг холбоно уу.",
+  "dialog.provider.description": "OpenFork ашиглаж болохоор үйлчилгээнүүдийг холбоно уу.",
   "dialog.provider.group.services": "Үйлчилгээнүүд",
   "dialog.provider.environmentOnly": "Зөвхөн орчны хувьсагч",
   "dialog.provider.signInRequired": "Нэвтрэх шаардлагатай →",
@@ -951,7 +951,7 @@ export const dict = {
   "provider.connect.models.available": "Боломжтой загварууд",
   "provider.connect.chatgptWelcome.title": "ChatGPT холбогдлоо",
   "provider.connect.chatgptWelcome.description":
-    "OpenCode дахь шаардлага хангасан хүсэлтүүд таны ChatGPT багцыг ашиглаж болно.",
+    "OpenFork дахь шаардлага хангасан хүсэлтүүд таны ChatGPT багцыг ашиглаж болно.",
   "provider.connect.chatgptWelcome.usage": "Хэрэглээг ChatGPT тохиргоонд удирдах",
   "provider.connect.chatgptWelcome.confirm": "Ойлголоо",
   "provider.connect.models.list": "{{provider}}-оос боломжтой загварууд",
@@ -961,7 +961,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Хаах",
   "provider.connect.console.refreshFailed":
     "Таны бүртгэл холбогдсон ч загваруудыг ачаалж чадсангүй. Шинэчлэхийн тулд дахин оролдоно уу.",
-  "provider.connect.console.connected": "OpenCode холбогдлоо",
+  "provider.connect.console.connected": "OpenFork холбогдлоо",
   "provider.connect.console.noModels":
     "Таны бүртгэл холбогдсон ч энэ Console ажлын талбарт боломжтой загвар алга. Console дээр тохиргоог нь шалгаад шинэчилнэ үү.",
   "provider.connect.console.modelsLoading": "Таны загварууд ачаалагдсаар байна. Дахин шалгахын тулд шинэчилнэ үү.",
@@ -969,7 +969,7 @@ export const dict = {
   "provider.connect.console.openingBrowser": "Хөтөч нээж байна",
   "provider.connect.remote.label": "{{server}} дээр",
   "provider.connect.remote.description":
-    "Таны OpenCode нэвтрэх мэдээлэл энэ сервер дээр хадгалагдана. Загварууд энэ серверээр дамжин ашиглагдана.",
+    "Таны OpenFork нэвтрэх мэдээлэл энэ сервер дээр хадгалагдана. Загварууд энэ серверээр дамжин ашиглагдана.",
   "provider.connect.claudeAgent.description":
     "Өөрийн Claude багц эсвэл өөр Claude Code нэвтрэлтийг ашиглана. Эхлээд Claude Code суулгаж нэвтэрнэ үү.",
   "provider.connect.claudeAgent.install": "Claude Code суулгах",
@@ -1003,7 +1003,7 @@ export const dict = {
     "Таны хөтчийг нээж чадсангүй. Дахин оролдохын тулд «Хөтөч нээх»-ийг сонгоно уу.",
   "provider.connect.oauth.paste.toggle": "Өөр төхөөрөмжөөс нэвтэрч байна уу?",
   "provider.connect.oauth.paste.description":
-    "Хэрэв таны хөтөч OpenCode ажиллаж буй машинд хүрч чадахгүй бол дахин чиглүүлсэн URL-ыг буулгана уу.",
+    "Хэрэв таны хөтөч OpenFork ажиллаж буй машинд хүрч чадахгүй бол дахин чиглүүлсэн URL-ыг буулгана уу.",
   "provider.connect.oauth.expired": "Зөвшөөрлийн хугацаа дууссан",
   "model.details.input.text": "Текст",
   "model.details.input.image": "Зураг",
@@ -1040,7 +1040,7 @@ export const dict = {
   "dialog.mcp.signIn": "Нэвтрэх",
   "dialog.mcp.signIn.open": "{{name}}-д нэвтрэх",
   "dialog.mcp.signIn.description":
-    "{{name}}-д нэвтрэхийн тулд таны хөтөч нээгдэнэ. Хэрэв хөтөч OpenCode ажиллаж буй машинд хүрч чадахгүй бол дахин чиглүүлсэн URL-ыг доор буулгана уу.",
+    "{{name}}-д нэвтрэхийн тулд таны хөтөч нээгдэнэ. Хэрэв хөтөч OpenFork ажиллаж буй машинд хүрч чадахгүй бол дахин чиглүүлсэн URL-ыг доор буулгана уу.",
   "dialog.mcp.signIn.syncFailed": "Нэвтэрсэн ч {{name}}-ийг шинэчилж чадсангүй: {{error}}",
   "dialog.mcp.error.details":
     "MCP сервер: {{name}}\nТөлөв: амжилтгүй\nТохиргоо: mcp.servers.{{name}}\nАлдаа: {{error}}",
@@ -1068,22 +1068,22 @@ export const dict = {
   "server.connect.link": "Хослуулах холбоос",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "opencode pair-ээс эсвэл серверийн компьютер дээрх Тохиргоо → Хослуулах хэсгээс бүтэн хослуулах холбоосыг буулгана уу.",
+    "openfork pair-ээс эсвэл серверийн компьютер дээрх Тохиргоо → Хослуулах хэсгээс бүтэн хослуулах холбоосыг буулгана уу.",
   "server.connect.password.prompt": "Хослуулах холбоос алга уу?",
   "server.connect.password.use": "Нууц үг ашиглах",
   "server.connect.password.hint":
-    "Үүнийг харахын тулд серверийн компьютер дээр opencode service get password ажиллуулна уу.",
+    "Үүнийг харахын тулд серверийн компьютер дээр openfork service get password ажиллуулна уу.",
   "server.connect.link.prompt": "Хослуулах холбоос байгаа юу?",
   "server.connect.link.use": "Хослуулах холбоос ашиглах",
   "server.connect.pair.link":
     "Хослуулах холбоос болон QR код авахын тулд энэ командыг серверийн компьютер дээр ажиллуулна уу.",
   "server.connect.scan.failed": "Энэ хөтөч QR кодыг уншиж чадсангүй. Холболтын мэдээллээ гараар оруулна уу.",
   "server.connect.link.expired":
-    "Энэ хослуулах холбоосын хугацаа дууссан эсвэл аль хэдийн ашиглагдсан. Шинийг авахын тулд opencode pair ажиллуулна уу.",
+    "Энэ хослуулах холбоосын хугацаа дууссан эсвэл аль хэдийн ашиглагдсан. Шинийг авахын тулд openfork pair ажиллуулна уу.",
   "server.connect.link.unreachable":
     "{{url}}-д хүрч чадсангүй. Энэ төхөөрөмж серверт хүрч чадаж байгааг шалгаад дахин оролдоно уу.",
   "server.connect.link.legacy":
-    "Энэ хослуулах код OpenCode-ийн хуучин хувилбарынх байна. Сервер дээрх OpenCode-ийг шинэчлээд opencode pair-ийг дахин ажиллуулна уу.",
+    "Энэ хослуулах код OpenFork-ийн хуучин хувилбарынх байна. Сервер дээрх OpenFork-ийг шинэчлээд openfork pair-ийг дахин ажиллуулна уу.",
   "server.connect.camera.native": "Энэ хуудас HTTP-ээр камер ашиглах боломжгүй. Дээрх хослуулах холбоосыг буулгана уу.",
   "dialog.server.signedOut":
     "Энэ серверт хийсэн таны нэвтрэлт хүчингүй болсон. Шинэ хослуулах холбоос буулгах эсвэл серверийн нууц үгийг оруулна уу.",
@@ -1104,7 +1104,7 @@ export const dict = {
   "home.sessions.load.timeout": "Сервер хариулахад хэт удлаа",
   "tips.browse.title": "Хөтчөө удирдах",
   "tips.browse.description":
-    "OpenCode-д таны таб, нэвтрэлт, өргөтгөлүүдтэйгээр хөтөч дээр тань ажиллах боломж олгоно уу.",
+    "OpenFork-д таны таб, нэвтрэлт, өргөтгөлүүдтэйгээр хөтөч дээр тань ажиллах боломж олгоно уу.",
   "tips.browse.install": "Суулгах",
   "tips.hex.title": "Дуу хоолойгоо ашиглах",
   "tips.hex.description":
@@ -1297,7 +1297,7 @@ export const dict = {
     'Унтраалга нь зөвхөн нэмэлтийн ширээний аппын UI-г унтраана. Серверийн хэсгийг унтраахын тулд глобал opencode.json дахь plugins-д "-<id>" нэмнэ үү, TUI хэсгийг унтраахын тулд cli.json дахь plugins-д "-" болон TUI нэмэлтийн ID-г нэмнэ үү.',
   "settings.about.copyVersionFailed": "Хувилбарыг хуулж чадсангүй",
   "settings.about.notices.title": "Гуравдагч талын мэдэгдлүүд",
-  "settings.about.notices.description": "OpenCode дараах нээлттэй эхийн програм хангамжийг агуулдаг.",
+  "settings.about.notices.description": "OpenFork дараах нээлттэй эхийн програм хангамжийг агуулдаг.",
   "settings.about.notices.license": "Лицензийн текст",
   "settings.about.notices.fonts.title": "Office урьдчилан харагдац дахь фонтууд",
   "settings.about.notices.fonts.description":

@@ -319,7 +319,7 @@ function Side(props: ParentProps<{ turn: Turn; expand: boolean; count: number; o
 }
 
 export default {
-  title: "OpenCode/Session/Sources",
+  title: "OpenFork/Session/Sources",
   id: "session-sources",
   render: (args: SourcesArgs) => <Sources {...args} />,
   args: { turn: "three", icons: "letters", panel: false, expand: false },

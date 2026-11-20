@@ -55,7 +55,7 @@ export default {
   "mcp.error.actionLabel": "Palvelimen {{name}} tiedot",
   "mcp.signIn.open": "Kirjaudu palveluun {{name}}",
   "mcp.signIn.description":
-    "Selain avautuu, jotta voit kirjautua palveluun {{name}}. Jos se ei tavoita konetta, jolla OpenCode on käynnissä, liitä alle URL-osoite, johon se ohjattiin.",
+    "Selain avautuu, jotta voit kirjautua palveluun {{name}}. Jos se ei tavoita konetta, jolla OpenFork on käynnissä, liitä alle URL-osoite, johon se ohjattiin.",
   "mcp.signIn.waiting": "Odotetaan valtuutusta…",
   "mcp.signIn.failed": "Valtuutus epäonnistui: {{error}}",
   "mcp.signIn.expired": "Valtuutus vanhentui",

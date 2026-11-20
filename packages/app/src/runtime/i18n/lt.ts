@@ -1,7 +1,7 @@
 import { DESKTOP_NATIVE_KEYS } from "./desktop-native"
 
 const desktop = [
-  "OpenCode",
+  "OpenFork",
   "Failas",
   "Taisa",
   "Rodymas",
@@ -41,11 +41,11 @@ const desktop = [
   "Kitas projektas",
   "Suskleisti",
   "Išskleisti",
-  "OpenCode dokumentacija",
+  "OpenFork dokumentacija",
   "Pagalbos forumas",
   "Pateikti atsiliepimą",
   "Pranešti apie klaidą",
-  "OpenCode meniu",
+  "OpenFork meniu",
   "CLI įdiegtas",
   "CLI įdiegtas į {{path}}\n\nPaleiskite terminalą iš naujo, kad galėtumėte naudoti komandą 'opencode2'.",
   "Įdiegti nepavyko",
@@ -54,9 +54,9 @@ const desktop = [
   "Eksportuoti žurnalus",
   "Laukti toliau",
   "Baigti darbą",
-  "OpenCode įkelti nepavyko",
-  "OpenCode langas netikėtai užsidarė",
-  "OpenCode neatsako",
+  "OpenFork įkelti nepavyko",
+  "OpenFork langas netikėtai užsidarė",
+  "OpenFork neatsako",
   "Galite paleisti programą iš naujo, atverti žurnalus arba laukti toliau.",
   "Langas: {{window}}\nURL: {{url}}\nKlaida: {{code}} {{description}}",
   "Langas: {{window}}\nPriežastis: {{reason}}\nKodas: {{code}}",
@@ -154,7 +154,7 @@ export const dict = {
   "dialog.model.empty": "Nėra modelio rezultatų",
   "dialog.model.manage": "Tvarkyti modelius",
   "dialog.model.manage.description": "Tinkinkite, kurie modeliai rodomi modelio parinkiklyje.",
-  "dialog.model.unpaid.freeModels.title": "Nemokami OpenCode modeliai",
+  "dialog.model.unpaid.freeModels.title": "Nemokami OpenFork modeliai",
   "dialog.model.unpaid.addMore.title": "Pridėkite daugiau populiarių tiekėjų modelių",
   "dialog.model.unpaid.viewMoreProviders": "Žr. daugiau nei 70 tiekėjų",
   "dialog.provider.viewAll": "Rodyti daugiau teikėjų",
@@ -164,7 +164,7 @@ export const dict = {
   "provider.connect.status.waiting": "Laukiama įgaliojimo",
   "provider.connect.status.failed": "Autorizacija nepavyko: {{error}}",
   "provider.connect.apiKey.description":
-    "Įveskite {{provider}} API raktą, kad susietumėte paskyrą ir naudotumėte {{provider}} modelius programoje OpenCode.",
+    "Įveskite {{provider}} API raktą, kad susietumėte paskyrą ir naudotumėte {{provider}} modelius programoje OpenFork.",
   "provider.connect.apiKey.label": "{{provider}} API raktas",
   "provider.connect.apiKey.placeholder": "API raktas",
   "provider.connect.apiKey.required": "Reikalingas API raktas",
@@ -278,7 +278,7 @@ export const dict = {
   "error.page.action.checkUpdates": "Patikrinkite, ar nėra atnaujinimų",
   "error.page.action.updateTo": "Atnaujinkite į {{version}}",
   "error.page.circular": "[Aplinkraštis]",
-  "error.page.report.prefix": "Praneškite apie šią klaidą OpenCode komandai",
+  "error.page.report.prefix": "Praneškite apie šią klaidą OpenFork komandai",
   "error.page.report.discord": "ant Discord",
   "error.page.version": "Versija: {{version}}",
   "error.dev.rootNotFound":
@@ -300,7 +300,7 @@ export const dict = {
   "error.chain.modelNotFound": "Modelis nerastas: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Patikrinkite konfigūracijos (opencode.json) teikėjo / modelio pavadinimus",
   "error.chain.mcpFailed":
-    "MCP serveris „{{name}}“ nepavyko. Atminkite, kad OpenCode dar nepalaiko MCP autentifikavimo.",
+    "MCP serveris „{{name}}“ nepavyko. Atminkite, kad OpenFork dar nepalaiko MCP autentifikavimo.",
   "error.chain.providerAuthFailed": "Teikėjo autentifikavimas nepavyko ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     "Nepavyko inicijuoti teikėjo „{{provider}}“. Patikrinkite kredencialus ir konfigūraciją.",
@@ -405,15 +405,15 @@ export const dict = {
   "settings.general.section.notifications": "Sistemos pranešimai",
   "settings.general.section.sounds": "Garso efektai",
   "settings.general.row.language.title": "Kalba",
-  "settings.general.row.language.description": "Pakeiskite OpenCode ekrano kalbą",
+  "settings.general.row.language.description": "Pakeiskite OpenFork ekrano kalbą",
   "settings.general.row.shell.title": "Terminalo apvalkalas",
   "settings.general.row.shell.description": "Terminalo ir agento įrankių naudojamas apvalkalas",
   "settings.general.row.shell.autoDefault": "Automatinis (numatytasis)",
   "settings.general.row.shell.terminalOnly": "tik terminalas",
   "settings.general.row.colorScheme.title": "Spalvų schema",
-  "settings.general.row.colorScheme.description": "Pasirinkite, ar OpenCode seka sistemos, šviesios ar tamsios temos",
+  "settings.general.row.colorScheme.description": "Pasirinkite, ar OpenFork seka sistemos, šviesios ar tamsios temos",
   "settings.general.row.theme.title": "tema",
-  "settings.general.row.theme.description": "Tinkinkite OpenCode temą.",
+  "settings.general.row.theme.description": "Tinkinkite OpenFork temą.",
   "settings.general.row.font.title": "Kodo šriftas",
   "settings.general.row.font.description": "Tinkinkite kodo blokuose naudojamą šriftą",
   "settings.general.row.terminalFont.title": "Šriftas Terminal",
@@ -620,7 +620,7 @@ export const dict = {
   "command.project.copyID": "Kopijuoti projekto ID",
   "command.session.copyID": "Kopijuoti seanso ID",
   "server.row.incompatible":
-    "Šiame serveryje veikia OpenCode {{version}}, nesuderinama su šia programa. Norėdami tęsti, atnaujinkite serverį į OpenCode V2.",
+    "Šiame serveryje veikia OpenFork {{version}}, nesuderinama su šia programa. Norėdami tęsti, atnaujinkite serverį į OpenFork V2.",
   "toast.session.copyID.failed.title": "Nepavyko nukopijuoti seanso ID",
   "toast.session.copyID.failed.description": "Kopijuojant seanso ID įvyko klaida",
   "toast.project.copyID.failed.title": "Nepavyko nukopijuoti projekto ID",
@@ -630,7 +630,7 @@ export const dict = {
   "error.page.action.reload": "Įkelti iš naujo",
   "session.error.incompatible": "Ši serverio versija nepalaikoma",
   "session.error.incompatible.description":
-    "Serveryje {{server}} veikia OpenCode {{version}}, nesuderinama su šia programa. Norėdami tęsti, atnaujinkite serverį į OpenCode V2.",
+    "Serveryje {{server}} veikia OpenFork {{version}}, nesuderinama su šia programa. Norėdami tęsti, atnaujinkite serverį į OpenFork V2.",
   "session.background.moveInline": "Paspauskite {{keybind}}, kad perkeltumėte vykdomą darbą į foną",
   "session.background.runningCount.few": "{{count}} elementai vykdomi fone",
   "session.background.runningCount.many": "{{count}} elementų vykdoma fone",
@@ -687,8 +687,8 @@ export const dict = {
   "settings.about.firstPublished": "Pirmą kartą išleista Misūrio valstijoje, JAV",
   "settings.about.firstIllustrated": "Pirmą kartą iliustruotas Londone, Anglijoje",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, atvirojo kodo kodavimo agentas",
-  "settings.about.trademark": "OpenCode yra registruotasis Anomaly Innovations, Inc. prekės ženklas.",
+  "settings.about.description": "OpenFork, atvirojo kodo kodavimo agentas",
+  "settings.about.trademark": "OpenFork yra registruotasis Anomaly Innovations, Inc. prekės ženklas.",
   "settings.about.typeset": "Rinkinys „Inter“ ir „IBM Plex Mono“.",
   "settings.about.tagline": "AI negali sukurti puikios programinės įrangos be jūsų",
   "settings.about.copyright": "© Anomaly Innovations, Inc.",
@@ -736,8 +736,8 @@ export const dict = {
   "server.connect.failed":
     "Nepavyko prisijungti. Patikrinkite serverio adresą ir slaptažodį, tada bandykite dar kartą.",
   "server.connect.scan": "Nuskaitykite QR kodą",
-  "server.connect.scan.description": "Nukreipkite fotoaparatą į QR kodą, rodomą opencode pair.",
-  "server.connect.scan.invalid": "Tai nėra OpenCode susiejimo kodas. Nuskaitykite kodą, kurį rodo opencode pair.",
+  "server.connect.scan.description": "Nukreipkite fotoaparatą į QR kodą, rodomą openfork pair.",
+  "server.connect.scan.invalid": "Tai nėra OpenFork susiejimo kodas. Nuskaitykite kodą, kurį rodo openfork pair.",
   "server.connect.camera": "Kameros susiejimas",
   "server.connect.camera.starting": "Atidaroma kamera…",
   "server.connect.mixedContent":
@@ -772,7 +772,7 @@ export const dict = {
     "Pasirinkite paieškos teikėjo agentus, kuriuos naudoja ieškodami žiniatinklyje",
   "settings.projects.search.placeholder": "Ieškoti projektų",
   "project.settings.name.title": "Projekto pavadinimas",
-  "project.settings.name.description": "Šio projekto pavadinimas rodomas visame OpenCode",
+  "project.settings.name.description": "Šio projekto pavadinimas rodomas visame OpenFork",
   "project.settings.icon.description":
     "Rekomenduojama: 128 × 128 pikselių. Spustelėkite arba vilkite, kad įkeltumėte vaizdą.",
   "project.settings.color.description": "Naudojama projekto piktogramai, kai nenustatytas joks pasirinktinis vaizdas",
@@ -780,11 +780,11 @@ export const dict = {
   "project.settings.worktree.startup.hint.base": "Naudokite $OPENCODE_WORKTREE_BASE pagrindiniam darbo medžiui.",
   "project.settings.worktree.startup.hint.new": "Naujam darbiniam medžiui naudokite $OPENCODE_WORKTREE_PATH.",
   "project.settings.extensions.empty.mcps.title": "Dar nėra MCPs",
-  "project.settings.extensions.empty.mcps.description": "MCPs, pasiekiamas OpenCode, bus rodomas čia",
+  "project.settings.extensions.empty.mcps.description": "MCPs, pasiekiamas OpenFork, bus rodomas čia",
   "project.settings.extensions.empty.plugins.title": "Papildinių dar nėra",
-  "project.settings.extensions.empty.plugins.description": "Čia bus rodomi OpenCode prieinami papildiniai",
+  "project.settings.extensions.empty.plugins.description": "Čia bus rodomi OpenFork prieinami papildiniai",
   "project.settings.extensions.empty.skills.title": "Dar nėra įgūdžių",
-  "project.settings.extensions.empty.skills.description": "Čia bus rodomi OpenCode įgūdžiai",
+  "project.settings.extensions.empty.skills.description": "Čia bus rodomi OpenFork įgūdžiai",
   "project.settings.extensions.lsp.configured": "Sukonfigūruoti kalbos serveriai",
   "project.settings.extensions.lsp.status.enabled": "Įjungta konfigūracijose",
   "project.settings.extensions.lsp.status.disabled": "Išjungta konfigūracijose",
@@ -804,7 +804,7 @@ export const dict = {
   "settings.timeline.collapsed.label": "{{activity}} sugriuvo",
   "session.new.workspace.search.empty": "Nėra atitinkamų darbmedžių",
   "settings.workspaces.description": "Peržiūrėkite darbo medžius ir tvarkykite disko naudojimą",
-  "settings.workspaces.empty.description": "Čia bus rodomi OpenCode sukurti darbo medžiai",
+  "settings.workspaces.empty.description": "Čia bus rodomi OpenFork sukurti darbo medžiai",
   "settings.workspaces.sessions.filtered.one": "{{count}} sesija",
   "settings.workspaces.sessions.filtered.other": "{{count}} sesijos",
   "settings.workspaces.deleteAll.confirm.one": "Tai visam laikui ištrins pasirinktą {{count}} darbo medį.",
@@ -864,7 +864,7 @@ export const dict = {
   "voice.captions.hide": "Slėpti subtitrus",
   "voice.connecting": "Jungiamasi…",
   "voice.you": "Jūs:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Balso skambučiams šiame serveryje reikia OpenAI API rakto.",
   "voice.failure.microphone": "Norint skambinti, reikia prieigos prie mikrofono.",
   "voice.failure.dropped": "Skambutis nutrūko.",
@@ -915,7 +915,7 @@ export const dict = {
   "palette.group.settings": "Nustatymai",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Integracijos",
-  "dialog.provider.description": "Prijunkite paslaugas, kad OpenCode galėtų jomis naudotis.",
+  "dialog.provider.description": "Prijunkite paslaugas, kad OpenFork galėtų jomis naudotis.",
   "dialog.provider.group.services": "Paslaugos",
   "dialog.provider.environmentOnly": "Tik aplinka",
   "dialog.provider.signInRequired": "Reikia prisijungti →",
@@ -973,7 +973,7 @@ export const dict = {
   "provider.connect.models.description": "Pasirinkite modelį pradžiai. Modelį galite pakeisti bet kada.",
   "provider.connect.models.available": "Pasiekiami modeliai",
   "provider.connect.chatgptWelcome.title": "ChatGPT prijungtas",
-  "provider.connect.chatgptWelcome.description": "Tinkamos OpenCode užklausos gali naudoti jūsų ChatGPT planą.",
+  "provider.connect.chatgptWelcome.description": "Tinkamos OpenFork užklausos gali naudoti jūsų ChatGPT planą.",
   "provider.connect.chatgptWelcome.usage": "Tvarkykite naudojimą ChatGPT nustatymuose",
   "provider.connect.chatgptWelcome.confirm": "Supratau",
   "provider.connect.models.list": "{{provider}} pasiekiami modeliai",
@@ -983,7 +983,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Uždaryti",
   "provider.connect.console.refreshFailed":
     "Paskyra prijungta, tačiau nepavyko įkelti modelių. Bandykite atnaujinti dar kartą.",
-  "provider.connect.console.connected": "OpenCode prijungtas",
+  "provider.connect.console.connected": "OpenFork prijungtas",
   "provider.connect.console.noModels":
     "Paskyra prijungta, tačiau šioje Console darbo srityje nėra pasiekiamų modelių. Patikrinkite jos sąranką Console, tada atnaujinkite.",
   "provider.connect.console.modelsLoading": "Modeliai dar įkeliami. Atnaujinkite, kad patikrintumėte dar kartą.",
@@ -991,7 +991,7 @@ export const dict = {
   "provider.connect.console.openingBrowser": "Atveriama naršyklė",
   "provider.connect.remote.label": "serveryje {{server}}",
   "provider.connect.remote.description":
-    "Jūsų OpenCode prisijungimo duomenys bus saugomi šiame serveryje. Modeliai bus pasiekiami per šį serverį.",
+    "Jūsų OpenFork prisijungimo duomenys bus saugomi šiame serveryje. Modeliai bus pasiekiami per šį serverį.",
   "provider.connect.claudeAgent.description":
     "Naudokite savo Claude planą arba kitą Claude Code prisijungimą. Pirmiausia įdiekite Claude Code ir prisijunkite.",
   "provider.connect.claudeAgent.install": "Įdiegti Claude Code",
@@ -1025,7 +1025,7 @@ export const dict = {
     "Nepavyko atverti naršyklės. Pasirinkite „Atverti naršyklę“, kad bandytumėte dar kartą.",
   "provider.connect.oauth.paste.toggle": "Jungiatės iš kito įrenginio?",
   "provider.connect.oauth.paste.description":
-    "Jei naršyklė negali pasiekti kompiuterio, kuriame veikia OpenCode, įklijuokite URL, į kurį buvote nukreipti.",
+    "Jei naršyklė negali pasiekti kompiuterio, kuriame veikia OpenFork, įklijuokite URL, į kurį buvote nukreipti.",
   "provider.connect.oauth.expired": "Autorizacija nebegalioja",
   "model.details.input.text": "Tekstas",
   "model.details.input.image": "Vaizdas",
@@ -1062,7 +1062,7 @@ export const dict = {
   "dialog.mcp.signIn": "Prisijungti",
   "dialog.mcp.signIn.open": "Prisijungti prie {{name}}",
   "dialog.mcp.signIn.description":
-    "Atsivers naršyklė, kad galėtumėte prisijungti prie {{name}}. Jei ji negali pasiekti kompiuterio, kuriame veikia OpenCode, žemiau įklijuokite URL, į kurį buvote nukreipti.",
+    "Atsivers naršyklė, kad galėtumėte prisijungti prie {{name}}. Jei ji negali pasiekti kompiuterio, kuriame veikia OpenFork, žemiau įklijuokite URL, į kurį buvote nukreipti.",
   "dialog.mcp.signIn.syncFailed": "Prisijungta, tačiau nepavyko atnaujinti {{name}}: {{error}}",
   "dialog.mcp.error.details":
     "MCP serveris: {{name}}\nBūsena: nepavyko\nKonfigūracija: mcp.servers.{{name}}\nKlaida: {{error}}",
@@ -1090,22 +1090,22 @@ export const dict = {
   "server.connect.link": "Susiejimo nuoroda",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "Įklijuokite visą susiejimo nuorodą iš opencode pair arba iš Nustatymai → Susiejimas serverio kompiuteryje.",
+    "Įklijuokite visą susiejimo nuorodą iš openfork pair arba iš Nustatymai → Susiejimas serverio kompiuteryje.",
   "server.connect.password.prompt": "Neturite susiejimo nuorodos?",
   "server.connect.password.use": "Naudoti slaptažodį",
   "server.connect.password.hint":
-    "Norėdami jį pamatyti, serverio kompiuteryje paleiskite opencode service get password.",
+    "Norėdami jį pamatyti, serverio kompiuteryje paleiskite openfork service get password.",
   "server.connect.link.prompt": "Turite susiejimo nuorodą?",
   "server.connect.link.use": "Naudoti susiejimo nuorodą",
   "server.connect.pair.link":
     "Paleiskite šią komandą serverio kompiuteryje, kad gautumėte susiejimo nuorodą ir QR kodą.",
   "server.connect.scan.failed": "Ši naršyklė negalėjo nuskaityti QR kodo. Įveskite ryšio duomenis rankiniu būdu.",
   "server.connect.link.expired":
-    "Ši susiejimo nuoroda nebegalioja arba jau buvo panaudota. Paleiskite opencode pair, kad gautumėte naują.",
+    "Ši susiejimo nuoroda nebegalioja arba jau buvo panaudota. Paleiskite openfork pair, kad gautumėte naują.",
   "server.connect.link.unreachable":
     "Nepavyko pasiekti {{url}}. Patikrinkite, ar šis įrenginys gali pasiekti serverį, ir bandykite dar kartą.",
   "server.connect.link.legacy":
-    "Šis susiejimo kodas yra iš senesnės OpenCode versijos. Atnaujinkite OpenCode serveryje, tada vėl paleiskite opencode pair.",
+    "Šis susiejimo kodas yra iš senesnės OpenFork versijos. Atnaujinkite OpenFork serveryje, tada vėl paleiskite openfork pair.",
   "server.connect.camera.native":
     "Šis puslapis negali naudoti kameros per HTTP. Įklijuokite susiejimo nuorodą aukščiau.",
   "dialog.server.signedOut":
@@ -1127,7 +1127,7 @@ export const dict = {
   "home.sessions.load.timeout": "Serveris per ilgai neatsakė",
   "tips.browse.title": "Valdykite naršyklę",
   "tips.browse.description":
-    "Leiskite OpenCode dirbti jūsų naršyklėje su jūsų skirtukais, prisijungimais ir plėtiniais.",
+    "Leiskite OpenFork dirbti jūsų naršyklėje su jūsų skirtukais, prisijungimais ir plėtiniais.",
   "tips.browse.install": "Įdiegti",
   "tips.hex.title": "Naudokite balsą",
   "tips.hex.description":
@@ -1335,7 +1335,7 @@ export const dict = {
     'Jungikliai išjungia tik papildinio darbalaukio sąsają. Norėdami išjungti jo serverio dalį, pridėkite "-<id>" prie plugins globaliame opencode.json, o norėdami išjungti TUI dalį – pridėkite "-" ir jo TUI papildinio ID prie plugins faile cli.json.',
   "settings.about.copyVersionFailed": "Nepavyko nukopijuoti versijos",
   "settings.about.notices.title": "Trečiųjų šalių pranešimai",
-  "settings.about.notices.description": "OpenCode apima šią atvirojo kodo programinę įrangą.",
+  "settings.about.notices.description": "OpenFork apima šią atvirojo kodo programinę įrangą.",
   "settings.about.notices.license": "Licencijos tekstas",
   "settings.about.notices.fonts.title": "Office peržiūrose naudojami šriftai",
   "settings.about.notices.fonts.description":

@@ -2,7 +2,7 @@ import { Button } from "@opencode/ui/button"
 import { DockPrompt } from "./dock-prompt"
 
 export default {
-  title: "OpenCode/Requests/Prompt frame",
+  title: "OpenFork/Requests/Prompt frame",
   id: "components-dock-prompt",
   component: DockPrompt,
   args: { experimental: false },

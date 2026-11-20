@@ -58,7 +58,7 @@ function ContextProgress(props: Counts) {
 }
 
 export default {
-  title: "OpenCode/Work/Context progress",
+  title: "OpenFork/Work/Context progress",
   id: "components-animated-count-list",
   component: AnimatedCountList,
   argTypes: Object.fromEntries(

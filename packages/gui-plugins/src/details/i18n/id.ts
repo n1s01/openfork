@@ -35,15 +35,15 @@ export default {
   "move.recovery.remove": "Hapus worktree",
   "mcp.manage": "Kelola server MCP",
   timedOut: "Server terlalu lama merespons",
-  "setup.mcp": "Tambah server dengan OpenCode",
+  "setup.mcp": "Tambah server dengan OpenFork",
   "setup.mcp.prompt":
-    "Bantu saya menambahkan server MCP ke konfigurasi OpenCode global saya. Tanyakan layanan mana yang ingin saya hubungkan, lalu siapkan dan periksa apakah koneksinya berhasil.",
-  "setup.plugins": "Tambah plugin dengan OpenCode",
+    "Bantu saya menambahkan server MCP ke konfigurasi OpenFork global saya. Tanyakan layanan mana yang ingin saya hubungkan, lalu siapkan dan periksa apakah koneksinya berhasil.",
+  "setup.plugins": "Tambah plugin dengan OpenFork",
   "setup.plugins.prompt":
-    "Bantu saya menambahkan plugin ke konfigurasi OpenCode global saya. Tanyakan apa yang ingin saya lakukan dengannya, sarankan plugin, lalu tambahkan.",
-  "setup.skills": "Keahlian baru dengan OpenCode",
+    "Bantu saya menambahkan plugin ke konfigurasi OpenFork global saya. Tanyakan apa yang ingin saya lakukan dengannya, sarankan plugin, lalu tambahkan.",
+  "setup.skills": "Keahlian baru dengan OpenFork",
   "setup.skills.prompt":
-    "Bantu saya menulis keahlian OpenCode baru di konfigurasi global saya. Tanyakan apa yang harus diajarkannya kepada Anda, lalu tulis SKILL.md-nya.",
+    "Bantu saya menulis keahlian OpenFork baru di konfigurasi global saya. Tanyakan apa yang harus diajarkannya kepada Anda, lalu tulis SKILL.md-nya.",
   changesFailed: "Tidak dapat memuat perubahan",
   changesOffline: "Tidak dapat menjangkau server ini",
   "mcp.signIn": "Masuk",
@@ -55,7 +55,7 @@ export default {
   "mcp.error.actionLabel": "Detail untuk {{name}}",
   "mcp.signIn.open": "Masuk ke {{name}}",
   "mcp.signIn.description":
-    "Peramban Anda akan terbuka agar Anda dapat masuk ke {{name}}. Jika peramban tidak dapat menjangkau mesin yang menjalankan OpenCode, tempel URL tujuan pengalihannya di bawah.",
+    "Peramban Anda akan terbuka agar Anda dapat masuk ke {{name}}. Jika peramban tidak dapat menjangkau mesin yang menjalankan OpenFork, tempel URL tujuan pengalihannya di bawah.",
   "mcp.signIn.waiting": "Menunggu otorisasi…",
   "mcp.signIn.failed": "Otorisasi gagal: {{error}}",
   "mcp.signIn.expired": "Otorisasi kedaluwarsa",

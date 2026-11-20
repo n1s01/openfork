@@ -1,3 +1,28 @@
+# OpenFork
+
+> **OpenFork is a fork of [OpenCode](https://github.com/anomalyco/opencode)** — the open source AI coding agent by the OpenCode authors, licensed under MIT.
+> All credit for the original work goes to them; see [LICENSE](LICENSE) (original copyright kept unchanged) and [NOTICE](NOTICE) for what this fork changes.
+> OpenFork is not affiliated with or endorsed by the OpenCode project.
+
+### Build and run OpenFork
+
+```bash
+bun install
+bun run --cwd packages/cli build --single
+./packages/cli/dist/cli-$(uname -s | tr A-Z a-z)-$(uname -m | sed 's/x86_64/x64/;s/aarch64/arm64/')/bin/openfork
+```
+
+Keeping up with upstream:
+
+```bash
+git fetch upstream && git merge upstream/dev
+bun script/openfork/rebrand.ts packages/{cli,tui,core,server,client,session-ui,ui,app,util,plugin,desktop,gui-plugins,sdk,protocol,schema}/src
+```
+
+The rest of this README is the upstream OpenCode README.
+
+---
+
 <p align="center">
   <a href="https://opencode.ai">
     <picture>

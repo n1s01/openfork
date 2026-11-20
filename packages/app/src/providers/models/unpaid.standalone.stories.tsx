@@ -29,7 +29,7 @@ function SelectModelWithoutProviders(props: { count: number }) {
       ...free,
       id: name.toLowerCase().replaceAll(" ", "-"),
       name,
-      provider: { ...free.provider, name: "OpenCode" },
+      provider: { ...free.provider, name: "OpenFork" },
       limit: { ...free.limit, context: 128_000 },
       capabilities: {
         ...free.capabilities,

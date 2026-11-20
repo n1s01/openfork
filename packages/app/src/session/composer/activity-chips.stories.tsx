@@ -245,7 +245,7 @@ function LiveActivity(props: PreviewArgs) {
 }
 
 export default {
-  title: "OpenCode/Session/Activity chips",
+  title: "OpenFork/Session/Activity chips",
   id: "session-activity-chips",
   render: (args: PreviewArgs) => <Preview {...args} />,
   args: { stage: 0, subagents: 0, shells: 0 },

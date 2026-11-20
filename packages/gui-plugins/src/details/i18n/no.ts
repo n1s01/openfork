@@ -35,13 +35,13 @@ export default {
   "move.recovery.remove": "Slett worktree",
   "mcp.manage": "Administrer MCP-servere",
   timedOut: "Serveren brukte for lang tid på å svare",
-  "setup.mcp": "Legg til en server med OpenCode",
+  "setup.mcp": "Legg til en server med OpenFork",
   "setup.mcp.prompt":
     "Hjelp meg å legge til en MCP-server i den globale OpenCode-konfigurasjonen min. Spør meg hvilken tjeneste jeg vil koble til, sett den opp og sjekk at den kobler til.",
-  "setup.plugins": "Legg til et programtillegg med OpenCode",
+  "setup.plugins": "Legg til et programtillegg med OpenFork",
   "setup.plugins.prompt":
     "Hjelp meg å legge til et programtillegg i den globale OpenCode-konfigurasjonen min. Spør meg hva det skal gjøre, foreslå et programtillegg og legg det til.",
-  "setup.skills": "Ny ferdighet med OpenCode",
+  "setup.skills": "Ny ferdighet med OpenFork",
   "setup.skills.prompt":
     "Hjelp meg å skrive en ny OpenCode-ferdighet i den globale konfigurasjonen min. Spør meg hva den skal lære deg, og skriv deretter SKILL.md.",
   changesFailed: "Kunne ikke laste inn endringer",
@@ -55,7 +55,7 @@ export default {
   "mcp.error.actionLabel": "Detaljer for {{name}}",
   "mcp.signIn.open": "Logg på {{name}}",
   "mcp.signIn.description":
-    "Nettleseren åpnes slik at du kan logge på {{name}}. Hvis den ikke når maskinen som kjører OpenCode, lim inn URL-en den ble omdirigert til, nedenfor.",
+    "Nettleseren åpnes slik at du kan logge på {{name}}. Hvis den ikke når maskinen som kjører OpenFork, lim inn URL-en den ble omdirigert til, nedenfor.",
   "mcp.signIn.waiting": "Venter på autorisering …",
   "mcp.signIn.failed": "Autorisering mislyktes: {{error}}",
   "mcp.signIn.expired": "Autoriseringen er utløpt",

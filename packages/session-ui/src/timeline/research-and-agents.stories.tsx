@@ -19,7 +19,7 @@ import { timelinePresets, type TimelinePlacement } from "./detail"
 import { SessionTimeline } from "./session-timeline"
 
 export default {
-  title: "OpenCode/Work/Research and agents",
+  title: "OpenFork/Work/Research and agents",
   id: "current-session-research-agents",
   component: SessionTimeline,
   parameters: {
@@ -247,7 +247,7 @@ const LoadingSpecializedSkills = {
       description="Active and completed skills display their identifier or resolved name."
       document={storyDocument([
         storyTool("tool_skill_id", "skill", "running", { id: "frontend-design" }),
-        storyTool("tool_skill_name", "skill", "completed", { id: "opencode" }, { metadata: { name: "OpenCode" } }),
+        storyTool("tool_skill_name", "skill", "completed", { id: "opencode" }, { metadata: { name: "OpenFork" } }),
       ])}
     />
   ),

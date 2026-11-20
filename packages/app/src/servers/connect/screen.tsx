@@ -29,7 +29,7 @@ export function ConnectServerForm(props: {
   return (
     <main data-component="connect-server" aria-labelledby="server-connect-title">
       <div class="server-connect-content">
-        <div class="server-connect-brand" role="img" aria-label="OpenCode">
+        <div class="server-connect-brand" role="img" aria-label="OpenFork">
           <Wordmark />
         </div>
         <header>
@@ -154,7 +154,7 @@ export function ConnectServerForm(props: {
           <Show when={view().draft.method === "link"}>
             <footer>
               <p>{language.t("server.connect.pair.link")}</p>
-              <code dir="ltr">opencode pair</code>
+              <code dir="ltr">openfork pair</code>
             </footer>
           </Show>
         </Show>

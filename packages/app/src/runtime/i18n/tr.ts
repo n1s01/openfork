@@ -3,7 +3,7 @@ import en from "./en"
 type Keys = keyof typeof en
 
 export const dict = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "OpenFork",
   "desktop.menu.file": "Dosya",
   "desktop.menu.edit": "Düzen",
   "desktop.menu.view": "Görünüm",
@@ -43,11 +43,11 @@ export const dict = {
   "desktop.menu.nextProject": "Sonraki proje",
   "desktop.menu.minimize": "Simge durumuna küçült",
   "desktop.menu.maximize": "Ekranı kapla",
-  "desktop.menu.documentation": "OpenCode belgeleri",
+  "desktop.menu.documentation": "OpenFork belgeleri",
   "desktop.menu.supportForum": "Destek forumu",
   "desktop.menu.shareFeedback": "Geri bildirim paylaş",
   "desktop.menu.reportBug": "Hata bildir",
-  "desktop.menu.ariaLabel": "OpenCode menüsü",
+  "desktop.menu.ariaLabel": "OpenFork menüsü",
 
   "desktop.cli.installed.title": "CLI yüklendi",
   "desktop.cli.installed.message":
@@ -59,9 +59,9 @@ export const dict = {
   "desktop.recovery.action.exportLogs": "Günlükleri dışa aktar",
   "desktop.recovery.action.keepWaiting": "Beklemeye devam et",
   "desktop.recovery.action.quit": "Çık",
-  "desktop.recovery.loadFailed": "OpenCode yüklenemedi",
-  "desktop.recovery.terminated": "OpenCode penceresi beklenmedik şekilde sonlandırıldı",
-  "desktop.recovery.unresponsive": "OpenCode yanıt vermiyor",
+  "desktop.recovery.loadFailed": "OpenFork yüklenemedi",
+  "desktop.recovery.terminated": "OpenFork penceresi beklenmedik şekilde sonlandırıldı",
+  "desktop.recovery.unresponsive": "OpenFork yanıt vermiyor",
   "desktop.recovery.unresponsive.detail":
     "Uygulamayı yeniden başlatabilir, günlükleri açabilir veya beklemeye devam edebilirsiniz.",
   "desktop.recovery.loadFailed.detail": "Pencere: {{window}}\nURL: {{url}}\nHata: {{code}} {{description}}",
@@ -166,7 +166,7 @@ export const dict = {
   "dialog.model.manage": "Modelleri yönet",
   "dialog.model.manage.description": "Model seçicide hangi modellerin görüneceğini özelleştirin.",
 
-  "dialog.model.unpaid.freeModels.title": "OpenCode tarafından sunulan ücretsiz modeller",
+  "dialog.model.unpaid.freeModels.title": "OpenFork tarafından sunulan ücretsiz modeller",
   "dialog.model.unpaid.addMore.title": "Popüler sağlayıcılardan daha fazla model ekleyin",
   "dialog.model.unpaid.viewMoreProviders": "70'ten fazla sağlayıcı daha görüntüle",
 
@@ -178,7 +178,7 @@ export const dict = {
   "provider.connect.status.waiting": "Yetkilendirme bekleniyor",
   "provider.connect.status.failed": "Yetkilendirme başarısız: {{error}}",
   "provider.connect.apiKey.description":
-    "{{provider}} hesabınızı bağlamak ve OpenCode'da {{provider}} modellerini kullanmak için API anahtarınızı girin.",
+    "{{provider}} hesabınızı bağlamak ve OpenFork'da {{provider}} modellerini kullanmak için API anahtarınızı girin.",
   "provider.connect.apiKey.label": "{{provider}} API anahtarı",
   "provider.connect.apiKey.placeholder": "API anahtarı",
   "provider.connect.apiKey.required": "API anahtarı gerekli",
@@ -307,7 +307,7 @@ export const dict = {
   "error.page.action.checking": "Kontrol ediliyor…",
   "error.page.action.checkUpdates": "Güncellemeleri kontrol et",
   "error.page.action.updateTo": "{{version}} sürümüne güncelle",
-  "error.page.report.prefix": "Lütfen bu hatayı OpenCode ekibine",
+  "error.page.report.prefix": "Lütfen bu hatayı OpenFork ekibine",
   "error.page.report.discord": "Discord üzerinden bildirin",
   "error.page.version": "Sürüm: {{version}}",
 
@@ -326,7 +326,7 @@ export const dict = {
   "error.chain.modelNotFound": "Model bulunamadı: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Yapılandırma dosyanızdaki (opencode.json) sağlayıcı/model adlarını kontrol edin",
   "error.chain.mcpFailed":
-    'MCP sunucusu "{{name}}" çalıştırılamadı. Not: OpenCode henüz MCP kimlik doğrulamasını desteklemiyor.',
+    'MCP sunucusu "{{name}}" çalıştırılamadı. Not: OpenFork henüz MCP kimlik doğrulamasını desteklemiyor.',
   "error.chain.providerAuthFailed": "Sağlayıcı kimlik doğrulaması başarısız ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     '"{{provider}}" sağlayıcısı başlatılamadı. Kimlik bilgilerini ve yapılandırmayı kontrol edin.',
@@ -421,7 +421,7 @@ export const dict = {
   "settings.general.section.sounds": "Ses efektleri",
 
   "settings.general.row.language.title": "Dil",
-  "settings.general.row.language.description": "OpenCode'un görünüm dilini değiştirin",
+  "settings.general.row.language.description": "OpenFork'un görünüm dilini değiştirin",
   "settings.general.row.shell.title": "Terminal Kabuğu",
   "settings.general.row.shell.description":
     "Terminalinizde kullanılacak kabuğu seçin. Uyumlu kabuklar, ajan araç çağrılarında da kullanılır.",
@@ -429,9 +429,9 @@ export const dict = {
   "settings.general.row.shell.terminalOnly": "yalnızca terminal",
   "settings.general.row.colorScheme.title": "Renk şeması",
   "settings.general.row.colorScheme.description":
-    "OpenCode'un sistem, açık veya koyu temayı takip etip etmeyeceğini seçin",
+    "OpenFork'un sistem, açık veya koyu temayı takip etip etmeyeceğini seçin",
   "settings.general.row.theme.title": "Tema",
-  "settings.general.row.theme.description": "OpenCode'un temasını özelleştirin.",
+  "settings.general.row.theme.description": "OpenFork'un temasını özelleştirin.",
   "settings.general.row.font.title": "Kod yazı tipi",
   "settings.general.row.font.description": "Kod bloklarında kullanılan yazı tipini özelleştirin",
   "settings.general.row.terminalFont.title": "Terminal yazı tipi",
@@ -624,7 +624,7 @@ export const dict = {
   "command.project.copyID": "Proje kimliğini kopyala",
   "command.session.copyID": "Oturum kimliğini kopyala",
   "server.row.incompatible":
-    "Bu sunucu, bu uygulamayla uyumlu olmayan OpenCode {{version}} sürümünü çalıştırıyor. Devam etmek için OpenCode V2'ye yükseltin.",
+    "Bu sunucu, bu uygulamayla uyumlu olmayan OpenFork {{version}} sürümünü çalıştırıyor. Devam etmek için OpenFork V2'ye yükseltin.",
   "toast.session.copyID.failed.title": "Oturum kimliği kopyalanamadı",
   "toast.session.copyID.failed.description": "Oturum kimliği kopyalanırken bir hata oluştu",
   "toast.project.copyID.failed.title": "Proje kimliği kopyalanamadı",
@@ -634,7 +634,7 @@ export const dict = {
   "error.page.action.reload": "Yeniden yükle",
   "session.error.incompatible": "Bu sunucu sürümü desteklenmiyor",
   "session.error.incompatible.description":
-    "{{server}}, bu uygulamayla uyumlu olmayan OpenCode {{version}} sürümünü çalıştırıyor. Devam etmek için sunucuyu OpenCode V2'ye yükseltin.",
+    "{{server}}, bu uygulamayla uyumlu olmayan OpenFork {{version}} sürümünü çalıştırıyor. Devam etmek için sunucuyu OpenFork V2'ye yükseltin.",
   "session.background.moveInline": "Çalışan işi arka plana taşımak için {{keybind}} tuşuna basın",
 
   "command.session.background": "Arka plana taşı",
@@ -746,8 +746,8 @@ export const dict = {
   "settings.about.firstPublished": "İlk olarak Missouri, ABD'de yayınlandı",
   "settings.about.firstIllustrated": "İlk kez Londra, İngiltere'de resmedildi",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, açık kaynak kodlama aracısı",
-  "settings.about.trademark": "OpenCode, Anomaly Innovations, Inc.'in tescilli ticari markasıdır.",
+  "settings.about.description": "OpenFork, açık kaynak kodlama aracısı",
+  "settings.about.trademark": "OpenFork, Anomaly Innovations, Inc.'in tescilli ticari markasıdır.",
   "settings.about.typeset": "Inter ve IBM Plex Mono'da dizgi",
   "settings.about.tagline": "Yapay zeka siz olmadan mükemmel yazılım geliştiremez",
   "settings.about.copyright": "© Anomaly Innovations, Inc.",
@@ -787,9 +787,9 @@ export const dict = {
   "server.connect.address.invalid": "Geçerli bir HTTP veya HTTPS sunucu adresi girin.",
   "server.connect.failed": "Bağlantı kurulamadı. Sunucu adresini ve şifreyi kontrol edip tekrar deneyin.",
   "server.connect.scan": "QR kodunu tarayın",
-  "server.connect.scan.description": "Kameranızı opencode pair tarafından gösterilen QR koduna doğrultun.",
+  "server.connect.scan.description": "Kameranızı openfork pair tarafından gösterilen QR koduna doğrultun.",
   "server.connect.scan.invalid":
-    "Bu bir OpenCode eşleştirme kodu değildir. opencode pair tarafından gösterilen kodu tarayın.",
+    "Bu bir OpenFork eşleştirme kodu değildir. openfork pair tarafından gösterilen kodu tarayın.",
   "server.connect.camera": "Kamera eşleniyor",
   "server.connect.camera.starting": "Kamera açılıyor…",
   "server.connect.mixedContent":
@@ -825,18 +825,18 @@ export const dict = {
     "Temsilcilerin web'de arama yapmak için kullanacağı arama sağlayıcısını seçin",
   "settings.projects.search.placeholder": "Proje ara",
   "project.settings.name.title": "Proje adı",
-  "project.settings.name.description": "OpenCode genelinde bu proje için gösterilen ad",
+  "project.settings.name.description": "OpenFork genelinde bu proje için gösterilen ad",
   "project.settings.icon.description": "Önerilen: 128×128 piksel. Bir görseli yüklemek için tıklayın veya sürükleyin.",
   "project.settings.color.description": "Özel bir görüntü ayarlanmadığında proje simgesi için kullanılır",
   "project.settings.worktree.startup.description": "Yeni bir çalışma ağacı oluşturulduktan sonra bir kez çalıştırılır",
   "project.settings.worktree.startup.hint.base": "Temel çalışma ağacı için $OPENCODE_WORKTREE_BASE kullanın.",
   "project.settings.worktree.startup.hint.new": "Yeni çalışma ağacı için $OPENCODE_WORKTREE_PATH'yi kullanın.",
   "project.settings.extensions.empty.mcps.title": "Henüz MCPs yok",
-  "project.settings.extensions.empty.mcps.description": "OpenCode tarafından kullanılabilen MCPs burada görünecek",
+  "project.settings.extensions.empty.mcps.description": "OpenFork tarafından kullanılabilen MCPs burada görünecek",
   "project.settings.extensions.empty.plugins.title": "Henüz eklenti yok",
-  "project.settings.extensions.empty.plugins.description": "OpenCode'de kullanılabilen eklentiler burada görünecek",
+  "project.settings.extensions.empty.plugins.description": "OpenFork'de kullanılabilen eklentiler burada görünecek",
   "project.settings.extensions.empty.skills.title": "Henüz beceri yok",
-  "project.settings.extensions.empty.skills.description": "OpenCode'nin kullanabileceği beceriler burada görünecek",
+  "project.settings.extensions.empty.skills.description": "OpenFork'nin kullanabileceği beceriler burada görünecek",
   "project.settings.extensions.lsp.configured": "Yapılandırılmış dil sunucuları",
   "project.settings.extensions.lsp.status.enabled": "Yapılandırmada etkinleştirildi",
   "project.settings.extensions.lsp.status.disabled": "Yapılandırmada devre dışı bırakıldı",
@@ -856,7 +856,7 @@ export const dict = {
   "settings.timeline.collapsed.label": "{{activity}} çöktü",
   "session.new.workspace.search.empty": "Eşleşen çalışma ağacı yok",
   "settings.workspaces.description": "Çalışma ağaçlarını inceleyin ve disk kullanımını yönetin",
-  "settings.workspaces.empty.description": "OpenCode'de oluşturulan çalışma ağaçları burada görünecek",
+  "settings.workspaces.empty.description": "OpenFork'de oluşturulan çalışma ağaçları burada görünecek",
   "settings.workspaces.sessions.filtered.one": "{{count}} oturumu",
   "settings.workspaces.sessions.filtered.other": "{{count}} oturumları",
   "settings.workspaces.deleteAll.confirm.one": "Bu, {{count}} seçili çalışma ağacını kalıcı olarak silecektir.",
@@ -906,22 +906,22 @@ export const dict = {
   "voice.captions.hide": "Altyazıları gizle",
   "voice.connecting": "Bağlanıyor…",
   "voice.you": "Siz:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Sesli aramalar için bu sunucuda bir OpenAI API anahtarı gerekir.",
   "voice.failure.microphone": "Arama yapmak için mikrofon erişimi gerekir.",
   "voice.failure.dropped": "Arama kesildi.",
   "voice.failure.connection": "Arama bağlanamadı.",
-  "desktop.microphoneUsage": "OpenCode, sesli aramalar için mikrofonunuzu kullanır.",
+  "desktop.microphoneUsage": "OpenFork, sesli aramalar için mikrofonunuzu kullanır.",
   "desktop.documentsFolderUsage":
-    "OpenCode, açtığınız projeler ve orada çalıştırdığınız komutlar için Belgeler klasörünüzdeki dosyaları kullanır.",
+    "OpenFork, açtığınız projeler ve orada çalıştırdığınız komutlar için Belgeler klasörünüzdeki dosyaları kullanır.",
   "desktop.desktopFolderUsage":
-    "OpenCode, açtığınız projeler ve orada çalıştırdığınız komutlar için Masaüstünüzdeki dosyaları kullanır.",
+    "OpenFork, açtığınız projeler ve orada çalıştırdığınız komutlar için Masaüstünüzdeki dosyaları kullanır.",
   "desktop.downloadsFolderUsage":
-    "OpenCode, açtığınız projeler ve orada çalıştırdığınız komutlar için İndirilenler klasörünüzdeki dosyaları kullanır.",
+    "OpenFork, açtığınız projeler ve orada çalıştırdığınız komutlar için İndirilenler klasörünüzdeki dosyaları kullanır.",
   "desktop.networkVolumesUsage":
-    "OpenCode, açtığınız projeler ve orada çalıştırdığınız komutlar için ağ birimlerindeki dosyaları kullanır.",
+    "OpenFork, açtığınız projeler ve orada çalıştırdığınız komutlar için ağ birimlerindeki dosyaları kullanır.",
   "desktop.removableVolumesUsage":
-    "OpenCode, açtığınız projeler ve orada çalıştırdığınız komutlar için çıkarılabilir birimlerdeki dosyaları kullanır.",
+    "OpenFork, açtığınız projeler ve orada çalıştırdığınız komutlar için çıkarılabilir birimlerdeki dosyaları kullanır.",
   "desktop.contextMenu.spellcheck": "Yazım denetimi",
   "desktop.contextMenu.spellcheckLanguages": "Yazım Denetimi Dilleri",
   "session.location.unavailable": "Oturum konumu kullanılamıyor",
@@ -964,7 +964,7 @@ export const dict = {
   "palette.group.settings": "Ayarlar",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Entegrasyonlar",
-  "dialog.provider.description": "OpenCode'un kullanabilmesi için hizmetleri bağlayın.",
+  "dialog.provider.description": "OpenFork'un kullanabilmesi için hizmetleri bağlayın.",
   "dialog.provider.group.services": "Hizmetler",
   "dialog.provider.environmentOnly": "Yalnızca ortam",
   "dialog.provider.signInRequired": "Oturum açılması gerekiyor →",
@@ -1018,7 +1018,7 @@ export const dict = {
   "provider.connect.models.description": "Başlamak için bir model seçin. Modeli istediğiniz zaman değiştirebilirsiniz.",
   "provider.connect.models.available": "Kullanılabilir modeller",
   "provider.connect.chatgptWelcome.title": "ChatGPT bağlandı",
-  "provider.connect.chatgptWelcome.description": "OpenCode'daki uygun istekler ChatGPT planınızı kullanabilir.",
+  "provider.connect.chatgptWelcome.description": "OpenFork'daki uygun istekler ChatGPT planınızı kullanabilir.",
   "provider.connect.chatgptWelcome.usage": "Kullanımı ChatGPT ayarlarından yönetin",
   "provider.connect.chatgptWelcome.confirm": "Anladım",
   "provider.connect.models.list": "{{provider}} üzerinden kullanılabilir modeller",
@@ -1028,7 +1028,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Kapat",
   "provider.connect.console.refreshFailed":
     "Hesabınız bağlandı ancak modelleriniz yüklenemedi. Yenilemek için tekrar deneyin.",
-  "provider.connect.console.connected": "OpenCode bağlandı",
+  "provider.connect.console.connected": "OpenFork bağlandı",
   "provider.connect.console.noModels":
     "Hesabınız bağlandı ancak bu Console çalışma alanında kullanılabilir model yok. Kurulumunu Console'da kontrol edip yenileyin.",
   "provider.connect.console.modelsLoading": "Modelleriniz hâlâ yükleniyor. Tekrar kontrol etmek için yenileyin.",
@@ -1036,7 +1036,7 @@ export const dict = {
   "provider.connect.console.openingBrowser": "Tarayıcı açılıyor",
   "provider.connect.remote.label": "{{server}} üzerinde",
   "provider.connect.remote.description":
-    "OpenCode kimlik bilgileriniz bu sunucuda saklanacak. Modeller bu sunucu üzerinden kullanılabilir olacak.",
+    "OpenFork kimlik bilgileriniz bu sunucuda saklanacak. Modeller bu sunucu üzerinden kullanılabilir olacak.",
   "provider.connect.claudeAgent.description":
     "Claude planınızı veya başka bir Claude Code oturumunu kullanın. Önce Claude Code'u yükleyip oturum açın.",
   "provider.connect.claudeAgent.install": "Claude Code'u yükle",
@@ -1068,7 +1068,7 @@ export const dict = {
   "provider.connect.oauth.browserFailed": "Tarayıcınız açılamadı. Tekrar denemek için Tarayıcıyı aç'ı seçin.",
   "provider.connect.oauth.paste.toggle": "Başka bir cihazdan mı oturum açıyorsunuz?",
   "provider.connect.oauth.paste.description":
-    "Tarayıcınız OpenCode'u çalıştıran makineye erişemiyorsa, yönlendirildiği URL'yi yapıştırın.",
+    "Tarayıcınız OpenFork'u çalıştıran makineye erişemiyorsa, yönlendirildiği URL'yi yapıştırın.",
   "provider.connect.oauth.expired": "Yetkilendirmenin süresi doldu",
   "model.details.input.text": "Metin",
   "model.details.input.image": "Görsel",
@@ -1105,7 +1105,7 @@ export const dict = {
   "dialog.mcp.signIn": "Oturum aç",
   "dialog.mcp.signIn.open": "{{name}} hesabında oturum aç",
   "dialog.mcp.signIn.description":
-    "{{name}} hesabında oturum açabilmeniz için tarayıcınız açılır. Tarayıcı OpenCode'u çalıştıran makineye erişemiyorsa, yönlendirildiği URL'yi aşağıya yapıştırın.",
+    "{{name}} hesabında oturum açabilmeniz için tarayıcınız açılır. Tarayıcı OpenFork'u çalıştıran makineye erişemiyorsa, yönlendirildiği URL'yi aşağıya yapıştırın.",
   "dialog.mcp.signIn.syncFailed": "Oturum açıldı ancak {{name}} yenilenemedi: {{error}}",
   "dialog.mcp.error.details":
     "MCP sunucusu: {{name}}\nDurum: başarısız\nYapılandırma: mcp.servers.{{name}}\nHata: {{error}}",
@@ -1133,22 +1133,22 @@ export const dict = {
   "server.connect.link": "Eşleştirme bağlantısı",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "opencode pair komutundan veya sunucunun bilgisayarındaki Ayarlar → Eşleştirme bölümünden alınan eşleştirme bağlantısının tamamını yapıştırın.",
+    "openfork pair komutundan veya sunucunun bilgisayarındaki Ayarlar → Eşleştirme bölümünden alınan eşleştirme bağlantısının tamamını yapıştırın.",
   "server.connect.password.prompt": "Eşleştirme bağlantınız yok mu?",
   "server.connect.password.use": "Parola kullan",
   "server.connect.password.hint":
-    "Görmek için sunucunun bilgisayarında opencode service get password komutunu çalıştırın.",
+    "Görmek için sunucunun bilgisayarında openfork service get password komutunu çalıştırın.",
   "server.connect.link.prompt": "Eşleştirme bağlantınız var mı?",
   "server.connect.link.use": "Eşleştirme bağlantısı kullan",
   "server.connect.pair.link":
     "Eşleştirme bağlantısı ve QR kodu almak için bu komutu sunucunun bilgisayarında çalıştırın.",
   "server.connect.scan.failed": "Bu tarayıcı QR kodunu okuyamadı. Bağlantı ayrıntılarınızı elle girin.",
   "server.connect.link.expired":
-    "Bu eşleştirme bağlantısının süresi doldu veya zaten kullanıldı. Yenisini almak için opencode pair komutunu çalıştırın.",
+    "Bu eşleştirme bağlantısının süresi doldu veya zaten kullanıldı. Yenisini almak için openfork pair komutunu çalıştırın.",
   "server.connect.link.unreachable":
     "{{url}} adresine ulaşılamadı. Bu cihazın sunucuya erişebildiğini kontrol edip tekrar deneyin.",
   "server.connect.link.legacy":
-    "Bu eşleştirme kodu OpenCode'un eski bir sürümüne ait. Sunucudaki OpenCode'u güncelleyip opencode pair komutunu yeniden çalıştırın.",
+    "Bu eşleştirme kodu OpenFork'un eski bir sürümüne ait. Sunucudaki OpenFork'u güncelleyip openfork pair komutunu yeniden çalıştırın.",
   "server.connect.camera.native":
     "Bu sayfa HTTP üzerinden kamerayı kullanamaz. Eşleştirme bağlantısını yukarıya yapıştırın.",
   "dialog.server.signedOut":
@@ -1170,7 +1170,7 @@ export const dict = {
   "home.sessions.load.timeout": "Sunucunun yanıt vermesi çok uzun sürdü",
   "tips.browse.title": "Tarayıcınızı kontrol edin",
   "tips.browse.description":
-    "OpenCode'un sekmeleriniz, oturum açtığınız hesaplar ve uzantılarınızla tarayıcınızda çalışmasına izin verin.",
+    "OpenFork'un sekmeleriniz, oturum açtığınız hesaplar ve uzantılarınızla tarayıcınızda çalışmasına izin verin.",
   "tips.browse.install": "Yükle",
   "tips.hex.title": "Sesinizi kullanın",
   "tips.hex.description":
@@ -1362,7 +1362,7 @@ export const dict = {
     'Anahtarlar yalnızca bir eklentinin masaüstü arayüzünü kapatır. Sunucu bölümünü kapatmak için genel opencode.json dosyanızdaki plugins listesine "-<id>" ekleyin; TUI bölümünü kapatmak için ise cli.json dosyasındaki plugins listesine "-" ve TUI eklentisinin kimliğini ekleyin.',
   "settings.about.copyVersionFailed": "Sürüm kopyalanamadı",
   "settings.about.notices.title": "Üçüncü taraf bildirimleri",
-  "settings.about.notices.description": "OpenCode aşağıdaki açık kaynak yazılımları içerir.",
+  "settings.about.notices.description": "OpenFork aşağıdaki açık kaynak yazılımları içerir.",
   "settings.about.notices.license": "Lisans metni",
   "settings.about.notices.fonts.title": "Office önizlemelerindeki yazı tipleri",
   "settings.about.notices.fonts.description":

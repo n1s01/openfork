@@ -23,9 +23,9 @@ export const dict = {
   "server.connect.address.invalid": "Inserisci un indirizzo server HTTP o HTTPS valido.",
   "server.connect.failed": "Impossibile connettersi. Controlla l'indirizzo del server e la password, quindi riprova.",
   "server.connect.scan": "Scansiona il codice QR",
-  "server.connect.scan.description": "Punta la fotocamera sul codice QR mostrato da opencode pair.",
+  "server.connect.scan.description": "Punta la fotocamera sul codice QR mostrato da openfork pair.",
   "server.connect.scan.invalid":
-    "Questo non è un codice di abbinamento OpenCode. Scansiona il codice mostrato da opencode pair.",
+    "Questo non è un codice di abbinamento OpenFork. Scansiona il codice mostrato da openfork pair.",
   "server.connect.camera": "Associazione della fotocamera",
   "server.connect.camera.starting": "Apertura della fotocamera…",
   "server.connect.mixedContent":
@@ -61,7 +61,7 @@ export const dict = {
     "Seleziona il provider di ricerca utilizzato dagli agenti per effettuare ricerche sul Web",
   "settings.projects.search.placeholder": "Cerca progetti",
   "project.settings.name.title": "Nome del progetto",
-  "project.settings.name.description": "Il nome mostrato per questo progetto in tutto OpenCode",
+  "project.settings.name.description": "Il nome mostrato per questo progetto in tutto OpenFork",
   "project.settings.icon.description": "Consigliato: 128×128px. Fare clic o trascinare per caricare un'immagine.",
   "project.settings.color.description":
     "Utilizzato per l'icona del progetto quando non è impostata alcuna immagine personalizzata",
@@ -70,11 +70,11 @@ export const dict = {
   "project.settings.worktree.startup.hint.base": "Utilizzare $OPENCODE_WORKTREE_BASE per lo spazio di lavoro di base.",
   "project.settings.worktree.startup.hint.new": "Utilizzare $OPENCODE_WORKTREE_PATH per il nuovo spazio di lavoro.",
   "project.settings.extensions.empty.mcps.title": "Ancora nessun MCPs",
-  "project.settings.extensions.empty.mcps.description": "MCPs disponibile per OpenCode verrà visualizzato qui",
+  "project.settings.extensions.empty.mcps.description": "MCPs disponibile per OpenFork verrà visualizzato qui",
   "project.settings.extensions.empty.plugins.title": "Nessun plugin ancora",
-  "project.settings.extensions.empty.plugins.description": "I plugin disponibili per OpenCode appariranno qui",
+  "project.settings.extensions.empty.plugins.description": "I plugin disponibili per OpenFork appariranno qui",
   "project.settings.extensions.empty.skills.title": "Nessuna competenza ancora",
-  "project.settings.extensions.empty.skills.description": "Le abilità disponibili per OpenCode appariranno qui",
+  "project.settings.extensions.empty.skills.description": "Le abilità disponibili per OpenFork appariranno qui",
   "project.settings.extensions.lsp.configured": "Server linguistici configurati",
   "project.settings.extensions.lsp.status.enabled": "Abilitato nella configurazione",
   "project.settings.extensions.lsp.status.disabled": "Disabilitato nella configurazione",
@@ -95,7 +95,7 @@ export const dict = {
   "settings.timeline.collapsed.label": "{{activity}} è crollato",
   "session.new.workspace.search.empty": "Nessun spazio di lavoro corrispondente",
   "settings.workspaces.description": "Esamina gli spazi di lavoro e gestisci l'utilizzo del disco",
-  "settings.workspaces.empty.description": "Gli spazi di lavoro creati in OpenCode appariranno qui",
+  "settings.workspaces.empty.description": "Gli spazi di lavoro creati in OpenFork appariranno qui",
   "settings.workspaces.sessions.filtered.one": "Sessione {{count}}",
   "settings.workspaces.sessions.filtered.other": "Sessioni {{count}}",
   "settings.workspaces.deleteAll.confirm.one":
@@ -155,8 +155,8 @@ export const dict = {
   "settings.about.firstPublished": "Pubblicato per la prima volta nel Missouri, USA",
   "settings.about.firstIllustrated": "Illustrato per la prima volta a Londra, Inghilterra",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, l’agente di programmazione open source",
-  "settings.about.trademark": "OpenCode è un marchio registrato di Anomaly Innovations, Inc.",
+  "settings.about.description": "OpenFork, l’agente di programmazione open source",
+  "settings.about.trademark": "OpenFork è un marchio registrato di Anomaly Innovations, Inc.",
   "settings.about.typeset": "Composto in Inter e IBM Plex Mono",
   "settings.about.tagline": "L’IA non può creare software eccellente senza di te",
   "settings.about.copyright": "© Anomaly Innovations, Inc.",
@@ -296,7 +296,7 @@ export const dict = {
   "dialog.model.empty": "Nessun modello trovato",
   "dialog.model.manage": "Gestisci modelli",
   "dialog.model.manage.description": "Personalizza quali modelli appaiono nel selettore del modello.",
-  "dialog.model.unpaid.freeModels.title": "Modelli gratuiti forniti da OpenCode",
+  "dialog.model.unpaid.freeModels.title": "Modelli gratuiti forniti da OpenFork",
   "dialog.model.unpaid.addMore.title": "Aggiungi altri modelli dai provider più diffusi",
   "dialog.model.unpaid.viewMoreProviders": "Scopri oltre 70 provider",
   "dialog.provider.viewAll": "Mostra altri provider",
@@ -306,7 +306,7 @@ export const dict = {
   "provider.connect.status.waiting": "In attesa di autorizzazione",
   "provider.connect.status.failed": "Autorizzazione fallita: {{error}}",
   "provider.connect.apiKey.description":
-    "Inserisci la chiave API di {{provider}} per connettere il tuo account e utilizzare i modelli {{provider}} in OpenCode.",
+    "Inserisci la chiave API di {{provider}} per connettere il tuo account e utilizzare i modelli {{provider}} in OpenFork.",
   "provider.connect.apiKey.label": "Chiave API di {{provider}}",
   "provider.connect.apiKey.placeholder": "Chiave API",
   "provider.connect.apiKey.required": "È richiesta la chiave API",
@@ -423,7 +423,7 @@ export const dict = {
   "error.page.action.checkUpdates": "Controlla gli aggiornamenti",
   "error.page.action.updateTo": "Aggiorna a {{version}}",
   "error.page.circular": "[Circular]",
-  "error.page.report.prefix": "Segnala questo errore al team OpenCode",
+  "error.page.report.prefix": "Segnala questo errore al team OpenFork",
   "error.page.report.discord": "su Discord",
   "error.page.version": "Versione: {{version}}",
   "error.dev.rootNotFound":
@@ -445,7 +445,7 @@ export const dict = {
   "error.chain.modelNotFound": "Modello non trovato: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Controlla i nomi di provider e modelli nella configurazione (opencode.json)",
   "error.chain.mcpFailed":
-    'Il server MCP "{{name}}" non ha funzionato. Nota: OpenCode non supporta ancora l\'autenticazione MCP.',
+    'Il server MCP "{{name}}" non ha funzionato. Nota: OpenFork non supporta ancora l\'autenticazione MCP.',
   "error.chain.providerAuthFailed": "Autenticazione del provider non riuscita ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Impossibile inizializzare il provider "{{provider}}". Controlla credenziali e configurazione.',
@@ -548,15 +548,15 @@ export const dict = {
   "settings.general.section.notifications": "Notifiche di sistema",
   "settings.general.section.sounds": "Effetti sonori",
   "settings.general.row.language.title": "Lingua",
-  "settings.general.row.language.description": "Cambia la lingua di visualizzazione per OpenCode",
+  "settings.general.row.language.description": "Cambia la lingua di visualizzazione per OpenFork",
   "settings.general.row.shell.title": "Shell del terminale",
   "settings.general.row.shell.description": "Shell utilizzata dal terminale e dagli strumenti dell'agente",
   "settings.general.row.shell.autoDefault": "Automatico (predefinito)",
   "settings.general.row.shell.terminalOnly": "solo terminale",
   "settings.general.row.colorScheme.title": "Combinazione di colori",
-  "settings.general.row.colorScheme.description": "Scegli se OpenCode segue il tema di sistema, chiaro o scuro",
+  "settings.general.row.colorScheme.description": "Scegli se OpenFork segue il tema di sistema, chiaro o scuro",
   "settings.general.row.theme.title": "Tema",
-  "settings.general.row.theme.description": "Personalizza il tema di OpenCode.",
+  "settings.general.row.theme.description": "Personalizza il tema di OpenFork.",
   "settings.general.row.font.title": "Carattere del codice",
   "settings.general.row.font.description": "Personalizza il carattere utilizzato nei blocchi di codice",
   "settings.general.row.terminalFont.title": "Carattere terminale",
@@ -699,7 +699,7 @@ export const dict = {
   "workspace.status.dirty": "Modifiche non integrate rilevate in quest'area di lavoro.",
   "workspace.delete.confirm": 'Eliminare l\'area di lavoro "{{name}}"?',
   "workspace.delete.button": "Elimina l'area di lavoro",
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "OpenFork",
   "desktop.menu.file": "File",
   "desktop.menu.edit": "Modifica",
   "desktop.menu.view": "Vista",
@@ -738,18 +738,18 @@ export const dict = {
   "desktop.menu.nextProject": "Progetto successivo",
   "desktop.menu.minimize": "Riduci a icona",
   "desktop.menu.maximize": "Ingrandisci",
-  "desktop.menu.documentation": "Documentazione di OpenCode",
+  "desktop.menu.documentation": "Documentazione di OpenFork",
   "desktop.menu.supportForum": "Forum di supporto",
   "desktop.menu.shareFeedback": "Invia feedback",
   "desktop.menu.reportBug": "Segnala un bug",
-  "desktop.menu.ariaLabel": "Menu OpenCode",
+  "desktop.menu.ariaLabel": "Menu OpenFork",
   "desktop.recovery.action.relaunch": "Riapri",
   "desktop.recovery.action.exportLogs": "Esporta log",
   "desktop.recovery.action.keepWaiting": "Continua ad attendere",
   "desktop.recovery.action.quit": "Esci",
-  "desktop.recovery.loadFailed": "Impossibile caricare OpenCode",
-  "desktop.recovery.terminated": "La finestra di OpenCode si è chiusa in modo imprevisto",
-  "desktop.recovery.unresponsive": "OpenCode non risponde",
+  "desktop.recovery.loadFailed": "Impossibile caricare OpenFork",
+  "desktop.recovery.terminated": "La finestra di OpenFork si è chiusa in modo imprevisto",
+  "desktop.recovery.unresponsive": "OpenFork non risponde",
   "desktop.recovery.unresponsive.detail": "Puoi riaprire l'app, aprire i log o continuare ad attendere.",
   "desktop.recovery.loadFailed.detail": "Finestra: {{window}}\nURL: {{url}}\nErrore: {{code}} {{description}}",
   "desktop.recovery.terminated.detail": "Finestra: {{window}}\nMotivo: {{reason}}\nCodice: {{code}}",
@@ -828,7 +828,7 @@ export const dict = {
   "command.project.copyID": "Copia ID progetto",
   "command.session.copyID": "Copia ID sessione",
   "server.row.incompatible":
-    "Questo server esegue OpenCode {{version}}, che non è compatibile con questa applicazione. Aggiornalo a OpenCode V2 per continuare.",
+    "Questo server esegue OpenFork {{version}}, che non è compatibile con questa applicazione. Aggiornalo a OpenFork V2 per continuare.",
   "toast.session.copyID.failed.title": "Impossibile copiare l'ID della sessione",
   "toast.session.copyID.failed.description": "Si è verificato un errore durante la copia dell'ID della sessione",
   "toast.project.copyID.failed.title": "Impossibile copiare l'ID del progetto",
@@ -838,7 +838,7 @@ export const dict = {
   "error.page.action.reload": "Ricarica",
   "session.error.incompatible": "Questa versione del server non è supportata",
   "session.error.incompatible.description":
-    "{{server}} esegue OpenCode {{version}}, che non è compatibile con questa applicazione. Aggiorna il server a OpenCode V2 per continuare.",
+    "{{server}} esegue OpenFork {{version}}, che non è compatibile con questa applicazione. Aggiorna il server a OpenFork V2 per continuare.",
   "session.background.moveInline": "Premi {{keybind}} per spostare il lavoro in corso in background",
   "session.background.runningCount.many": "{{count}} di elementi in esecuzione in background",
   "command.session.location.cycle": "Cambia la posizione della sessione",
@@ -858,22 +858,22 @@ export const dict = {
   "voice.captions.hide": "Nascondi sottotitoli",
   "voice.connecting": "Connessione…",
   "voice.you": "Tu:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Le chiamate vocali richiedono una chiave API OpenAI su questo server.",
   "voice.failure.microphone": "Per chiamare è necessario l'accesso al microfono.",
   "voice.failure.dropped": "La chiamata si è interrotta.",
   "voice.failure.connection": "Impossibile avviare la chiamata.",
-  "desktop.microphoneUsage": "OpenCode usa il microfono per le chiamate vocali.",
+  "desktop.microphoneUsage": "OpenFork usa il microfono per le chiamate vocali.",
   "desktop.documentsFolderUsage":
-    "OpenCode usa i file nella cartella Documenti per i progetti che apri e i comandi che esegui lì.",
+    "OpenFork usa i file nella cartella Documenti per i progetti che apri e i comandi che esegui lì.",
   "desktop.desktopFolderUsage":
-    "OpenCode usa i file sulla Scrivania per i progetti che apri e i comandi che esegui lì.",
+    "OpenFork usa i file sulla Scrivania per i progetti che apri e i comandi che esegui lì.",
   "desktop.downloadsFolderUsage":
-    "OpenCode usa i file nella cartella Download per i progetti che apri e i comandi che esegui lì.",
+    "OpenFork usa i file nella cartella Download per i progetti che apri e i comandi che esegui lì.",
   "desktop.networkVolumesUsage":
-    "OpenCode usa i file sui volumi di rete per i progetti che apri e i comandi che esegui lì.",
+    "OpenFork usa i file sui volumi di rete per i progetti che apri e i comandi che esegui lì.",
   "desktop.removableVolumesUsage":
-    "OpenCode usa i file sui volumi rimovibili per i progetti che apri e i comandi che esegui lì.",
+    "OpenFork usa i file sui volumi rimovibili per i progetti che apri e i comandi che esegui lì.",
   "desktop.contextMenu.spellcheck": "Controllo ortografico",
   "desktop.contextMenu.spellcheckLanguages": "Lingue del controllo ortografico",
   "session.location.unavailable": "Posizione della sessione non disponibile",
@@ -914,7 +914,7 @@ export const dict = {
   "palette.group.settings": "Impostazioni",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Integrazioni",
-  "dialog.provider.description": "Connetti servizi che OpenCode può utilizzare.",
+  "dialog.provider.description": "Connetti servizi che OpenFork può utilizzare.",
   "dialog.provider.group.services": "Servizi",
   "dialog.provider.environmentOnly": "Solo ambiente",
   "dialog.provider.signInRequired": "Accesso richiesto →",
@@ -968,7 +968,7 @@ export const dict = {
   "provider.connect.models.description": "Scegli un modello per iniziare. Puoi cambiarlo in qualsiasi momento.",
   "provider.connect.models.available": "Modelli disponibili",
   "provider.connect.chatgptWelcome.title": "ChatGPT connesso",
-  "provider.connect.chatgptWelcome.description": "Le richieste idonee in OpenCode possono usare il tuo piano ChatGPT.",
+  "provider.connect.chatgptWelcome.description": "Le richieste idonee in OpenFork possono usare il tuo piano ChatGPT.",
   "provider.connect.chatgptWelcome.usage": "Gestisci l'utilizzo nelle impostazioni di ChatGPT",
   "provider.connect.chatgptWelcome.confirm": "Ho capito",
   "provider.connect.models.list": "Modelli disponibili da {{provider}}",
@@ -978,7 +978,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Chiudi",
   "provider.connect.console.refreshFailed":
     "Il tuo account è connesso, ma non è stato possibile caricare i modelli. Riprova per aggiornarli.",
-  "provider.connect.console.connected": "OpenCode connesso",
+  "provider.connect.console.connected": "OpenFork connesso",
   "provider.connect.console.noModels":
     "Il tuo account è connesso, ma quest'area di lavoro di Console non ha modelli disponibili. Controlla la configurazione in Console, poi aggiorna.",
   "provider.connect.console.modelsLoading": "I modelli sono ancora in caricamento. Aggiorna per controllare di nuovo.",
@@ -986,7 +986,7 @@ export const dict = {
   "provider.connect.console.openingBrowser": "Apertura del browser",
   "provider.connect.remote.label": "su {{server}}",
   "provider.connect.remote.description":
-    "Le credenziali di OpenCode verranno salvate su questo server. I modelli saranno disponibili tramite questo server.",
+    "Le credenziali di OpenFork verranno salvate su questo server. I modelli saranno disponibili tramite questo server.",
   "provider.connect.claudeAgent.description":
     "Usa il tuo piano Claude o un altro accesso a Claude Code. Installa Claude Code ed effettua prima l'accesso.",
   "provider.connect.claudeAgent.install": "Installa Claude Code",
@@ -1019,7 +1019,7 @@ export const dict = {
   "provider.connect.oauth.browserFailed": "Impossibile aprire il browser. Seleziona Apri browser per riprovare.",
   "provider.connect.oauth.paste.toggle": "Stai accedendo da un altro dispositivo?",
   "provider.connect.oauth.paste.description":
-    "Se il browser non riesce a raggiungere la macchina su cui è in esecuzione OpenCode, incolla l'URL a cui è stato reindirizzato.",
+    "Se il browser non riesce a raggiungere la macchina su cui è in esecuzione OpenFork, incolla l'URL a cui è stato reindirizzato.",
   "provider.connect.oauth.expired": "Autorizzazione scaduta",
   "model.details.input.text": "Testo",
   "model.details.input.image": "Immagine",
@@ -1056,7 +1056,7 @@ export const dict = {
   "dialog.mcp.signIn": "Accedi",
   "dialog.mcp.signIn.open": "Accedi a {{name}}",
   "dialog.mcp.signIn.description":
-    "Si aprirà il browser per accedere a {{name}}. Se non riesce a raggiungere la macchina su cui è in esecuzione OpenCode, incolla qui sotto l'URL a cui è stato reindirizzato.",
+    "Si aprirà il browser per accedere a {{name}}. Se non riesce a raggiungere la macchina su cui è in esecuzione OpenFork, incolla qui sotto l'URL a cui è stato reindirizzato.",
   "dialog.mcp.signIn.syncFailed": "Accesso effettuato, ma impossibile aggiornare {{name}}: {{error}}",
   "dialog.mcp.error.details":
     "Server MCP: {{name}}\nStato: non riuscito\nConfigurazione: mcp.servers.{{name}}\nErrore: {{error}}",
@@ -1084,10 +1084,10 @@ export const dict = {
   "server.connect.link": "Link di abbinamento",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "Incolla il link di abbinamento completo da opencode pair o da Impostazioni → Abbinamento sul computer del server.",
+    "Incolla il link di abbinamento completo da openfork pair o da Impostazioni → Abbinamento sul computer del server.",
   "server.connect.password.prompt": "Nessun link di abbinamento?",
   "server.connect.password.use": "Usa password",
-  "server.connect.password.hint": "Per vederla, esegui opencode service get password sul computer del server.",
+  "server.connect.password.hint": "Per vederla, esegui openfork service get password sul computer del server.",
   "server.connect.link.prompt": "Hai un link di abbinamento?",
   "server.connect.link.use": "Usa link di abbinamento",
   "server.connect.pair.link":
@@ -1095,11 +1095,11 @@ export const dict = {
   "server.connect.scan.failed":
     "Questo browser non riesce a leggere il codice QR. Inserisci manualmente i dettagli della connessione.",
   "server.connect.link.expired":
-    "Questo link di abbinamento è scaduto o è già stato usato. Esegui opencode pair per ottenerne uno nuovo.",
+    "Questo link di abbinamento è scaduto o è già stato usato. Esegui openfork pair per ottenerne uno nuovo.",
   "server.connect.link.unreachable":
     "Impossibile raggiungere {{url}}. Verifica che questo dispositivo possa raggiungere il server, poi riprova.",
   "server.connect.link.legacy":
-    "Questo codice di abbinamento proviene da una versione precedente di OpenCode. Aggiorna OpenCode sul server, poi esegui di nuovo opencode pair.",
+    "Questo codice di abbinamento proviene da una versione precedente di OpenFork. Aggiorna OpenFork sul server, poi esegui di nuovo openfork pair.",
   "server.connect.camera.native":
     "Questa pagina non può usare la fotocamera tramite HTTP. Incolla il link di abbinamento qui sopra.",
   "dialog.server.signedOut":
@@ -1122,7 +1122,7 @@ export const dict = {
   "home.sessions.load.timeout": "Il server ha impiegato troppo tempo a rispondere",
   "tips.browse.title": "Pilota il tuo browser",
   "tips.browse.description":
-    "Lascia che OpenCode lavori nel tuo browser con le tue schede, i tuoi accessi e le tue estensioni.",
+    "Lascia che OpenFork lavori nel tuo browser con le tue schede, i tuoi accessi e le tue estensioni.",
   "tips.browse.install": "Installa",
   "tips.hex.title": "Usa la voce",
   "tips.hex.description":
@@ -1312,7 +1312,7 @@ export const dict = {
     'Gli interruttori disattivano solo l\'interfaccia desktop di un plugin. Aggiungi "-<id>" ai plugin nel file opencode.json globale per disattivarne la parte server, oppure "-" seguito dall\'ID del suo plugin TUI ai plugin in cli.json per disattivarne la parte TUI.',
   "settings.about.copyVersionFailed": "Impossibile copiare la versione",
   "settings.about.notices.title": "Note di terze parti",
-  "settings.about.notices.description": "OpenCode include il seguente software open source.",
+  "settings.about.notices.description": "OpenFork include il seguente software open source.",
   "settings.about.notices.license": "Testo della licenza",
   "settings.about.notices.fonts.title": "Caratteri nelle anteprime di Office",
   "settings.about.notices.fonts.description":

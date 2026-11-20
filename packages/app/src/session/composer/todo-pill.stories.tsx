@@ -122,7 +122,7 @@ function Preview(props: PreviewArgs) {
 }
 
 export default {
-  title: "OpenCode/Session/Todo pill",
+  title: "OpenFork/Session/Todo pill",
   id: "session-todo-pill",
   render: (args: PreviewArgs) => <Preview {...args} />,
   args: { progress: 3, scenario: "plan", open: false, activity: true },

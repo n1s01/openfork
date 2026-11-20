@@ -1,5 +1,5 @@
 export const dict = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "OpenFork",
   "desktop.menu.file": "Skedari",
   "desktop.menu.edit": "Redakto",
   "desktop.menu.view": "Shiko",
@@ -38,18 +38,18 @@ export const dict = {
   "desktop.menu.nextProject": "Projekti i radhës",
   "desktop.menu.minimize": "Minimizoje",
   "desktop.menu.maximize": "Maksimizoni",
-  "desktop.menu.documentation": "Dokumentacioni OpenCode",
+  "desktop.menu.documentation": "Dokumentacioni OpenFork",
   "desktop.menu.supportForum": "Forumi i Mbështetjes",
   "desktop.menu.shareFeedback": "Ndani komentet",
   "desktop.menu.reportBug": "Raportoni një gabim",
-  "desktop.menu.ariaLabel": "Menuja OpenCode",
+  "desktop.menu.ariaLabel": "Menuja OpenFork",
   "desktop.recovery.action.relaunch": "Rinis",
   "desktop.recovery.action.exportLogs": "Eksporto regjistrat",
   "desktop.recovery.action.keepWaiting": "Vazhdoni të prisni",
   "desktop.recovery.action.quit": "Hiq dorë",
-  "desktop.recovery.loadFailed": "OpenCode nuk u ngarkua",
-  "desktop.recovery.terminated": "Dritarja OpenCode u mbyll papritur",
-  "desktop.recovery.unresponsive": "OpenCode nuk po përgjigjet",
+  "desktop.recovery.loadFailed": "OpenFork nuk u ngarkua",
+  "desktop.recovery.terminated": "Dritarja OpenFork u mbyll papritur",
+  "desktop.recovery.unresponsive": "OpenFork nuk po përgjigjet",
   "desktop.recovery.unresponsive.detail":
     "Mund ta rinisni aplikacionin, të hapni regjistrat ose të vazhdoni të prisni.",
   "desktop.recovery.loadFailed.detail": "Dritarja: {{window}}\nURL: {{url}}\nGabim: {{code}} {{description}}",
@@ -142,7 +142,7 @@ export const dict = {
   "dialog.model.empty": "Asnjë rezultat modeli",
   "dialog.model.manage": "Menaxhoni modelet",
   "dialog.model.manage.description": "Personalizo cilat modele shfaqen në përzgjedhësin e modelit.",
-  "dialog.model.unpaid.freeModels.title": "Modele falas të ofruara nga OpenCode",
+  "dialog.model.unpaid.freeModels.title": "Modele falas të ofruara nga OpenFork",
   "dialog.model.unpaid.addMore.title": "Shtoni më shumë modele nga ofruesit e njohur",
   "dialog.model.unpaid.viewMoreProviders": "Shiko mbi 70 ofrues të tjerë",
   "dialog.provider.viewAll": "Shfaq më shumë ofrues",
@@ -152,7 +152,7 @@ export const dict = {
   "provider.connect.status.waiting": "Në pritje të autorizimit",
   "provider.connect.status.failed": "Autorizimi dështoi: {{error}}",
   "provider.connect.apiKey.description":
-    "Futni çelësin API të {{provider}} për të lidhur llogarinë dhe për të përdorur modelet {{provider}} në OpenCode.",
+    "Futni çelësin API të {{provider}} për të lidhur llogarinë dhe për të përdorur modelet {{provider}} në OpenFork.",
   "provider.connect.apiKey.label": "{{provider}} Tasti API",
   "provider.connect.apiKey.placeholder": "Tasti API",
   "provider.connect.apiKey.required": "Kërkohet çelësi API",
@@ -266,7 +266,7 @@ export const dict = {
   "error.page.action.checkUpdates": "Kontrolloni për përditësime",
   "error.page.action.updateTo": "Përditëso në {{version}}",
   "error.page.circular": "[Rrethore]",
-  "error.page.report.prefix": "Ju lutemi raportoni këtë gabim te ekipi i OpenCode",
+  "error.page.report.prefix": "Ju lutemi raportoni këtë gabim te ekipi i OpenFork",
   "error.page.report.discord": "mbi Mosmarrëveshjen",
   "error.page.version": "Versioni: {{version}}",
   "error.dev.rootNotFound":
@@ -288,7 +288,7 @@ export const dict = {
   "error.chain.didYouMean": "A do të thuash: {{suggestions}}",
   "error.chain.modelNotFound": "Modeli nuk u gjet: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Kontrolloni emrat e ofruesit/modelit tuaj të konfigurimit (opencode.json).",
-  "error.chain.mcpFailed": 'Serveri MCP "{{name}}" dështoi. Shënim, OpenCode nuk e mbështet ende vërtetimin MCP.',
+  "error.chain.mcpFailed": 'Serveri MCP "{{name}}" dështoi. Shënim, OpenFork nuk e mbështet ende vërtetimin MCP.',
   "error.chain.providerAuthFailed": "Autentifikimi i ofruesit dështoi ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Inicializimi i ofruesit "{{provider}}" dështoi. Kontrolloni kredencialet dhe konfigurimin.',
@@ -391,16 +391,16 @@ export const dict = {
   "settings.general.section.notifications": "Njoftimet e sistemit",
   "settings.general.section.sounds": "Efektet zanore",
   "settings.general.row.language.title": "Gjuha",
-  "settings.general.row.language.description": "Ndryshoni gjuhën e ekranit për OpenCode",
+  "settings.general.row.language.description": "Ndryshoni gjuhën e ekranit për OpenFork",
   "settings.general.row.shell.title": "Predha e terminalit",
   "settings.general.row.shell.description": "Predha e përdorur nga terminali dhe mjetet e agjentit",
   "settings.general.row.shell.autoDefault": "Auto (e parazgjedhur)",
   "settings.general.row.shell.terminalOnly": "vetëm terminali",
   "settings.general.row.colorScheme.title": "Skema e ngjyrave",
   "settings.general.row.colorScheme.description":
-    "Zgjidhni nëse OpenCode ndjek temën e sistemit, të lehtë ose të errët",
+    "Zgjidhni nëse OpenFork ndjek temën e sistemit, të lehtë ose të errët",
   "settings.general.row.theme.title": "Tema",
-  "settings.general.row.theme.description": "Personalizojeni se si është tema e OpenCode.",
+  "settings.general.row.theme.description": "Personalizojeni se si është tema e OpenFork.",
   "settings.general.row.font.title": "Fonti i kodit",
   "settings.general.row.font.description": "Personalizoni fontin e përdorur në blloqet e kodit",
   "settings.general.row.terminalFont.title": "Fonti i Terminalit",
@@ -607,7 +607,7 @@ export const dict = {
   "command.project.copyID": "Kopjo ID-në e projektit",
   "command.session.copyID": "Kopjo ID-në e sesionit",
   "server.row.incompatible":
-    "Ky server po ekzekuton OpenCode {{version}}, i cili nuk përputhet me këtë aplikacion. Për ta vazhduar, përmirësojeni në OpenCode V2.",
+    "Ky server po ekzekuton OpenFork {{version}}, i cili nuk përputhet me këtë aplikacion. Për ta vazhduar, përmirësojeni në OpenFork V2.",
   "toast.session.copyID.failed.title": "Kopjimi i ID-së së sesionit dështoi",
   "toast.session.copyID.failed.description": "Ndodhi një gabim gjatë kopjimit të ID-së së sesionit",
   "toast.project.copyID.failed.title": "Kopjimi i ID-së së projektit dështoi",
@@ -617,7 +617,7 @@ export const dict = {
   "error.page.action.reload": "Ringarko",
   "session.error.incompatible": "Ky version i serverit nuk mbështetet",
   "session.error.incompatible.description":
-    "{{server}} po ekzekuton OpenCode {{version}}, i cili nuk përputhet me këtë aplikacion. Për ta vazhduar, përmirësoni serverin në OpenCode V2.",
+    "{{server}} po ekzekuton OpenFork {{version}}, i cili nuk përputhet me këtë aplikacion. Për ta vazhduar, përmirësoni serverin në OpenFork V2.",
   "session.background.moveInline": "Shtypni {{keybind}} për ta zhvendosur punën në ekzekutim në sfond",
   "dialog.server.menu.hide": "Fshih nga lista e projekteve",
   "dialog.server.menu.show": "Shfaq në listën e projekteve",
@@ -671,8 +671,8 @@ export const dict = {
   "settings.about.firstPublished": "Botuar për herë të parë në Misuri, SHBA",
   "settings.about.firstIllustrated": "Ilustruar për herë të parë në Londër, Angli",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, agjenti kodues me burim të hapur",
-  "settings.about.trademark": "OpenCode është një markë e regjistruar e Anomaly Innovations, Inc.",
+  "settings.about.description": "OpenFork, agjenti kodues me burim të hapur",
+  "settings.about.trademark": "OpenFork është një markë e regjistruar e Anomaly Innovations, Inc.",
   "settings.about.typeset": "Llojet në Inter dhe IBM Plex Mono",
   "settings.about.tagline": "AI nuk mund të ndërtojë softuer të shkëlqyeshëm, pa ju",
   "settings.about.copyright": "© Anomaly Innovations, Inc.",
@@ -714,8 +714,8 @@ export const dict = {
   "server.connect.failed":
     "Nuk mund të lidhej. Kontrolloni adresën dhe fjalëkalimin e serverit, më pas provoni përsëri.",
   "server.connect.scan": "Skanoni kodin QR",
-  "server.connect.scan.description": "Drejtoje kamerën drejt kodit QR të treguar nga opencode pair.",
-  "server.connect.scan.invalid": "Ky nuk është një kod çiftimi OpenCode. Skanoni kodin e treguar nga opencode pair.",
+  "server.connect.scan.description": "Drejtoje kamerën drejt kodit QR të treguar nga openfork pair.",
+  "server.connect.scan.invalid": "Ky nuk është një kod çiftimi OpenFork. Skanoni kodin e treguar nga openfork pair.",
   "server.connect.camera": "Çiftimi i kamerës",
   "server.connect.camera.starting": "Hapja e kamerës…",
   "server.connect.mixedContent":
@@ -751,7 +751,7 @@ export const dict = {
     "Zgjidhni agjentët e ofruesit të kërkimit që përdorin për të kërkuar në ueb",
   "settings.projects.search.placeholder": "Kërko projekte",
   "project.settings.name.title": "Emri i projektit",
-  "project.settings.name.description": "Emri i shfaqur për këtë projekt në të gjithë OpenCode",
+  "project.settings.name.description": "Emri i shfaqur për këtë projekt në të gjithë OpenFork",
   "project.settings.icon.description": "Rekomandohet: 128×128px. Klikoni ose tërhiqni për të ngarkuar një imazh.",
   "project.settings.color.description":
     "Përdoret për ikonën e projektit kur nuk është vendosur asnjë imazh i personalizuar",
@@ -759,11 +759,11 @@ export const dict = {
   "project.settings.worktree.startup.hint.base": "Përdorni $OPENCODE_WORKTREE_BASE për pemën bazë të punës.",
   "project.settings.worktree.startup.hint.new": "Përdorni $OPENCODE_WORKTREE_PATH për pemën e re të punës.",
   "project.settings.extensions.empty.mcps.title": "Nuk ka ende MCPs",
-  "project.settings.extensions.empty.mcps.description": "MCPs i disponueshëm për OpenCode do të shfaqet këtu",
+  "project.settings.extensions.empty.mcps.description": "MCPs i disponueshëm për OpenFork do të shfaqet këtu",
   "project.settings.extensions.empty.plugins.title": "Nuk ka ende shtojca",
-  "project.settings.extensions.empty.plugins.description": "Shtojcat e disponueshme për OpenCode do të shfaqen këtu",
+  "project.settings.extensions.empty.plugins.description": "Shtojcat e disponueshme për OpenFork do të shfaqen këtu",
   "project.settings.extensions.empty.skills.title": "Nuk ka ende aftësi",
-  "project.settings.extensions.empty.skills.description": "Aftësitë e disponueshme për OpenCode do të shfaqen këtu",
+  "project.settings.extensions.empty.skills.description": "Aftësitë e disponueshme për OpenFork do të shfaqen këtu",
   "project.settings.extensions.lsp.configured": "Serverët e konfiguruar të gjuhës",
   "project.settings.extensions.lsp.status.enabled": "Aktivizuar në konfigurimin",
   "project.settings.extensions.lsp.status.disabled": "Çaktivizuar në konfigurimin",
@@ -784,7 +784,7 @@ export const dict = {
   "settings.timeline.collapsed.label": "{{activity}} u rrëzua",
   "session.new.workspace.search.empty": "Nuk ka pemë pune që përputhen",
   "settings.workspaces.description": "Rishikoni pemët e punës dhe menaxhoni përdorimin e diskut",
-  "settings.workspaces.empty.description": "Pemët e punës të krijuara në OpenCode do të shfaqen këtu",
+  "settings.workspaces.empty.description": "Pemët e punës të krijuara në OpenFork do të shfaqen këtu",
   "settings.workspaces.sessions.filtered.one": "Sesioni {{count}}",
   "settings.workspaces.sessions.filtered.other": "Sesionet {{count}}",
   "settings.workspaces.deleteAll.confirm.one": "Kjo do të fshijë përgjithmonë pemën e zgjedhur të punës {{count}}.",
@@ -835,22 +835,22 @@ export const dict = {
   "voice.captions.hide": "Fshih titrat",
   "voice.connecting": "Po lidhet…",
   "voice.you": "Ju:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Thirrjet zanore kërkojnë një çelës API të OpenAI në këtë server.",
   "voice.failure.microphone": "Për të thirrur kërkohet qasja në mikrofon.",
   "voice.failure.dropped": "Thirrja u shkëput.",
   "voice.failure.connection": "Thirrja nuk mund të lidhej.",
-  "desktop.microphoneUsage": "OpenCode përdor mikrofonin tuaj për thirrjet zanore.",
+  "desktop.microphoneUsage": "OpenFork përdor mikrofonin tuaj për thirrjet zanore.",
   "desktop.documentsFolderUsage":
-    "OpenCode përdor skedarët në dosjen Dokumentet për projektet që hapni dhe komandat që ekzekutoni atje.",
+    "OpenFork përdor skedarët në dosjen Dokumentet për projektet që hapni dhe komandat që ekzekutoni atje.",
   "desktop.desktopFolderUsage":
-    "OpenCode përdor skedarët në Desktop për projektet që hapni dhe komandat që ekzekutoni atje.",
+    "OpenFork përdor skedarët në Desktop për projektet që hapni dhe komandat që ekzekutoni atje.",
   "desktop.downloadsFolderUsage":
-    "OpenCode përdor skedarët në dosjen Shkarkimet për projektet që hapni dhe komandat që ekzekutoni atje.",
+    "OpenFork përdor skedarët në dosjen Shkarkimet për projektet që hapni dhe komandat që ekzekutoni atje.",
   "desktop.networkVolumesUsage":
-    "OpenCode përdor skedarët në vëllimet e rrjetit për projektet që hapni dhe komandat që ekzekutoni atje.",
+    "OpenFork përdor skedarët në vëllimet e rrjetit për projektet që hapni dhe komandat që ekzekutoni atje.",
   "desktop.removableVolumesUsage":
-    "OpenCode përdor skedarët në vëllimet e lëvizshme për projektet që hapni dhe komandat që ekzekutoni atje.",
+    "OpenFork përdor skedarët në vëllimet e lëvizshme për projektet që hapni dhe komandat që ekzekutoni atje.",
   "desktop.contextMenu.spellcheck": "Kontrolli drejtshkrimor",
   "desktop.contextMenu.spellcheckLanguages": "Gjuhët e kontrollit drejtshkrimor",
   "session.location.unavailable": "Vendndodhja e sesionit nuk është e disponueshme",
@@ -892,7 +892,7 @@ export const dict = {
   "palette.group.settings": "Cilësimet",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Integrimet",
-  "dialog.provider.description": "Lidhni shërbime që OpenCode t'i përdorë.",
+  "dialog.provider.description": "Lidhni shërbime që OpenFork t'i përdorë.",
   "dialog.provider.group.services": "Shërbimet",
   "dialog.provider.environmentOnly": "Vetëm nga mjedisi",
   "dialog.provider.signInRequired": "Kërkohet hyrja →",
@@ -947,7 +947,7 @@ export const dict = {
   "provider.connect.models.available": "Modelet e disponueshme",
   "provider.connect.chatgptWelcome.title": "ChatGPT u lidh",
   "provider.connect.chatgptWelcome.description":
-    "Kërkesat e përshtatshme në OpenCode mund të përdorin planin tuaj ChatGPT.",
+    "Kërkesat e përshtatshme në OpenFork mund të përdorin planin tuaj ChatGPT.",
   "provider.connect.chatgptWelcome.usage": "Menaxhoni përdorimin te cilësimet e ChatGPT",
   "provider.connect.chatgptWelcome.confirm": "Në rregull",
   "provider.connect.models.list": "Modelet e disponueshme nga {{provider}}",
@@ -957,7 +957,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Mbylle",
   "provider.connect.console.refreshFailed":
     "Llogaria juaj është e lidhur, por nuk mundëm të ngarkonim modelet. Provoni sërish për t'i rifreskuar.",
-  "provider.connect.console.connected": "OpenCode u lidh",
+  "provider.connect.console.connected": "OpenFork u lidh",
   "provider.connect.console.noModels":
     "Llogaria juaj është e lidhur, por kjo hapësirë pune e Console nuk ka modele të disponueshme. Kontrolloni konfigurimin në Console, pastaj rifreskoni.",
   "provider.connect.console.modelsLoading": "Modelet tuaja po ngarkohen ende. Rifreskoni për të kontrolluar sërish.",
@@ -965,7 +965,7 @@ export const dict = {
   "provider.connect.console.openingBrowser": "Po hapet shfletuesi",
   "provider.connect.remote.label": "në {{server}}",
   "provider.connect.remote.description":
-    "Kredencialet tuaja të OpenCode do të ruhen në këtë server. Modelet do të jenë të disponueshme përmes këtij serveri.",
+    "Kredencialet tuaja të OpenFork do të ruhen në këtë server. Modelet do të jenë të disponueshme përmes këtij serveri.",
   "provider.connect.claudeAgent.description":
     "Përdorni planin tuaj Claude ose një hyrje tjetër në Claude Code. Fillimisht instaloni Claude Code dhe hyni.",
   "provider.connect.claudeAgent.install": "Instalo Claude Code",
@@ -999,7 +999,7 @@ export const dict = {
     "Nuk mundëm të hapnim shfletuesin. Zgjidhni Hap shfletuesin për të provuar sërish.",
   "provider.connect.oauth.paste.toggle": "Po hyni nga një pajisje tjetër?",
   "provider.connect.oauth.paste.description":
-    "Nëse shfletuesi nuk arrin te makina ku ekzekutohet OpenCode, ngjitni URL-në ku u ridrejtua.",
+    "Nëse shfletuesi nuk arrin te makina ku ekzekutohet OpenFork, ngjitni URL-në ku u ridrejtua.",
   "provider.connect.oauth.expired": "Autorizimi skadoi",
   "model.details.input.text": "Tekst",
   "model.details.input.image": "Imazh",
@@ -1036,7 +1036,7 @@ export const dict = {
   "dialog.mcp.signIn": "Hyr",
   "dialog.mcp.signIn.open": "Hyr në {{name}}",
   "dialog.mcp.signIn.description":
-    "Shfletuesi do të hapet që të hyni në {{name}}. Nëse nuk arrin te makina ku ekzekutohet OpenCode, ngjitni më poshtë URL-në ku u ridrejtua.",
+    "Shfletuesi do të hapet që të hyni në {{name}}. Nëse nuk arrin te makina ku ekzekutohet OpenFork, ngjitni më poshtë URL-në ku u ridrejtua.",
   "dialog.mcp.signIn.syncFailed": "Hyrja u krye, por {{name}} nuk mund të rifreskohej: {{error}}",
   "dialog.mcp.error.details":
     "Serveri MCP: {{name}}\nStatusi: dështoi\nKonfigurimi: mcp.servers.{{name}}\nGabimi: {{error}}",
@@ -1064,21 +1064,21 @@ export const dict = {
   "server.connect.link": "Lidhja e çiftimit",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "Ngjitni lidhjen e plotë të çiftimit nga opencode pair, ose nga Cilësimet → Çiftimi në kompjuterin e serverit.",
+    "Ngjitni lidhjen e plotë të çiftimit nga openfork pair, ose nga Cilësimet → Çiftimi në kompjuterin e serverit.",
   "server.connect.password.prompt": "Nuk keni lidhje çiftimi?",
   "server.connect.password.use": "Përdor fjalëkalimin",
-  "server.connect.password.hint": "Për ta parë, ekzekutoni opencode service get password në kompjuterin e serverit.",
+  "server.connect.password.hint": "Për ta parë, ekzekutoni openfork service get password në kompjuterin e serverit.",
   "server.connect.link.prompt": "Keni një lidhje çiftimi?",
   "server.connect.link.use": "Përdor lidhjen e çiftimit",
   "server.connect.pair.link":
     "Ekzekutoni këtë komandë në kompjuterin e serverit për të marrë një lidhje çiftimi dhe kod QR.",
   "server.connect.scan.failed": "Ky shfletues nuk mundi ta lexonte kodin QR. Futni manualisht detajet e lidhjes.",
   "server.connect.link.expired":
-    "Kjo lidhje çiftimi ka skaduar ose është përdorur tashmë. Ekzekutoni opencode pair për të marrë një të re.",
+    "Kjo lidhje çiftimi ka skaduar ose është përdorur tashmë. Ekzekutoni openfork pair për të marrë një të re.",
   "server.connect.link.unreachable":
     "{{url}} nuk u arrit. Kontrolloni që kjo pajisje mund të arrijë serverin, pastaj provoni sërish.",
   "server.connect.link.legacy":
-    "Ky kod çiftimi është nga një version më i vjetër i OpenCode. Përditësoni OpenCode në server, pastaj ekzekutoni sërish opencode pair.",
+    "Ky kod çiftimi është nga një version më i vjetër i OpenFork. Përditësoni OpenFork në server, pastaj ekzekutoni sërish openfork pair.",
   "server.connect.camera.native":
     "Kjo faqe nuk mund të përdorë kamerën përmes HTTP. Ngjitni lidhjen e çiftimit më lart.",
   "dialog.server.signedOut":
@@ -1099,7 +1099,7 @@ export const dict = {
   "home.sessions.load.failed": "Sesionet nuk mund të ngarkoheshin",
   "home.sessions.load.timeout": "Serveri vonoi shumë të përgjigjej",
   "tips.browse.title": "Kontrolloni shfletuesin tuaj",
-  "tips.browse.description": "Lejoni OpenCode të punojë në shfletuesin tuaj me skedat, hyrjet dhe zgjerimet tuaja.",
+  "tips.browse.description": "Lejoni OpenFork të punojë në shfletuesin tuaj me skedat, hyrjet dhe zgjerimet tuaja.",
   "tips.browse.install": "Instalo",
   "tips.hex.title": "Përdorni zërin tuaj",
   "tips.hex.description":
@@ -1292,7 +1292,7 @@ export const dict = {
     'Çelësat çaktivizojnë vetëm ndërfaqen desktop të një shtojce. Shtoni "-<id>" te plugins në opencode.json global për të çaktivizuar pjesën e saj të serverit, ose "-" dhe ID-në e shtojcës TUI te plugins në cli.json për të çaktivizuar pjesën TUI.',
   "settings.about.copyVersionFailed": "Kopjimi i versionit dështoi",
   "settings.about.notices.title": "Njoftimet e palëve të treta",
-  "settings.about.notices.description": "OpenCode përfshin softuerin me burim të hapur të mëposhtëm.",
+  "settings.about.notices.description": "OpenFork përfshin softuerin me burim të hapur të mëposhtëm.",
   "settings.about.notices.license": "Teksti i licencës",
   "settings.about.notices.fonts.title": "Fontet në pamjet paraprake të Office",
   "settings.about.notices.fonts.description":

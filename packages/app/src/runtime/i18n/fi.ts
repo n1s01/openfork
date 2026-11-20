@@ -24,8 +24,8 @@ export const dict = {
   "server.connect.failed":
     "Yhteyttä ei voitu muodostaa. Tarkista palvelimen osoite ja salasana ja yritä sitten uudelleen.",
   "server.connect.scan": "Skannaa QR-koodi",
-  "server.connect.scan.description": "Suuntaa kamerasi QR-koodiin, joka näkyy opencode pair:ssä.",
-  "server.connect.scan.invalid": "Tämä ei ole OpenCode-pariliitoskoodi. Skannaa opencode pair:n näyttämä koodi.",
+  "server.connect.scan.description": "Suuntaa kamerasi QR-koodiin, joka näkyy openfork pair:ssä.",
+  "server.connect.scan.invalid": "Tämä ei ole OpenCode-pariliitoskoodi. Skannaa openfork pair:n näyttämä koodi.",
   "server.connect.camera": "Kameraparin muodostaminen",
   "server.connect.camera.starting": "Avataan kameraa…",
   "server.connect.mixedContent":
@@ -59,18 +59,18 @@ export const dict = {
     "Valitse hakupalveluntarjoajan agentit, joita käyttävät verkkohakuihin",
   "settings.projects.search.placeholder": "Etsi projekteja",
   "project.settings.name.title": "Projektin nimi",
-  "project.settings.name.description": "Tämän projektin nimi näkyy koko OpenCode:n kautta",
+  "project.settings.name.description": "Tämän projektin nimi näkyy koko OpenFork:n kautta",
   "project.settings.icon.description": "Suositus: 128 × 128 pikseliä. Lataa kuva napsauttamalla tai vetämällä.",
   "project.settings.color.description": "Käytetään projektikuvakkeena, kun mukautettua kuvaa ei ole asetettu",
   "project.settings.worktree.startup.description": "Käynnistyy kerran uuden työtilan luomisen jälkeen",
   "project.settings.worktree.startup.hint.base": "Käytä $OPENCODE_WORKTREE_BASE:tä pohjatyötilana.",
   "project.settings.worktree.startup.hint.new": "Käytä $OPENCODE_WORKTREE_PATH uuteen työtilaan.",
   "project.settings.extensions.empty.mcps.title": "Ei vielä MCPs:tä",
-  "project.settings.extensions.empty.mcps.description": "MCPs saatavilla OpenCode näkyy tässä",
+  "project.settings.extensions.empty.mcps.description": "MCPs saatavilla OpenFork näkyy tässä",
   "project.settings.extensions.empty.plugins.title": "Ei vielä lisäosia",
-  "project.settings.extensions.empty.plugins.description": "OpenCode:lle saatavilla olevat laajennukset näkyvät täällä",
+  "project.settings.extensions.empty.plugins.description": "OpenFork:lle saatavilla olevat laajennukset näkyvät täällä",
   "project.settings.extensions.empty.skills.title": "Ei taitoja vielä",
-  "project.settings.extensions.empty.skills.description": "OpenCode:n käytettävissä olevat taidot näkyvät täällä",
+  "project.settings.extensions.empty.skills.description": "OpenFork:n käytettävissä olevat taidot näkyvät täällä",
   "project.settings.extensions.lsp.configured": "Konfiguroidut kielipalvelimet",
   "project.settings.extensions.lsp.status.enabled": "Käytössä kokoonpanossa",
   "project.settings.extensions.lsp.status.disabled": "Pois käytöstä määrityksessä",
@@ -90,7 +90,7 @@ export const dict = {
   "settings.timeline.collapsed.label": "{{activity}} romahti",
   "session.new.workspace.search.empty": "Ei vastaavia työpuita",
   "settings.workspaces.description": "Tarkastele työpuita ja hallitse levyn käyttöä",
-  "settings.workspaces.empty.description": "OpenCode:llä luodut työtilat näkyvät täällä",
+  "settings.workspaces.empty.description": "OpenFork:llä luodut työtilat näkyvät täällä",
   "settings.workspaces.sessions.filtered.one": "{{count}}-istunto",
   "settings.workspaces.sessions.filtered.other": "{{count}}-istunnot",
   "settings.workspaces.deleteAll.confirm.one": "Tämä poistaa pysyvästi valitun {{count}}-työtilan.",
@@ -141,8 +141,8 @@ export const dict = {
   "settings.about.firstPublished": "Julkaistu ensimmäisen kerran Missourissa, Yhdysvalloissa",
   "settings.about.firstIllustrated": "Kuvitettu ensimmäisen kerran Lontoossa, Englannissa",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, avoimen lähdekoodin koodausagentti",
-  "settings.about.trademark": "OpenCode on Anomaly Innovations, Inc:n rekisteröity tavaramerkki.",
+  "settings.about.description": "OpenFork, avoimen lähdekoodin koodausagentti",
+  "settings.about.trademark": "OpenFork on Anomaly Innovations, Inc:n rekisteröity tavaramerkki.",
   "settings.about.typeset": "Kirjasinlajit Inter ja IBM Plex Mono",
   "settings.about.tagline": "Tekoäly ei voi rakentaa erinomaista ohjelmistoa ilman sinua",
   "settings.about.copyright": "© Anomaly Innovations, Inc.",
@@ -424,7 +424,7 @@ export const dict = {
   "error.chain.didYouMean": "Tarkoititko: {{suggestions}}",
   "error.chain.modelNotFound": "Mallia ei löydy: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Tarkista määritysten (opencode.json) palveluntarjoajien ja mallien nimet",
-  "error.chain.mcpFailed": 'MCP-palvelin "{{name}}" epäonnistui. Huomaa, että OpenCode ei vielä tue MCP-todennusta.',
+  "error.chain.mcpFailed": 'MCP-palvelin "{{name}}" epäonnistui. Huomaa, että OpenFork ei vielä tue MCP-todennusta.',
   "error.chain.providerAuthFailed": "Palveluntarjoajan todennus epäonnistui ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Palveluntarjoajan "{{provider}}" alustaminen epäonnistui. Tarkista tunnistetiedot ja määritykset.',
@@ -534,7 +534,7 @@ export const dict = {
   "settings.general.row.shell.terminalOnly": "vain terminaali",
   "settings.general.row.colorScheme.title": "Värimalli",
   "settings.general.row.colorScheme.description":
-    "Valitse, käyttääkö OpenCode järjestelmän mukaista, vaaleaa vai tummaa teemaa",
+    "Valitse, käyttääkö OpenFork järjestelmän mukaista, vaaleaa vai tummaa teemaa",
   "settings.general.row.theme.title": "Teema",
   "settings.general.row.theme.description": "Mukauta OpenCoden teemaa.",
   "settings.general.row.font.title": "Koodifontti",
@@ -677,7 +677,7 @@ export const dict = {
   "workspace.status.dirty": "Tässä työtilassa havaittu yhdistämättömiä muutoksia.",
   "workspace.delete.confirm": 'Poistetaanko työtila "{{name}}"?',
   "workspace.delete.button": "Poista työtila",
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "OpenFork",
   "desktop.menu.file": "Tiedosto",
   "desktop.menu.edit": "Muokkaa",
   "desktop.menu.view": "Näytä",
@@ -727,7 +727,7 @@ export const dict = {
   "desktop.recovery.action.quit": "Lopeta",
   "desktop.recovery.loadFailed": "OpenCoden lataaminen epäonnistui",
   "desktop.recovery.terminated": "OpenCode-ikkuna sulkeutui odottamatta",
-  "desktop.recovery.unresponsive": "OpenCode ei vastaa",
+  "desktop.recovery.unresponsive": "OpenFork ei vastaa",
   "desktop.recovery.unresponsive.detail": "Voit käynnistää sovelluksen uudelleen, avata lokit tai jatkaa odottamista.",
   "desktop.recovery.loadFailed.detail": "Ikkuna: {{window}}\nURL: {{url}}\nVirhe: {{code}} {{description}}",
   "desktop.recovery.terminated.detail": "Ikkuna: {{window}}\nSyy: {{reason}}\nKoodi: {{code}}",
@@ -805,7 +805,7 @@ export const dict = {
   "command.project.copyID": "Kopioi projektin tunnus",
   "command.session.copyID": "Kopioi istunnon tunnus",
   "server.row.incompatible":
-    "Tässä palvelimessa on käytössä OpenCode {{version}}, joka ei ole yhteensopiva tämän sovelluksen kanssa. Jatka päivittämällä palvelin OpenCode V2:een.",
+    "Tässä palvelimessa on käytössä OpenFork {{version}}, joka ei ole yhteensopiva tämän sovelluksen kanssa. Jatka päivittämällä palvelin OpenFork V2:een.",
   "toast.session.copyID.failed.title": "Istunnon tunnuksen kopiointi epäonnistui",
   "toast.session.copyID.failed.description": "Istunnon tunnusta kopioitaessa tapahtui virhe",
   "toast.project.copyID.failed.title": "Projektin tunnuksen kopiointi epäonnistui",
@@ -815,7 +815,7 @@ export const dict = {
   "error.page.action.reload": "Lataa uudelleen",
   "session.error.incompatible": "Tätä palvelinversiota ei tueta",
   "session.error.incompatible.description":
-    "Palvelimessa {{server}} on käytössä OpenCode {{version}}, joka ei ole yhteensopiva tämän sovelluksen kanssa. Jatka päivittämällä palvelin OpenCode V2:een.",
+    "Palvelimessa {{server}} on käytössä OpenFork {{version}}, joka ei ole yhteensopiva tämän sovelluksen kanssa. Jatka päivittämällä palvelin OpenFork V2:een.",
   "session.background.moveInline": "Siirrä käynnissä oleva työ taustalle painamalla {{keybind}}",
   "command.session.location.cycle": "Vaihda istunnon sijaintia",
   "dialog.provider.anthropic.note": "Suora pääsy Claude-malleihin API-avaimella",
@@ -834,22 +834,22 @@ export const dict = {
   "voice.captions.hide": "Piilota tekstitys",
   "voice.connecting": "Yhdistetään…",
   "voice.you": "Sinä:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Äänipuhelut vaativat OpenAI-API-avaimen tällä palvelimella.",
   "voice.failure.microphone": "Soittaminen vaatii mikrofonin käyttöoikeuden.",
   "voice.failure.dropped": "Puhelu katkesi.",
   "voice.failure.connection": "Puhelua ei voitu yhdistää.",
-  "desktop.microphoneUsage": "OpenCode käyttää mikrofoniasi äänipuheluihin.",
+  "desktop.microphoneUsage": "OpenFork käyttää mikrofoniasi äänipuheluihin.",
   "desktop.documentsFolderUsage":
-    "OpenCode käyttää Dokumentit-kansiosi tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
+    "OpenFork käyttää Dokumentit-kansiosi tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
   "desktop.desktopFolderUsage":
-    "OpenCode käyttää työpöytäsi tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
+    "OpenFork käyttää työpöytäsi tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
   "desktop.downloadsFolderUsage":
-    "OpenCode käyttää Lataukset-kansiosi tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
+    "OpenFork käyttää Lataukset-kansiosi tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
   "desktop.networkVolumesUsage":
-    "OpenCode käyttää verkkoasemien tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
+    "OpenFork käyttää verkkoasemien tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
   "desktop.removableVolumesUsage":
-    "OpenCode käyttää siirrettävien asemien tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
+    "OpenFork käyttää siirrettävien asemien tiedostoja projekteissa, jotka avaat, ja komennoissa, jotka suoritat siellä.",
   "desktop.contextMenu.spellcheck": "Oikeinkirjoituksen tarkistus",
   "desktop.contextMenu.spellcheckLanguages": "Oikeinkirjoituksen kielet",
   "session.location.unavailable": "Istunnon sijainti ei ole käytettävissä",
@@ -863,7 +863,7 @@ export const dict = {
   "session.location.moveFailed": "Istunnon siirtäminen epäonnistui",
   "server.thisComputer": "Tämä tietokone",
   "command.provider.connect.description":
-    "Kirjaudu OpenCode Gohon, OpenCode Consoleen tai muuhun mallipalveluntarjoajaan",
+    "Kirjaudu OpenFork Gohon, OpenCode Consoleen tai muuhun mallipalveluntarjoajaan",
   "command.config.reload": "Lataa määritykset uudelleen",
   "command.config.reload.description":
     "Lataa agentit, komennot, taidot, MCP-palvelimet ja laajennukset uudelleen määrityksistäsi",
@@ -892,7 +892,7 @@ export const dict = {
   "palette.group.settings": "Asetukset",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Integraatiot",
-  "dialog.provider.description": "Yhdistä palveluita, jotta OpenCode voi käyttää niitä.",
+  "dialog.provider.description": "Yhdistä palveluita, jotta OpenFork voi käyttää niitä.",
   "dialog.provider.group.services": "Palvelut",
   "dialog.provider.environmentOnly": "Vain ympäristön kautta",
   "dialog.provider.signInRequired": "Kirjautuminen vaaditaan →",
@@ -954,7 +954,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Sulje",
   "provider.connect.console.refreshFailed":
     "Tilisi on yhdistetty, mutta malleja ei voitu ladata. Päivitä ne yrittämällä uudelleen.",
-  "provider.connect.console.connected": "OpenCode yhdistetty",
+  "provider.connect.console.connected": "OpenFork yhdistetty",
   "provider.connect.console.noModels":
     "Tilisi on yhdistetty, mutta tässä Console-työtilassa ei ole saatavilla malleja. Tarkista sen asetukset Consolessa ja päivitä sitten.",
   "provider.connect.console.modelsLoading": "Mallejasi ladataan vielä. Tarkista uudelleen päivittämällä.",
@@ -994,7 +994,7 @@ export const dict = {
   "provider.connect.oauth.browserFailed": "Selainta ei voitu avata. Yritä uudelleen valitsemalla Avaa selain.",
   "provider.connect.oauth.paste.toggle": "Kirjaudutko toiselta laitteelta?",
   "provider.connect.oauth.paste.description":
-    "Jos selaimesi ei tavoita konetta, jolla OpenCode on käynnissä, liitä URL-osoite, johon se ohjattiin.",
+    "Jos selaimesi ei tavoita konetta, jolla OpenFork on käynnissä, liitä URL-osoite, johon se ohjattiin.",
   "provider.connect.oauth.expired": "Valtuutus vanhentui",
   "model.details.input.text": "Teksti",
   "model.details.input.image": "Kuva",
@@ -1031,7 +1031,7 @@ export const dict = {
   "dialog.mcp.signIn": "Kirjaudu",
   "dialog.mcp.signIn.open": "Kirjaudu palveluun {{name}}",
   "dialog.mcp.signIn.description":
-    "Selain avautuu, jotta voit kirjautua palveluun {{name}}. Jos se ei tavoita konetta, jolla OpenCode on käynnissä, liitä alle URL-osoite, johon se ohjattiin.",
+    "Selain avautuu, jotta voit kirjautua palveluun {{name}}. Jos se ei tavoita konetta, jolla OpenFork on käynnissä, liitä alle URL-osoite, johon se ohjattiin.",
   "dialog.mcp.signIn.syncFailed": "Kirjauduttu sisään, mutta palvelua {{name}} ei voitu päivittää: {{error}}",
   "dialog.mcp.error.details":
     "MCP-palvelin: {{name}}\nTila: epäonnistui\nMääritys: mcp.servers.{{name}}\nVirhe: {{error}}",
@@ -1059,20 +1059,20 @@ export const dict = {
   "server.connect.link": "Pariliitoslinkki",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "Liitä koko pariliitoslinkki komennosta opencode pair tai palvelimen tietokoneen kohdasta Asetukset → Pariliitos.",
+    "Liitä koko pariliitoslinkki komennosta openfork pair tai palvelimen tietokoneen kohdasta Asetukset → Pariliitos.",
   "server.connect.password.prompt": "Eikö pariliitoslinkkiä ole?",
   "server.connect.password.use": "Käytä salasanaa",
-  "server.connect.password.hint": "Näet sen suorittamalla palvelimen tietokoneella opencode service get password.",
+  "server.connect.password.hint": "Näet sen suorittamalla palvelimen tietokoneella openfork service get password.",
   "server.connect.link.prompt": "Onko sinulla pariliitoslinkki?",
   "server.connect.link.use": "Käytä pariliitoslinkkiä",
   "server.connect.pair.link": "Suorita tämä komento palvelimen tietokoneella saadaksesi pariliitoslinkin ja QR-koodin.",
   "server.connect.scan.failed": "Tämä selain ei pystynyt lukemaan QR-koodia. Syötä yhteystietosi manuaalisesti.",
   "server.connect.link.expired":
-    "Tämä pariliitoslinkki on vanhentunut tai jo käytetty. Hae uusi suorittamalla opencode pair.",
+    "Tämä pariliitoslinkki on vanhentunut tai jo käytetty. Hae uusi suorittamalla openfork pair.",
   "server.connect.link.unreachable":
     "Osoitteeseen {{url}} ei saatu yhteyttä. Varmista, että tämä laite tavoittaa palvelimen, ja yritä uudelleen.",
   "server.connect.link.legacy":
-    "Tämä pariliitoskoodi on OpenCoden vanhemmasta versiosta. Päivitä OpenCode palvelimella ja suorita sitten opencode pair uudelleen.",
+    "Tämä pariliitoskoodi on OpenCoden vanhemmasta versiosta. Päivitä OpenFork palvelimella ja suorita sitten openfork pair uudelleen.",
   "server.connect.camera.native":
     "Tämä sivu ei voi käyttää kameraa HTTP:n kautta. Liitä pariliitoslinkki yllä olevaan kenttään.",
   "dialog.server.signedOut":
@@ -1286,7 +1286,7 @@ export const dict = {
     'Kytkimet poistavat käytöstä vain laajennuksen työpöytäkäyttöliittymän. Poista sen palvelinosa käytöstä lisäämällä "-<id>" plugins-kohtaan globaalissa opencode.json-tiedostossasi, tai sen TUI-osa lisäämällä "-" ja sen TUI-laajennuksen tunnus plugins-kohtaan cli.json-tiedostossa.',
   "settings.about.copyVersionFailed": "Version kopiointi epäonnistui",
   "settings.about.notices.title": "Kolmannen osapuolen ilmoitukset",
-  "settings.about.notices.description": "OpenCode sisältää seuraavia avoimen lähdekoodin ohjelmistoja.",
+  "settings.about.notices.description": "OpenFork sisältää seuraavia avoimen lähdekoodin ohjelmistoja.",
   "settings.about.notices.license": "Lisenssiteksti",
   "settings.about.notices.fonts.title": "Office-esikatselujen fontit",
   "settings.about.notices.fonts.description":

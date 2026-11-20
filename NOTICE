@@ -1,0 +1,26 @@
+OpenFork
+========
+
+OpenFork is a fork of OpenCode (https://github.com/anomalyco/opencode),
+the open source AI coding agent.
+
+Original work: Copyright (c) 2025 opencode, licensed under the MIT License.
+The full original copyright and permission notice is kept unchanged in the
+LICENSE file and applies to this fork and all substantial portions of it.
+
+Upstream:   https://github.com/anomalyco/opencode
+Forked at:  upstream branch `dev`, commit 906e370146 (OpenCode 2.3.x), 2026-11-20
+
+Changes made in this fork (summary):
+- The product is renamed to OpenFork: the CLI binary is `openfork`, and the
+  user-facing name in the CLI, TUI, web app and desktop strings is "OpenFork".
+- Global data, config, cache and state live under `openfork` directories
+  (e.g. ~/.config/openfork), separate from an upstream OpenCode install.
+- `openfork.json(c)` and `.openfork/` are read in addition to the upstream
+  `opencode.json(c)` and `.opencode/` project config.
+- `OPENFORK_*` environment variables are accepted as aliases for `OPENCODE_*`.
+- Self-update from the upstream release service is disabled.
+
+"OpenCode", "OpenCode Zen", "OpenCode Go" and related names are the names of
+the upstream project and its services; OpenFork is not affiliated with or
+endorsed by their authors. References to those services are kept as-is.

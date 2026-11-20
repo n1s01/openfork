@@ -15,7 +15,7 @@ export default {
   "create.failed": "Nem sikerült létrehozni terminált",
   "create.unsupported": "Ez a szerver túl régi a terminálokhoz. Frissítse rajta az OpenCode-ot.",
   "rename.failed": "Nem sikerült átnevezni a terminált",
-  "rename.unsupported": "A terminál átnevezése az OpenCode terminálszolgáltatásának újraindítása után lesz elérhető",
+  "rename.unsupported": "A terminál átnevezése az OpenFork terminálszolgáltatásának újraindítása után lesz elérhető",
   disconnected: "A terminál kapcsolata megszakadt",
   connectionFailed: "A terminál csatlakozása sikertelen",
   serverOutdated: "Ez a szerver túl régi a terminálokhoz; frissítse rajta az OpenCode-ot",

@@ -13,7 +13,7 @@ import { NextSessionTimeline } from "./session-timeline"
 // One side of the compare page: the session as this build draws it, the New timeline when `activity` is set. Other
 // builds, such as timeline-policy, answer the same messages, so the page can compare them.
 export default {
-  title: "OpenCode/Timeline/Compare renderer",
+  title: "OpenFork/Timeline/Compare renderer",
   id: "timeline-compare-renderer",
   component: SessionTimeline,
   parameters: { layout: "fullscreen" },

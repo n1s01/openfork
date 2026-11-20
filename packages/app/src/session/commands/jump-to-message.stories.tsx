@@ -205,7 +205,7 @@ function SessionStory(props: Args) {
 }
 
 export default {
-  title: "OpenCode/Session/Jump to message",
+  title: "OpenFork/Session/Jump to message",
   id: "session-jump-to-message",
   render: (args: Args) => <SessionStory {...args} />,
   args: { scene: "browse", query: "" },

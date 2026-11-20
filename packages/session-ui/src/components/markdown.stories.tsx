@@ -4,7 +4,7 @@ import { MarkdownProvider } from "../context/markdown"
 import { Markdown } from "./markdown"
 
 export default {
-  title: "OpenCode/Conversation/Markdown response",
+  title: "OpenFork/Conversation/Markdown response",
   id: "components-markdown",
   component: Markdown,
   parameters: {

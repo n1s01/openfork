@@ -26,7 +26,7 @@ function ReviewStory(props: ReviewArgs) {
 }
 
 export default {
-  title: "OpenCode/Review/Changed files",
+  title: "OpenFork/Review/Changed files",
   id: "components-session-review",
   component: SessionReview,
   parameters: {
@@ -200,7 +200,7 @@ export const InlineChanges = {
     <CurrentSessionProviders document={editThenTestDocument}>
       <div class="mx-auto h-screen min-h-[620px] w-full max-w-[1100px] overflow-hidden bg-background-base">
         <SessionReview
-          title="OpenCode Git history"
+          title="OpenFork Git history"
           diffs={gitDiffs}
           open={gitDiffs.map((diff) => diff.file)}
           split={args.split}

@@ -12,7 +12,7 @@ import { replayScript, scenarios, ticks, type ScenarioName } from "./session-rep
 import { NextSessionTimeline } from "./session-timeline"
 
 export default {
-  title: "OpenCode/Timeline/Playground",
+  title: "OpenFork/Timeline/Playground",
   id: "timeline-playground",
   component: SessionTimeline,
   parameters: { layout: "fullscreen" },

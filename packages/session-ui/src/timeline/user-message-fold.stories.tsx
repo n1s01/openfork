@@ -6,7 +6,7 @@ import { CurrentSessionProviders } from "../storybook/current-session-story"
 import { CURRENT_SESSION_ID, STORY_MODEL, STORY_TIME } from "../storybook/current-session-fixtures"
 
 export default {
-  title: "OpenCode/Conversation/Long user messages",
+  title: "OpenFork/Conversation/Long user messages",
   id: "user-message-fold",
   parameters: { layout: "fullscreen" },
   args: { width: 760, turn: "thread" },
@@ -110,7 +110,7 @@ const pastedPrompt = [
   "- It only happens when the restored session is the one that was streaming when I quit.",
   "- Turning off the new virtualizer flag makes it go away, but scrolling is janky without it.",
   "",
-  "My machine: M3 Max, 64 GB, macOS 26.1, OpenCode Beta 2.4.0-beta.18.",
+  "My machine: M3 Max, 64 GB, macOS 26.1, OpenFork Beta 2.4.0-beta.18.",
   "",
   "I think the measure batches keep re-entering pinAnchor while the cold bottom is still settling, and each pass",
   "schedules another one. But I'm not sure why only the streaming session triggers it.",

@@ -545,7 +545,7 @@ const everyTool: Beat[] = [
   {
     kind: "tool",
     name: "websearch",
-    input: { query: '"applyScheme" opencode theme flash' },
+    input: { query: '"applyScheme" openfork theme flash' },
     output: "No results found.",
   },
   {

@@ -1,5 +1,5 @@
 export const dict = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "OpenFork",
   "desktop.menu.file": "Datoteka",
   "desktop.menu.edit": "Uredi",
   "desktop.menu.view": "Prikaz",
@@ -38,19 +38,19 @@ export const dict = {
   "desktop.menu.nextProject": "Sljedeći projekat",
   "desktop.menu.minimize": "Minimiziraj",
   "desktop.menu.maximize": "Maksimiziraj",
-  "desktop.menu.documentation": "Dokumentacija za OpenCode",
+  "desktop.menu.documentation": "Dokumentacija za OpenFork",
   "desktop.menu.supportForum": "Forum za podršku",
   "desktop.menu.shareFeedback": "Pošalji povratne informacije",
   "desktop.menu.reportBug": "Prijavi grešku",
-  "desktop.menu.ariaLabel": "OpenCode meni",
+  "desktop.menu.ariaLabel": "OpenFork meni",
 
   "desktop.recovery.action.relaunch": "Ponovo pokreni",
   "desktop.recovery.action.exportLogs": "Izvezi zapisnike",
   "desktop.recovery.action.keepWaiting": "Nastavi čekati",
   "desktop.recovery.action.quit": "Izađi",
-  "desktop.recovery.loadFailed": "OpenCode se nije uspio učitati",
+  "desktop.recovery.loadFailed": "OpenFork se nije uspio učitati",
   "desktop.recovery.terminated": "Prozor OpenCode-a neočekivano je zatvoren",
-  "desktop.recovery.unresponsive": "OpenCode ne reaguje",
+  "desktop.recovery.unresponsive": "OpenFork ne reaguje",
   "desktop.recovery.unresponsive.detail": "Možeš ponovo pokrenuti aplikaciju, otvoriti zapisnike ili nastaviti čekati.",
   "desktop.recovery.loadFailed.detail": "Prozor: {{window}}\nURL: {{url}}\nGreška: {{code}} {{description}}",
   "desktop.recovery.terminated.detail": "Prozor: {{window}}\nRazlog: {{reason}}\nKod: {{code}}",
@@ -154,7 +154,7 @@ export const dict = {
   "dialog.model.manage": "Upravljaj modelima",
   "dialog.model.manage.description": "Prilagodi koji se modeli prikazuju u izborniku modela.",
 
-  "dialog.model.unpaid.freeModels.title": "Besplatni modeli koje obezbjeđuje OpenCode",
+  "dialog.model.unpaid.freeModels.title": "Besplatni modeli koje obezbjeđuje OpenFork",
   "dialog.model.unpaid.addMore.title": "Dodaj još modela od popularnih provajdera",
   "dialog.model.unpaid.viewMoreProviders": "Pogledaj još više od 70 provajdera",
 
@@ -295,7 +295,7 @@ export const dict = {
   "error.page.action.checking": "Provjera…",
   "error.page.action.checkUpdates": "Provjeri ažuriranja",
   "error.page.action.updateTo": "Ažuriraj na {{version}}",
-  "error.page.report.prefix": "Molimo prijavi ovu grešku OpenCode timu",
+  "error.page.report.prefix": "Molimo prijavi ovu grešku OpenFork timu",
   "error.page.report.discord": "na Discordu",
   "error.page.version": "Verzija: {{version}}",
 
@@ -313,7 +313,7 @@ export const dict = {
   "error.chain.didYouMean": "Da li si mislio: {{suggestions}}",
   "error.chain.modelNotFound": "Model nije pronađen: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Provjeri nazive provajdera/modela u konfiguraciji (opencode.json)",
-  "error.chain.mcpFailed": 'MCP server "{{name}}" nije uspio. Napomena: OpenCode još ne podržava MCP autentifikaciju.',
+  "error.chain.mcpFailed": 'MCP server "{{name}}" nije uspio. Napomena: OpenFork još ne podržava MCP autentifikaciju.',
   "error.chain.providerAuthFailed": "Autentifikacija provajdera nije uspjela ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Neuspjelo inicijalizovanje provajdera "{{provider}}". Provjeri kredencijale i konfiguraciju.',
@@ -412,7 +412,7 @@ export const dict = {
   "settings.general.row.shell.autoDefault": "Automatski (podrazumijevano)",
   "settings.general.row.shell.terminalOnly": "samo terminal",
   "settings.general.row.colorScheme.title": "Šema boja",
-  "settings.general.row.colorScheme.description": "Odaberi da li OpenCode prati sistemsku, svijetlu ili tamnu temu",
+  "settings.general.row.colorScheme.description": "Odaberi da li OpenFork prati sistemsku, svijetlu ili tamnu temu",
   "settings.general.row.theme.title": "Tema",
   "settings.general.row.theme.description": "Prilagodi temu OpenCode-a.",
   "settings.general.row.font.title": "Font za kod",
@@ -671,7 +671,7 @@ export const dict = {
   "command.project.copyID": "Kopiraj ID projekta",
   "command.session.copyID": "Kopiraj ID sesije",
   "server.row.incompatible":
-    "Ovaj server koristi OpenCode {{version}}, koji nije kompatibilan s ovom aplikacijom. Nadogradite ga na OpenCode V2 da biste nastavili.",
+    "Ovaj server koristi OpenFork {{version}}, koji nije kompatibilan s ovom aplikacijom. Nadogradite ga na OpenFork V2 da biste nastavili.",
   "toast.session.copyID.failed.title": "Kopiranje ID-a sesije nije uspjelo",
   "toast.session.copyID.failed.description": "Došlo je do greške pri kopiranju ID-a sesije",
   "toast.project.copyID.failed.title": "Kopiranje ID-a projekta nije uspjelo",
@@ -681,7 +681,7 @@ export const dict = {
   "error.page.action.reload": "Ponovo učitaj",
   "session.error.incompatible": "Ova verzija servera nije podržana",
   "session.error.incompatible.description":
-    "{{server}} koristi OpenCode {{version}}, koji nije kompatibilan s ovom aplikacijom. Nadogradite server na OpenCode V2 da biste nastavili.",
+    "{{server}} koristi OpenFork {{version}}, koji nije kompatibilan s ovom aplikacijom. Nadogradite server na OpenFork V2 da biste nastavili.",
   "session.background.moveInline": "Pritisnite {{keybind}} da premjestite aktivni rad u pozadinu",
   "session.background.runningCount.few": "{{count}} stavke se izvršavaju u pozadini",
   "dialog.server.menu.hide": "Sakrij sa spiska projekata",
@@ -737,8 +737,8 @@ export const dict = {
   "settings.about.firstPublished": "Prvi put objavljeno u Missouriju, SAD",
   "settings.about.firstIllustrated": "Prvi put ilustrovan u Londonu, Engleska",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, agent za kodiranje otvorenog koda",
-  "settings.about.trademark": "OpenCode je registrovani zaštitni znak Anomaly Innovations, Inc.",
+  "settings.about.description": "OpenFork, agent za kodiranje otvorenog koda",
+  "settings.about.trademark": "OpenFork je registrovani zaštitni znak Anomaly Innovations, Inc.",
   "settings.about.typeset": "Postavljen u Inter i IBM Plex Mono",
   "settings.about.tagline": "AI ne može napraviti odličan softver bez vas",
   "settings.about.copyright": "© Anomaly Innovations, Inc.",
@@ -791,8 +791,8 @@ export const dict = {
   "server.connect.address.invalid": "Unesite ispravnu HTTP ili HTTPS adresu servera.",
   "server.connect.failed": "Povezivanje nije uspjelo. Provjerite adresu servera i lozinku, pa pokušajte ponovo.",
   "server.connect.scan": "Skeniraj QR kod",
-  "server.connect.scan.description": "Usmjerite kameru prema QR kodu koji prikazuje opencode pair.",
-  "server.connect.scan.invalid": "Ovo nije OpenCode kod za uparivanje. Skenirajte kod koji prikazuje opencode pair.",
+  "server.connect.scan.description": "Usmjerite kameru prema QR kodu koji prikazuje openfork pair.",
+  "server.connect.scan.invalid": "Ovo nije OpenFork kod za uparivanje. Skenirajte kod koji prikazuje openfork pair.",
   "server.connect.camera": "Kamera za uparivanje",
   "server.connect.camera.starting": "Otvaranje kamere…",
   "server.connect.mixedContent":
@@ -905,22 +905,22 @@ export const dict = {
   "voice.captions.hide": "Sakrij titlove",
   "voice.connecting": "Povezivanje…",
   "voice.you": "Vi:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Za glasovne pozive potreban je OpenAI API ključ na ovom serveru.",
   "voice.failure.microphone": "Za poziv je potreban pristup mikrofonu.",
   "voice.failure.dropped": "Poziv je prekinut.",
   "voice.failure.connection": "Povezivanje poziva nije uspjelo.",
-  "desktop.microphoneUsage": "OpenCode koristi vaš mikrofon za glasovne pozive.",
+  "desktop.microphoneUsage": "OpenFork koristi vaš mikrofon za glasovne pozive.",
   "desktop.documentsFolderUsage":
-    "OpenCode koristi datoteke u vašoj fascikli Dokumenti za projekte koje otvorite i komande koje tamo pokrenete.",
+    "OpenFork koristi datoteke u vašoj fascikli Dokumenti za projekte koje otvorite i komande koje tamo pokrenete.",
   "desktop.desktopFolderUsage":
-    "OpenCode koristi datoteke na vašoj radnoj površini za projekte koje otvorite i komande koje tamo pokrenete.",
+    "OpenFork koristi datoteke na vašoj radnoj površini za projekte koje otvorite i komande koje tamo pokrenete.",
   "desktop.downloadsFolderUsage":
-    "OpenCode koristi datoteke u vašoj fascikli Preuzimanja za projekte koje otvorite i komande koje tamo pokrenete.",
+    "OpenFork koristi datoteke u vašoj fascikli Preuzimanja za projekte koje otvorite i komande koje tamo pokrenete.",
   "desktop.networkVolumesUsage":
-    "OpenCode koristi datoteke na mrežnim diskovima za projekte koje otvorite i komande koje tamo pokrenete.",
+    "OpenFork koristi datoteke na mrežnim diskovima za projekte koje otvorite i komande koje tamo pokrenete.",
   "desktop.removableVolumesUsage":
-    "OpenCode koristi datoteke na prenosivim diskovima za projekte koje otvorite i komande koje tamo pokrenete.",
+    "OpenFork koristi datoteke na prenosivim diskovima za projekte koje otvorite i komande koje tamo pokrenete.",
   "desktop.contextMenu.spellcheck": "Provjera pravopisa",
   "desktop.contextMenu.spellcheckLanguages": "Jezici za provjeru pravopisa",
   "session.location.unavailable": "Lokacija sesije nije dostupna",
@@ -962,7 +962,7 @@ export const dict = {
   "palette.group.settings": "Postavke",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Integracije",
-  "dialog.provider.description": "Povežite servise kako bi ih OpenCode mogao koristiti.",
+  "dialog.provider.description": "Povežite servise kako bi ih OpenFork mogao koristiti.",
   "dialog.provider.group.services": "Servisi",
   "dialog.provider.environmentOnly": "Samo okruženje",
   "dialog.provider.signInRequired": "Potrebna prijava →",
@@ -1029,7 +1029,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Zatvori",
   "provider.connect.console.refreshFailed":
     "Vaš račun je povezan, ali nismo mogli učitati vaše modele. Pokušajte ponovo da ih osvježite.",
-  "provider.connect.console.connected": "OpenCode povezan",
+  "provider.connect.console.connected": "OpenFork povezan",
   "provider.connect.console.noModels":
     "Vaš račun je povezan, ali ovaj Console radni prostor nema dostupnih modela. Provjerite njegovo podešavanje u Console, zatim osvježite.",
   "provider.connect.console.modelsLoading": "Vaši modeli se još učitavaju. Osvježite da provjerite ponovo.",
@@ -1037,7 +1037,7 @@ export const dict = {
   "provider.connect.console.openingBrowser": "Otvaranje preglednika",
   "provider.connect.remote.label": "na {{server}}",
   "provider.connect.remote.description":
-    "Vaši OpenCode akreditivi bit će sačuvani na ovom serveru. Modeli će biti dostupni putem ovog servera.",
+    "Vaši OpenFork akreditivi bit će sačuvani na ovom serveru. Modeli će biti dostupni putem ovog servera.",
   "provider.connect.claudeAgent.description":
     "Koristite svoj Claude plan ili drugu Claude Code prijavu. Prvo instalirajte Claude Code i prijavite se.",
   "provider.connect.claudeAgent.install": "Instaliraj Claude Code",
@@ -1071,7 +1071,7 @@ export const dict = {
     "Nismo mogli otvoriti preglednik. Odaberite Otvori preglednik da pokušate ponovo.",
   "provider.connect.oauth.paste.toggle": "Prijavljujete se s drugog uređaja?",
   "provider.connect.oauth.paste.description":
-    "Ako vaš preglednik ne može pristupiti računaru na kojem radi OpenCode, zalijepite URL na koji je preusmjeren.",
+    "Ako vaš preglednik ne može pristupiti računaru na kojem radi OpenFork, zalijepite URL na koji je preusmjeren.",
   "provider.connect.oauth.expired": "Autorizacija je istekla",
   "model.details.input.text": "Tekst",
   "model.details.input.image": "Slika",
@@ -1108,7 +1108,7 @@ export const dict = {
   "dialog.mcp.signIn": "Prijavi se",
   "dialog.mcp.signIn.open": "Prijavi se na {{name}}",
   "dialog.mcp.signIn.description":
-    "Otvorit će se preglednik kako biste se prijavili na {{name}}. Ako ne može pristupiti računaru na kojem radi OpenCode, zalijepite ispod URL na koji je preusmjeren.",
+    "Otvorit će se preglednik kako biste se prijavili na {{name}}. Ako ne može pristupiti računaru na kojem radi OpenFork, zalijepite ispod URL na koji je preusmjeren.",
   "dialog.mcp.signIn.syncFailed": "Prijavljeni ste, ali osvježavanje {{name}} nije uspjelo: {{error}}",
   "dialog.mcp.error.details":
     "MCP server: {{name}}\nStatus: neuspješno\nKonfiguracija: mcp.servers.{{name}}\nGreška: {{error}}",
@@ -1136,20 +1136,20 @@ export const dict = {
   "server.connect.link": "Link za uparivanje",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "Zalijepite cijeli link za uparivanje iz opencode pair ili iz Postavke → Uparivanje na računaru servera.",
+    "Zalijepite cijeli link za uparivanje iz openfork pair ili iz Postavke → Uparivanje na računaru servera.",
   "server.connect.password.prompt": "Nemate link za uparivanje?",
   "server.connect.password.use": "Koristi lozinku",
-  "server.connect.password.hint": "Da je vidite, pokrenite opencode service get password na računaru servera.",
+  "server.connect.password.hint": "Da je vidite, pokrenite openfork service get password na računaru servera.",
   "server.connect.link.prompt": "Imate link za uparivanje?",
   "server.connect.link.use": "Koristi link za uparivanje",
   "server.connect.pair.link": "Pokrenite ovu komandu na računaru servera da dobijete link za uparivanje i QR kod.",
   "server.connect.scan.failed": "Ovaj preglednik nije mogao pročitati QR kod. Ručno unesite podatke za povezivanje.",
   "server.connect.link.expired":
-    "Ovaj link za uparivanje je istekao ili je već iskorišten. Pokrenite opencode pair da dobijete novi.",
+    "Ovaj link za uparivanje je istekao ili je već iskorišten. Pokrenite openfork pair da dobijete novi.",
   "server.connect.link.unreachable":
     "Nije moguće pristupiti {{url}}. Provjerite može li ovaj uređaj pristupiti serveru, zatim pokušajte ponovo.",
   "server.connect.link.legacy":
-    "Ovaj kod za uparivanje je iz starije verzije OpenCode-a. Ažurirajte OpenCode na serveru, zatim ponovo pokrenite opencode pair.",
+    "Ovaj kod za uparivanje je iz starije verzije OpenCode-a. Ažurirajte OpenFork na serveru, zatim ponovo pokrenite openfork pair.",
   "server.connect.camera.native":
     "Ova stranica ne može koristiti kameru preko HTTP-a. Zalijepite link za uparivanje iznad.",
   "dialog.server.signedOut":
@@ -1170,7 +1170,7 @@ export const dict = {
   "home.sessions.load.failed": "Učitavanje sesija nije uspjelo",
   "home.sessions.load.timeout": "Server je predugo odgovarao",
   "tips.browse.title": "Upravljajte preglednikom",
-  "tips.browse.description": "Neka OpenCode radi u vašem pregledniku s vašim karticama, prijavama i ekstenzijama.",
+  "tips.browse.description": "Neka OpenFork radi u vašem pregledniku s vašim karticama, prijavama i ekstenzijama.",
   "tips.browse.install": "Instaliraj",
   "tips.hex.title": "Koristite glas",
   "tips.hex.description":
@@ -1370,7 +1370,7 @@ export const dict = {
     'Prekidači isključuju samo desktop interfejs dodatka. Dodajte "-<id>" u plugins u globalnom opencode.json da isključite njegov serverski dio, ili "-" i ID njegovog TUI dodatka u plugins u cli.json da isključite njegov TUI dio.',
   "settings.about.copyVersionFailed": "Kopiranje verzije nije uspjelo",
   "settings.about.notices.title": "Obavještenja trećih strana",
-  "settings.about.notices.description": "OpenCode uključuje sljedeći softver otvorenog koda.",
+  "settings.about.notices.description": "OpenFork uključuje sljedeći softver otvorenog koda.",
   "settings.about.notices.license": "Tekst licence",
   "settings.about.notices.fonts.title": "Fontovi u Office pregledima",
   "settings.about.notices.fonts.description":

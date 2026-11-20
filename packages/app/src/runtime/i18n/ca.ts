@@ -1,5 +1,5 @@
 export const dict = {
-  "desktop.menu.app": "OpenCode",
+  "desktop.menu.app": "OpenFork",
   "desktop.menu.file": "Fitxer",
   "desktop.menu.edit": "Edita",
   "desktop.menu.view": "Veure",
@@ -38,18 +38,18 @@ export const dict = {
   "desktop.menu.nextProject": "Projecte següent",
   "desktop.menu.minimize": "Minimitzar",
   "desktop.menu.maximize": "Maximitzar",
-  "desktop.menu.documentation": "OpenCode Documentació",
+  "desktop.menu.documentation": "OpenFork Documentació",
   "desktop.menu.supportForum": "Fòrum de suport",
   "desktop.menu.shareFeedback": "Comparteix comentaris",
   "desktop.menu.reportBug": "Informar d'un error",
-  "desktop.menu.ariaLabel": "menú OpenCode.",
+  "desktop.menu.ariaLabel": "menú OpenFork.",
   "desktop.recovery.action.relaunch": "Relançar",
   "desktop.recovery.action.exportLogs": "Exporta registres",
   "desktop.recovery.action.keepWaiting": "Seguiu esperant",
   "desktop.recovery.action.quit": "Surt",
-  "desktop.recovery.loadFailed": "OpenCode no s'ha pogut carregar",
-  "desktop.recovery.terminated": "La finestra OpenCode s'ha acabat inesperadament",
-  "desktop.recovery.unresponsive": "OpenCode no respon",
+  "desktop.recovery.loadFailed": "OpenFork no s'ha pogut carregar",
+  "desktop.recovery.terminated": "La finestra OpenFork s'ha acabat inesperadament",
+  "desktop.recovery.unresponsive": "OpenFork no respon",
   "desktop.recovery.unresponsive.detail": "Podeu reiniciar l'aplicació, obrir els registres o continuar esperant.",
   "desktop.recovery.loadFailed.detail": "Finestra: {{window}}\nURL: {{url}}\nError: {{code}} {{description}}",
   "desktop.recovery.terminated.detail": "Finestra: {{window}}\nMotiu: {{reason}}\nCodi: {{code}}",
@@ -141,7 +141,7 @@ export const dict = {
   "dialog.model.empty": "No hi ha resultats del model",
   "dialog.model.manage": "Gestionar models",
   "dialog.model.manage.description": "Personalitza quins models apareixen al selector de models.",
-  "dialog.model.unpaid.freeModels.title": "Models gratuïts proporcionats per OpenCode",
+  "dialog.model.unpaid.freeModels.title": "Models gratuïts proporcionats per OpenFork",
   "dialog.model.unpaid.addMore.title": "Afegiu més models de proveïdors populars",
   "dialog.model.unpaid.viewMoreProviders": "Consulta més de 70 proveïdors més",
   "dialog.provider.viewAll": "Mostra més proveïdors",
@@ -151,7 +151,7 @@ export const dict = {
   "provider.connect.status.waiting": "Esperant l'autorització",
   "provider.connect.status.failed": "L'autorització ha fallat: {{error}}",
   "provider.connect.apiKey.description":
-    "Introduïu la clau API de {{provider}} per connectar el compte i utilitzar els models de {{provider}} a OpenCode.",
+    "Introduïu la clau API de {{provider}} per connectar el compte i utilitzar els models de {{provider}} a OpenFork.",
   "provider.connect.apiKey.label": "Tecla {{provider}} API.",
   "provider.connect.apiKey.placeholder": "tecla API.",
   "provider.connect.apiKey.required": "La clau API és necessària",
@@ -265,7 +265,7 @@ export const dict = {
   "error.page.action.checkUpdates": "Comproveu si hi ha actualitzacions",
   "error.page.action.updateTo": "Actualitza a {{version}}",
   "error.page.circular": "[Circular]",
-  "error.page.report.prefix": "Informeu aquest error a l'equip OpenCode.",
+  "error.page.report.prefix": "Informeu aquest error a l'equip OpenFork.",
   "error.page.report.discord": "a Discord",
   "error.page.version": "Versió: {{version}}",
   "error.dev.rootNotFound":
@@ -288,7 +288,7 @@ export const dict = {
   "error.chain.modelNotFound": "No s'ha trobat el model: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Comproveu els noms del vostre proveïdor/model de configuració (opencode.json).",
   "error.chain.mcpFailed":
-    'El servidor MCP "{{name}}" ha fallat. Tingueu en compte que OpenCode encara no admet l\'autenticació MCP.',
+    'El servidor MCP "{{name}}" ha fallat. Tingueu en compte que OpenFork encara no admet l\'autenticació MCP.',
   "error.chain.providerAuthFailed": "L'autenticació del proveïdor ha fallat ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'No s\'ha pogut inicialitzar el proveïdor "{{provider}}". Comproveu les credencials i la configuració.',
@@ -392,15 +392,15 @@ export const dict = {
   "settings.general.section.notifications": "Notificacions del sistema",
   "settings.general.section.sounds": "Efectes de so",
   "settings.general.row.language.title": "Llengua",
-  "settings.general.row.language.description": "Canvia l'idioma de visualització per a OpenCode",
+  "settings.general.row.language.description": "Canvia l'idioma de visualització per a OpenFork",
   "settings.general.row.shell.title": "Carcassa terminal",
   "settings.general.row.shell.description": "Shell utilitzat pel terminal i les eines d'agent",
   "settings.general.row.shell.autoDefault": "Automàtic (per defecte)",
   "settings.general.row.shell.terminalOnly": "només terminal",
   "settings.general.row.colorScheme.title": "Esquema de colors",
-  "settings.general.row.colorScheme.description": "Trieu si OpenCode segueix el tema del sistema, clar o fosc",
+  "settings.general.row.colorScheme.description": "Trieu si OpenFork segueix el tema del sistema, clar o fosc",
   "settings.general.row.theme.title": "Tema",
-  "settings.general.row.theme.description": "Personalitza la temàtica de OpenCode.",
+  "settings.general.row.theme.description": "Personalitza la temàtica de OpenFork.",
   "settings.general.row.font.title": "Font del codi",
   "settings.general.row.font.description": "Personalitzeu el tipus de lletra utilitzat als blocs de codi",
   "settings.general.row.terminalFont.title": "Tipus de lletra terminal",
@@ -613,7 +613,7 @@ export const dict = {
   "command.project.copyID": "Copia l'ID del projecte",
   "command.session.copyID": "Copia l'ID de la sessió",
   "server.row.incompatible":
-    "Aquest servidor executa OpenCode {{version}}, que no és compatible amb aquesta aplicació. Actualitzeu-lo a OpenCode V2 per continuar.",
+    "Aquest servidor executa OpenFork {{version}}, que no és compatible amb aquesta aplicació. Actualitzeu-lo a OpenFork V2 per continuar.",
   "toast.session.copyID.failed.title": "No s'ha pogut copiar l'ID de la sessió",
   "toast.session.copyID.failed.description": "S'ha produït un error en copiar l'ID de la sessió",
   "toast.project.copyID.failed.title": "No s'ha pogut copiar l'ID del projecte",
@@ -623,7 +623,7 @@ export const dict = {
   "error.page.action.reload": "Torna a carregar",
   "session.error.incompatible": "Aquesta versió del servidor no és compatible",
   "session.error.incompatible.description":
-    "{{server}} executa OpenCode {{version}}, que no és compatible amb aquesta aplicació. Actualitzeu el servidor a OpenCode V2 per continuar.",
+    "{{server}} executa OpenFork {{version}}, que no és compatible amb aquesta aplicació. Actualitzeu el servidor a OpenFork V2 per continuar.",
   "session.background.moveInline": "Premeu {{keybind}} per moure la feina en curs al segon pla",
   "session.background.runningCount.many": "{{count}} d'elements en curs en segon pla",
   "dialog.server.menu.hide": "Amaga de la llista de projectes",
@@ -679,8 +679,8 @@ export const dict = {
   "settings.about.firstPublished": "Publicat per primera vegada a Missouri, EUA",
   "settings.about.firstIllustrated": "Il·lustrat per primera vegada a Londres, Anglaterra",
   "settings.about.website": "www.opencode.ai",
-  "settings.about.description": "OpenCode, l'agent de codificació de codi obert",
-  "settings.about.trademark": "OpenCode és una marca registrada de Anomaly Innovations, Inc.",
+  "settings.about.description": "OpenFork, l'agent de codificació de codi obert",
+  "settings.about.trademark": "OpenFork és una marca registrada de Anomaly Innovations, Inc.",
   "settings.about.typeset": "Tipografia en Inter i IBM Plex Mono",
   "settings.about.tagline": "La IA no pot crear un gran programari sense tu",
   "settings.about.copyright": "© Anomaly Innovations, Inc.",
@@ -727,9 +727,9 @@ export const dict = {
   "server.connect.failed":
     "No s'ha pogut connectar. Comproveu l'adreça i la contrasenya del servidor i torneu-ho a provar.",
   "server.connect.scan": "Escaneja el codi QR",
-  "server.connect.scan.description": "Apunteu la càmera al codi QR que mostra opencode pair.",
+  "server.connect.scan.description": "Apunteu la càmera al codi QR que mostra openfork pair.",
   "server.connect.scan.invalid":
-    "Aquest no és un codi d'aparellament OpenCode. Escaneja el codi mostrat per opencode pair.",
+    "Aquest no és un codi d'aparellament OpenFork. Escaneja el codi mostrat per openfork pair.",
   "server.connect.camera": "Càmera d'aparellament",
   "server.connect.camera.starting": "Obertura de la càmera...",
   "server.connect.mixedContent":
@@ -765,7 +765,7 @@ export const dict = {
     "Seleccioneu el proveïdor de cerca que utilitzen els agents per cercar al web",
   "settings.projects.search.placeholder": "Cerca projectes",
   "project.settings.name.title": "Nom del projecte",
-  "project.settings.name.description": "El nom mostrat per a aquest projecte a tot OpenCode",
+  "project.settings.name.description": "El nom mostrat per a aquest projecte a tot OpenFork",
   "project.settings.icon.description": "Recomanat: 128×128px. Feu clic o arrossegueu per pujar una imatge.",
   "project.settings.color.description":
     "S'utilitza per a la icona del projecte quan no s'ha establert cap imatge personalitzada",
@@ -773,11 +773,11 @@ export const dict = {
   "project.settings.worktree.startup.hint.base": "Utilitzeu $OPENCODE_WORKTREE_BASE per a l'arbre de treball base.",
   "project.settings.worktree.startup.hint.new": "Utilitzeu $OPENCODE_WORKTREE_PATH per al nou arbre de treball.",
   "project.settings.extensions.empty.mcps.title": "Encara no MCPs",
-  "project.settings.extensions.empty.mcps.description": "MCPs disponible per a OpenCode apareixerà aquí",
+  "project.settings.extensions.empty.mcps.description": "MCPs disponible per a OpenFork apareixerà aquí",
   "project.settings.extensions.empty.plugins.title": "Encara no hi ha connectors",
-  "project.settings.extensions.empty.plugins.description": "Els connectors disponibles per a OpenCode apareixeran aquí",
+  "project.settings.extensions.empty.plugins.description": "Els connectors disponibles per a OpenFork apareixeran aquí",
   "project.settings.extensions.empty.skills.title": "Encara no hi ha habilitats",
-  "project.settings.extensions.empty.skills.description": "Les habilitats disponibles per a OpenCode apareixeran aquí",
+  "project.settings.extensions.empty.skills.description": "Les habilitats disponibles per a OpenFork apareixeran aquí",
   "project.settings.extensions.lsp.configured": "Servidors d'idiomes configurats",
   "project.settings.extensions.lsp.status.enabled": "Habilitat a la configuració",
   "project.settings.extensions.lsp.status.disabled": "Desactivat a la configuració",
@@ -798,7 +798,7 @@ export const dict = {
   "settings.timeline.collapsed.label": "{{activity}} col·lapsat",
   "session.new.workspace.search.empty": "No hi ha arbres de treball coincidents",
   "settings.workspaces.description": "Reviseu els arbres de treball i gestioneu l'ús del disc",
-  "settings.workspaces.empty.description": "Els arbres de treball creats a OpenCode apareixeran aquí",
+  "settings.workspaces.empty.description": "Els arbres de treball creats a OpenFork apareixeran aquí",
   "settings.workspaces.sessions.filtered.one": "Sessió {{count}}",
   "settings.workspaces.sessions.filtered.other": "{{count}} sessions",
   "settings.workspaces.deleteAll.confirm.one":
@@ -857,22 +857,22 @@ export const dict = {
   "voice.captions.hide": "Amaga els subtítols",
   "voice.connecting": "S'està connectant…",
   "voice.you": "Tu:",
-  "voice.assistant": "OpenCode:",
+  "voice.assistant": "OpenFork:",
   "voice.failure.unavailable": "Les trucades de veu necessiten una clau d'API d'OpenAI en aquest servidor.",
   "voice.failure.microphone": "Cal accés al micròfon per trucar.",
   "voice.failure.dropped": "La trucada s'ha desconnectat.",
   "voice.failure.connection": "No s'ha pogut connectar la trucada.",
-  "desktop.microphoneUsage": "OpenCode utilitza el micròfon per a les trucades de veu.",
+  "desktop.microphoneUsage": "OpenFork utilitza el micròfon per a les trucades de veu.",
   "desktop.documentsFolderUsage":
-    "OpenCode utilitza fitxers de la carpeta Documents per als projectes que hi obriu i les ordres que hi executeu.",
+    "OpenFork utilitza fitxers de la carpeta Documents per als projectes que hi obriu i les ordres que hi executeu.",
   "desktop.desktopFolderUsage":
-    "OpenCode utilitza fitxers de l'Escriptori per als projectes que hi obriu i les ordres que hi executeu.",
+    "OpenFork utilitza fitxers de l'Escriptori per als projectes que hi obriu i les ordres que hi executeu.",
   "desktop.downloadsFolderUsage":
-    "OpenCode utilitza fitxers de la carpeta Baixades per als projectes que hi obriu i les ordres que hi executeu.",
+    "OpenFork utilitza fitxers de la carpeta Baixades per als projectes que hi obriu i les ordres que hi executeu.",
   "desktop.networkVolumesUsage":
-    "OpenCode utilitza fitxers de volums de xarxa per als projectes que hi obriu i les ordres que hi executeu.",
+    "OpenFork utilitza fitxers de volums de xarxa per als projectes que hi obriu i les ordres que hi executeu.",
   "desktop.removableVolumesUsage":
-    "OpenCode utilitza fitxers de volums extraïbles per als projectes que hi obriu i les ordres que hi executeu.",
+    "OpenFork utilitza fitxers de volums extraïbles per als projectes que hi obriu i les ordres que hi executeu.",
   "desktop.contextMenu.spellcheck": "Correcció ortogràfica",
   "desktop.contextMenu.spellcheckLanguages": "Idiomes de la correcció ortogràfica",
   "session.location.unavailable": "La ubicació de la sessió no està disponible",
@@ -915,7 +915,7 @@ export const dict = {
   "palette.group.settings": "Configuració",
   "palette.session.location": "{{project}} · {{server}}",
   "dialog.provider.title": "Integracions",
-  "dialog.provider.description": "Connecteu serveis perquè OpenCode els pugui utilitzar.",
+  "dialog.provider.description": "Connecteu serveis perquè OpenFork els pugui utilitzar.",
   "dialog.provider.group.services": "Serveis",
   "dialog.provider.environmentOnly": "Només entorn",
   "dialog.provider.signInRequired": "Cal iniciar la sessió →",
@@ -972,7 +972,7 @@ export const dict = {
   "provider.connect.models.available": "Models disponibles",
   "provider.connect.chatgptWelcome.title": "ChatGPT connectat",
   "provider.connect.chatgptWelcome.description":
-    "Les sol·licituds aptes d'OpenCode poden utilitzar el vostre pla de ChatGPT.",
+    "Les sol·licituds aptes d'OpenFork poden utilitzar el vostre pla de ChatGPT.",
   "provider.connect.chatgptWelcome.usage": "Gestioneu l'ús a la configuració de ChatGPT",
   "provider.connect.chatgptWelcome.confirm": "Entesos",
   "provider.connect.models.list": "Models disponibles de {{provider}}",
@@ -982,7 +982,7 @@ export const dict = {
   "provider.connect.chatgptUsageLimit.close": "Tanca",
   "provider.connect.console.refreshFailed":
     "El compte està connectat, però no hem pogut carregar els models. Torneu-ho a provar per actualitzar-los.",
-  "provider.connect.console.connected": "OpenCode connectat",
+  "provider.connect.console.connected": "OpenFork connectat",
   "provider.connect.console.noModels":
     "El compte està connectat, però aquest espai de treball de Console no té cap model disponible. Reviseu-ne la configuració a Console i actualitzeu.",
   "provider.connect.console.modelsLoading":
@@ -991,7 +991,7 @@ export const dict = {
   "provider.connect.console.openingBrowser": "S'està obrint el navegador",
   "provider.connect.remote.label": "a {{server}}",
   "provider.connect.remote.description":
-    "Les credencials d'OpenCode es desaran en aquest servidor. Els models estaran disponibles a través d'aquest servidor.",
+    "Les credencials d'OpenFork es desaran en aquest servidor. Els models estaran disponibles a través d'aquest servidor.",
   "provider.connect.claudeAgent.description":
     "Utilitzeu el vostre pla de Claude o un altre inici de sessió de Claude Code. Primer instal·leu Claude Code i inicieu-hi la sessió.",
   "provider.connect.claudeAgent.install": "Instal·la Claude Code",
@@ -1025,7 +1025,7 @@ export const dict = {
     "No hem pogut obrir el navegador. Seleccioneu Obre el navegador per tornar-ho a provar.",
   "provider.connect.oauth.paste.toggle": "Inicieu la sessió des d'un altre dispositiu?",
   "provider.connect.oauth.paste.description":
-    "Si el navegador no pot accedir a la màquina on s'executa OpenCode, enganxeu l'URL al qual s'ha redirigit.",
+    "Si el navegador no pot accedir a la màquina on s'executa OpenFork, enganxeu l'URL al qual s'ha redirigit.",
   "provider.connect.oauth.expired": "L'autorització ha caducat",
   "model.details.input.text": "Text",
   "model.details.input.image": "Imatge",
@@ -1062,7 +1062,7 @@ export const dict = {
   "dialog.mcp.signIn": "Inicia la sessió",
   "dialog.mcp.signIn.open": "Inicia la sessió a {{name}}",
   "dialog.mcp.signIn.description":
-    "S'obrirà el navegador perquè inicieu la sessió a {{name}}. Si no pot accedir a la màquina on s'executa OpenCode, enganxeu a sota l'URL al qual s'ha redirigit.",
+    "S'obrirà el navegador perquè inicieu la sessió a {{name}}. Si no pot accedir a la màquina on s'executa OpenFork, enganxeu a sota l'URL al qual s'ha redirigit.",
   "dialog.mcp.signIn.syncFailed": "S'ha iniciat la sessió, però no s'ha pogut actualitzar {{name}}: {{error}}",
   "dialog.mcp.error.details":
     "Servidor MCP: {{name}}\nEstat: ha fallat\nConfiguració: mcp.servers.{{name}}\nError: {{error}}",
@@ -1090,10 +1090,10 @@ export const dict = {
   "server.connect.link": "Enllaç d'aparellament",
   "server.connect.link.placeholder": "http://192.168.1.2:4096/auth/connect/…",
   "server.connect.link.invalid":
-    "Enganxeu l'enllaç d'aparellament complet d'opencode pair o de Configuració → Aparellament a l'ordinador del servidor.",
+    "Enganxeu l'enllaç d'aparellament complet d'openfork pair o de Configuració → Aparellament a l'ordinador del servidor.",
   "server.connect.password.prompt": "No teniu cap enllaç d'aparellament?",
   "server.connect.password.use": "Utilitza una contrasenya",
-  "server.connect.password.hint": "Per veure-la, executeu opencode service get password a l'ordinador del servidor.",
+  "server.connect.password.hint": "Per veure-la, executeu openfork service get password a l'ordinador del servidor.",
   "server.connect.link.prompt": "Teniu un enllaç d'aparellament?",
   "server.connect.link.use": "Utilitza un enllaç d'aparellament",
   "server.connect.pair.link":
@@ -1101,11 +1101,11 @@ export const dict = {
   "server.connect.scan.failed":
     "Aquest navegador no ha pogut llegir el codi QR. Introduïu els detalls de connexió manualment.",
   "server.connect.link.expired":
-    "Aquest enllaç d'aparellament ha caducat o ja s'ha utilitzat. Executeu opencode pair per obtenir-ne un de nou.",
+    "Aquest enllaç d'aparellament ha caducat o ja s'ha utilitzat. Executeu openfork pair per obtenir-ne un de nou.",
   "server.connect.link.unreachable":
     "No s'ha pogut accedir a {{url}}. Comproveu que aquest dispositiu pot accedir al servidor i torneu-ho a provar.",
   "server.connect.link.legacy":
-    "Aquest codi d'aparellament és d'una versió antiga d'OpenCode. Actualitzeu OpenCode al servidor i torneu a executar opencode pair.",
+    "Aquest codi d'aparellament és d'una versió antiga d'OpenFork. Actualitzeu OpenFork al servidor i torneu a executar openfork pair.",
   "server.connect.camera.native":
     "Aquesta pàgina no pot utilitzar la càmera per HTTP. Enganxeu l'enllaç d'aparellament a dalt.",
   "dialog.server.signedOut":
@@ -1128,7 +1128,7 @@ export const dict = {
   "home.sessions.load.timeout": "El servidor ha trigat massa a respondre",
   "tips.browse.title": "Controleu el navegador",
   "tips.browse.description":
-    "Deixeu que OpenCode treballi al navegador amb les vostres pestanyes, sessions iniciades i extensions.",
+    "Deixeu que OpenFork treballi al navegador amb les vostres pestanyes, sessions iniciades i extensions.",
   "tips.browse.install": "Instal·la",
   "tips.hex.title": "Feu servir la veu",
   "tips.hex.description":
@@ -1318,7 +1318,7 @@ export const dict = {
     'Els interruptors només desactiven la interfície d\'escriptori d\'un connector. Afegiu "-<id>" a plugins al vostre opencode.json global per desactivar-ne la part del servidor, o "-" i l\'ID del seu connector TUI a plugins a cli.json per desactivar-ne la part TUI.',
   "settings.about.copyVersionFailed": "No s'ha pogut copiar la versió",
   "settings.about.notices.title": "Avisos de tercers",
-  "settings.about.notices.description": "OpenCode inclou el programari de codi obert següent.",
+  "settings.about.notices.description": "OpenFork inclou el programari de codi obert següent.",
   "settings.about.notices.license": "Text de la llicència",
   "settings.about.notices.fonts.title": "Tipus de lletra de les previsualitzacions d'Office",
   "settings.about.notices.fonts.description":

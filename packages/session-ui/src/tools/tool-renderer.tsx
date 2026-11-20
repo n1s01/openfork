@@ -267,7 +267,7 @@ export function taskAgentName(raw: string | undefined, list?: readonly { name: s
 
 const webSearchProviderNames = new Map([
   ["tinyfish", "TinyFish"],
-  ["opencode", "OpenCode"],
+  ["opencode", "OpenFork"],
 ])
 
 function webSearchProviderLabel(provider: string | undefined, i18n: ReturnType<typeof useI18n>) {

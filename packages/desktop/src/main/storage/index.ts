@@ -26,7 +26,7 @@ export const layer = Layer.effect(
     )
 
     if (storage.moved)
-      yield* Effect.logWarning("drafts.sqlite was the OpenCode CLI database; moved it aside", { to: storage.moved })
+      yield* Effect.logWarning("drafts.sqlite was the OpenFork CLI database; moved it aside", { to: storage.moved })
 
     yield* importLegacyStores(storage.db, userData).pipe(
       Effect.tap((result) =>

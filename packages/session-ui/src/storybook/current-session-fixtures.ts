@@ -372,7 +372,7 @@ export const fileChangeLoadingDocument = document(
           args: {
             path: "packages/app/src/components/empty-session.tsx",
             oldString: "No messages yet",
-            newString: "Ask OpenCode to start working",
+            newString: "Ask OpenFork to start working",
           },
         }),
       ],
@@ -395,7 +395,7 @@ export const fileChangeRunningDocument = document(
           args: {
             path: "packages/app/src/components/empty-session.tsx",
             oldString: "No messages yet",
-            newString: "Ask OpenCode to start working",
+            newString: "Ask OpenFork to start working",
           },
         }),
       ],
@@ -522,10 +522,10 @@ export const expandedShellDocument = document([
         offset: 52_300,
         args: {
           command:
-            "opencode api get /openapi.json > /private/var/folders/j/gd69b2|16y91666jzf3p9g22asdasc0000gn/T/opencode/temp/tes",
+            "openfork api get /openapi.json > /private/var/folders/j/gd69b2|16y91666jzf3p9g22asdasc0000gn/T/opencode/temp/tes",
         },
         output:
-          '{"location":{"directory":"/Users/usrnk1","project":{"id":"global","directory":"/","canonical":"/"}},"data":[{"id":"opencode","name":"OpenCode","description":"Use this skill for any question about OpenCode itself, including how OpenCode works, using or configuring it, migrating from V1 to V2, troubleshooting it, developing plugins or integrations, using the OpenCode SDK, clients, server, or API, and contributing to the OpenCode codebase."}]}',
+          '{"location":{"directory":"/Users/usrnk1","project":{"id":"global","directory":"/","canonical":"/"}},"data":[{"id":"opencode","name":"OpenFork","description":"Use this skill for any question about OpenFork itself, including how OpenFork works, using or configuring it, migrating from V1 to V2, troubleshooting it, developing plugins or integrations, using the OpenFork SDK, clients, server, or API, and contributing to the OpenFork codebase."}]}',
         metadata: { exit: 0 },
       }),
     ],

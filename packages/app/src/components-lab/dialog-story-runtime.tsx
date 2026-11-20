@@ -230,7 +230,7 @@ const fixtureIntegrations = [
   {
     id: "opencode-go",
     name: "OpenCode Go",
-    methods: [{ type: "oauth", id: "go", label: "Sign in with OpenCode" }],
+    methods: [{ type: "oauth", id: "go", label: "Sign in with OpenFork" }],
     connections: [],
   },
   {
