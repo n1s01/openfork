@@ -21,7 +21,6 @@ import { Host } from "@opencode/plugin/host"
 import { resolveSlots, type Claim } from "./structure"
 import { createStore, produce, reconcile as reconcileStore, unwrap } from "solid-js/store"
 import { isDeepEqual } from "remeda"
-import "#runtime-plugin-support"
 import { useConfig } from "../config"
 import { useTuiLifecycle } from "../context/runtime"
 import { useClient } from "../context/client"
@@ -664,6 +663,8 @@ async function resolvePlugin(
   // version needs no re-resolution (which could otherwise hit npm).
   if (!local && previous && sameOptions(previous.options, options))
     return { status: "unchanged" as const, plugin: previous.plugin, version: previous.version }
+  // The TSX transform pulls in Babel, so it loads only once an external plugin needs importing.
+  await import("#runtime-plugin-support")
   const target = local
     ? { directory: fileURLToPath(local) }
     : await trace("prepare", { reconciliation, target: spec, install }, () => packages.prepare(spec, install))

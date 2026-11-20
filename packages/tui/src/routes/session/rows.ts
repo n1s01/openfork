@@ -1,5 +1,5 @@
 import type { SessionInboxEnqueued, SessionMessageAssistant, SessionMessageInfo } from "@opencode/client"
-import { createEffect, on, onCleanup, type Accessor } from "solid-js"
+import { createEffect, createMemo, on, onCleanup, type Accessor } from "solid-js"
 import { createStore, produce, reconcile } from "solid-js/store"
 import { useConfig } from "../../config"
 import { useData } from "../../context/data"
@@ -8,7 +8,6 @@ import {
   append,
   completePrevious,
   groupRefs,
-  hasPart,
   messagePath,
   partitionPending,
   partPath,
@@ -84,10 +83,20 @@ export function createSessionRows(
     return rows
   }
 
+  // Parts already present in `rows`, so the many deltas for a known part skip walking every group.
+  // Only `rebuild` replaces rows wholesale; `appendPart` is the only other place that adds parts.
+  let knownParts = new Set<string>()
+
   // Rows have no `id`, Solid's default reconcile key. Matching by position instead would move every
   // row into another store object whenever older history is prepended, remounting the whole transcript.
   // Rows inserted live carry no key, so key the current rows too before matching.
   function rebuild() {
+    const reduced = reduce()
+    knownParts = new Set(
+      reduced.flatMap((row) =>
+        row.type === "part" ? [partKey(row.ref)] : row.type === "group" ? groupRefs(row, true).map(partKey) : [],
+      ),
+    )
     setRows(
       produce((draft) => {
         draft.forEach((row) => {
@@ -97,7 +106,7 @@ export function createSessionRows(
     )
     setRows(
       reconcile(
-        reduce().map((row) => ({ ...row, key: rowKey(row) })),
+        reduced.map((row) => ({ ...row, key: rowKey(row) })),
         { key: "key" },
       ),
     )
@@ -148,44 +157,36 @@ export function createSessionRows(
   // their first run: the mount effect above has already reduced the same state.
   createEffect(on(revertBoundary, rebuild, { defer: true }))
 
-  createEffect(
-    on(
-      () =>
-        data.session.pending.list(sessionID()).flatMap((item) => {
-          if (item.type === "compaction") return [`${item.id}:compaction`]
-          if (item.type === "user" && item.delivery === "queue") return [`${item.id}:queue`]
-          return []
-        }),
-      rebuild,
-      { defer: true },
-    ),
+  // `on` reruns whenever its source does, so these sources are string memos: steering items and
+  // assistant steps re-run the source without changing what a reduction would place.
+  const queued = createMemo(() =>
+    data.session.pending
+      .list(sessionID())
+      .flatMap((item) => {
+        if (item.type === "compaction") return [`${item.id}:compaction`]
+        if (item.type === "user" && item.delivery === "queue") return [`${item.id}:queue`]
+        return []
+      })
+      .join("|"),
   )
+  createEffect(on(queued, rebuild, { defer: true }))
 
-  createEffect(
-    on(
-      () =>
-        data.session.message.list(sessionID()).flatMap((message) =>
-          message.type === "user" || message.type === "synthetic"
-            ? [
-                {
-                  id: message.id,
-                  created: message.time.created,
-                  input: data.session.input.has(sessionID(), message.id),
-                },
-              ]
-            : message.type === "compaction" || message.type === "idle"
-              ? [
-                  {
-                    id: message.id,
-                    created: message.time.created,
-                  },
-                ]
-              : [],
-        ),
-      rebuild,
-      { defer: true },
-    ),
-  )
+  // Assistant steps extend the rows through the part and footer events below. The oldest ID
+  // covers prepended history pages, which may hold only assistant messages.
+  const structure = createMemo(() => {
+    const messages = data.session.message.list(sessionID())
+    return [
+      messages[0]?.id,
+      ...messages.flatMap((message) =>
+        message.type === "user" || message.type === "synthetic"
+          ? [`${message.id}:${message.time.created}:${data.session.input.has(sessionID(), message.id)}`]
+          : message.type === "compaction" || message.type === "idle"
+            ? [`${message.id}:${message.time.created}`]
+            : [],
+      ),
+    ].join("|")
+  })
+  createEffect(on(structure, rebuild, { defer: true }))
 
   createEffect(on([turnTokens, verbosity], rebuild, { defer: true }))
 
@@ -202,14 +203,15 @@ export function createSessionRows(
       }),
     )
 
-  const appendPart = (ref: PartRef, part: AppendPart) =>
+  const appendPart = (ref: PartRef, part: AppendPart) => {
+    if (!knownParts.has(partKey(ref))) {
+      knownParts.add(partKey(ref))
+      setRows(produce((draft) => append(draft, ref, part, queuedStart(draft), verbosity())))
+      return
+    }
+    if (part.type !== "reasoning" || part.time?.completed === undefined) return
     setRows(
       produce((draft) => {
-        if (!hasPart(draft, ref)) {
-          append(draft, ref, part, queuedStart(draft), verbosity())
-          return
-        }
-        if (part.type !== "reasoning" || part.time?.completed === undefined) return
         const row = draft.find(
           (row) =>
             row.type === "group" &&
@@ -219,6 +221,7 @@ export function createSessionRows(
         if (row?.type === "group" && row.kind === "reasoning") row.completed = true
       }),
     )
+  }
 
   const appendFooter = (messageID: string) =>
     setRows(
@@ -324,6 +327,10 @@ export function createSessionRows(
   onCleanup(() => subscriptions.forEach((unsubscribe) => unsubscribe()))
 
   return rows
+}
+
+function partKey(ref: PartRef) {
+  return `${ref.messageID}\0${ref.partID}`
 }
 
 function rowKey(row: SessionRow) {

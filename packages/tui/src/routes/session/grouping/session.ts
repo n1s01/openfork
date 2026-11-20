@@ -174,11 +174,3 @@ export function partitionPending(rows: SessionRow[], pending: Set<string>) {
     row.pending = groupRefs(row, true).filter((ref) => pending.has(ref.partID))
   })
 }
-
-export function hasPart(rows: SessionRow[], ref: PartRef) {
-  return rows.some((row) => {
-    if (row.type === "part") return row.ref.messageID === ref.messageID && row.ref.partID === ref.partID
-    if (row.type !== "group") return false
-    return groupRefs(row, true).some((item) => item.messageID === ref.messageID && item.partID === ref.partID)
-  })
-}

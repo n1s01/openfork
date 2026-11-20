@@ -214,9 +214,6 @@ export type TuiInput = {
 export const run = Effect.fn("Tui.run")(function* (input: TuiInput) {
   const log = input.log ?? (() => {})
   const global = yield* Global.Service
-  const config = Config.resolve(yield* Effect.tryPromise(() => input.config.get()), {
-    terminalSuspend: process.platform !== "win32",
-  })
   const headers = Service.headers(input.server.endpoint)
   const options = {
     baseUrl: input.server.endpoint.url,
@@ -224,12 +221,22 @@ export const run = Effect.fn("Tui.run")(function* (input: TuiInput) {
     fetch: noTimeoutFetch,
   }
   const api = OpenCode.make(options)
-  const location = yield* Effect.tryPromise(() => api.file.list({ location: { directory: process.cwd() } })).pipe(
-    Effect.map((response) => response.location),
-    Effect.catch(() => Effect.tryPromise(() => api.location.get())),
+  // Independent startup reads; the location request is a server round trip, so overlap the rest with it.
+  const [resolved, location, pluginDirectories] = yield* Effect.all(
+    [
+      Effect.tryPromise(() => input.config.get()),
+      Effect.tryPromise(() => api.file.list({ location: { directory: process.cwd() } })).pipe(
+        Effect.map((response) => response.location),
+        Effect.catch(() => Effect.tryPromise(() => api.location.get())),
+      ),
+      Effect.promise(() => localPluginDirectories(process.cwd(), global.config)),
+    ],
+    { concurrency: "unbounded" },
   )
+  const config = Config.resolve(resolved, {
+    terminalSuspend: process.platform !== "win32",
+  })
   const directory = location.directory
-  const pluginDirectories = yield* Effect.promise(() => localPluginDirectories(process.cwd(), global.config))
   const handoff = input.terminalHandoff ? yield* Effect.promise(input.terminalHandoff) : undefined
   const managed = input.server.service
   const service = managed
@@ -314,7 +321,9 @@ export const run = Effect.fn("Tui.run")(function* (input: TuiInput) {
       )
       renderer.once("destroy", () => shutdown.openUnsafe())
       yield* Effect.tryPromise(async () => {
-        const mode = handoff?.mode ?? (await renderer.waitForThemeMode(1000)) ?? "dark"
+        // Terminals that never answer the colour query would otherwise hold the first frame. A late
+        // answer still applies: the theme context follows THEME_MODE events.
+        const mode = handoff?.mode ?? (await renderer.waitForThemeMode(300)) ?? "dark"
         if (renderer.isDestroyed) return
 
         await render(() => {
