@@ -147,9 +147,18 @@ export const options = Effect.fnUntraced(function* (input: { readonly checkVersi
     file,
     version: input.checkVersion ? OPENCODE_VERSION : undefined,
     env: processEnv((yield* read()).env),
-    command: [...selfCommand(), "serve", "--service"],
+    command: [...serviceCommand(), "serve", "--service"],
   }
 })
+
+// OpenFork: the shared background service is upstream OpenCode's. Start the `opencode` binary when
+// it is installed (override with OPENFORK_SERVICE_BIN), and fall back to this binary otherwise.
+function serviceCommand(): string[] {
+  const explicit = process.env.OPENCODE_SERVICE_BIN
+  if (explicit) return [explicit]
+  const upstream = Bun.which("opencode")
+  return upstream ? [upstream] : selfCommand()
+}
 
 export const read = Effect.fn("cli.service-config.read")(function* () {
   const { fs, configFile, legacyConfigFile } = yield* paths

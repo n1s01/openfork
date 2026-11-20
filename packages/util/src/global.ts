@@ -9,8 +9,9 @@ import { roots } from "#global-roots"
 import { Flock } from "./flock.js"
 import { makeGlobalNode } from "./effect/app-node.js"
 
-// OpenFork keeps its own data/config/cache/state so it never clobbers an upstream OpenCode install.
-const app = "openfork"
+// OpenFork is a different window onto the same OpenCode install: it shares OpenCode's data, config,
+// cache and state (sessions, settings, the background service registration).
+const app = "opencode"
 const { data, cache, config, state, tmp } = roots(app)
 
 const paths = {

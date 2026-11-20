@@ -1,5 +1,5 @@
-import { createMemo, createSignal, For, Match, Show, Switch } from "solid-js"
-import { RGBA, type Renderable } from "@opentui/core"
+import { createEffect, createMemo, createSignal, For, Match, onCleanup, Show, Switch } from "solid-js"
+import { RGBA, type BoxRenderable, type Renderable } from "@opentui/core"
 import { useRenderer, type JSX } from "@opentui/solid"
 import type { SessionMessageAssistantTool, SessionMessageInfo } from "@opencode/client"
 import { useTheme } from "../../context/theme"
@@ -126,6 +126,20 @@ function GroupContent(props: GroupProps) {
     return `${completed() ? "Explored" : "Exploring"}: ${names.join(", ")}`
   })
   const toggle = () => disclosure.toggle()
+  const [box, setBox] = createSignal<BoxRenderable>()
+  useSticky({
+    node: box,
+    when: () =>
+      expanded() &&
+      grouped() &&
+      (props.node.kind === "reasoning" ? thoughts().length > 0 && props.completed : tools().length > 0),
+    icon: () => (props.node.kind === "reasoning" ? "-" : "→"),
+    label: () =>
+      props.node.kind === "reasoning"
+        ? ["Thought", thoughts().length > 1 ? ` · ${thoughts().length} steps` : "", duration() ? ` · ${Locale.duration(duration())}` : ""].join("")
+        : label(),
+    collapse: toggle,
+  })
   const children = (mode: "normal" | "thought" | "tool") => (
     <Children {...props} nodes={props.node.children} mode={mode} />
   )
@@ -134,6 +148,7 @@ function GroupContent(props: GroupProps) {
     <GroupAnchor
       groupID={id()}
       active={grouped() && (props.node.kind === "reasoning" ? thoughts().length > 0 : tools().length > 0)}
+      ref={setBox}
     >
       <Show
         when={props.node.kind === "reasoning"}
@@ -204,8 +219,16 @@ function ActivityGroup(props: GroupProps) {
   const [hover, setHover] = createSignal(false)
   const entries = createMemo(() => descendants(props.node))
   const summary = createMemo(() => summarizeActivity(props.node, props.message, props.pending, props.completed))
+  const [box, setBox] = createSignal<BoxRenderable>()
+  useSticky({
+    node: box,
+    when: () => disclosure.expanded() && summary().label !== "",
+    icon: () => "−",
+    label: () => summary().label,
+    collapse: () => disclosure.toggle(),
+  })
   return (
-    <GroupAnchor groupID={disclosure.id()} active={summary().label !== ""}>
+    <GroupAnchor groupID={disclosure.id()} active={summary().label !== ""} ref={setBox}>
       <Show when={summary().label}>
         <InlineToolRow
           icon={disclosure.expanded() ? "−" : "+"}
@@ -243,8 +266,16 @@ function InstructionsGroup(props: GroupProps) {
         ),
       ).size,
   )
+  const [box, setBox] = createSignal<BoxRenderable>()
+  useSticky({
+    node: box,
+    when: () => disclosure.expanded() && files() > 0,
+    icon: () => "◈",
+    label: () => `Instructions: ${files()} ${files() === 1 ? "file" : "files"}`,
+    collapse: () => disclosure.toggle(),
+  })
   return (
-    <GroupAnchor groupID={disclosure.id()} active={files() > 0}>
+    <GroupAnchor groupID={disclosure.id()} active={files() > 0} ref={setBox}>
       <InlineToolRow
         icon="◈"
         color={hover() ? theme.text.base : theme.text.muted}
@@ -261,6 +292,21 @@ function InstructionsGroup(props: GroupProps) {
       </Show>
     </GroupAnchor>
   )
+}
+
+/** OpenFork: while expanded, the group's header can pin to the top of the transcript (see Session). */
+function useSticky(input: {
+  node: () => BoxRenderable | undefined
+  when: () => boolean
+  icon: () => string
+  label: () => string
+  collapse: () => void
+}) {
+  const ctx = use()
+  createEffect(() => {
+    if (!input.when() || !input.node() || !ctx.registerSticky) return
+    onCleanup(ctx.registerSticky({ node: input.node, icon: input.icon, label: input.label, collapse: input.collapse }))
+  })
 }
 
 function useDisclosure(props: GroupProps) {

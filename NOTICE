@@ -14,10 +14,13 @@ Forked at:  upstream branch `dev`, commit 906e370146 (OpenCode 2.3.x), 2026-11-2
 Changes made in this fork (summary):
 - The product is renamed to OpenFork: the CLI binary is `openfork`, and the
   user-facing name in the CLI, TUI, web app and desktop strings is "OpenFork".
-- Global data, config, cache and state live under `openfork` directories
-  (e.g. ~/.config/openfork), separate from an upstream OpenCode install.
-- `openfork.json(c)` and `.openfork/` are read in addition to the upstream
-  `opencode.json(c)` and `.opencode/` project config.
+- OpenFork is a different window onto the same OpenCode install: it shares
+  OpenCode's data, config and sessions and attaches to the OpenCode background
+  service (starting the upstream `opencode` binary when none is running). It
+  never replaces that service on a version mismatch.
+- TUI: the header of an expanded group (activity, thoughts, exploration,
+  instructions) stays pinned at the top while you scroll inside it; click it to
+  collapse the group in place.
 - `OPENFORK_*` environment variables are accepted as aliases for `OPENCODE_*`.
 - Self-update from the upstream release service is disabled.
 

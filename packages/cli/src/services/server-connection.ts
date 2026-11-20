@@ -52,7 +52,9 @@ export const resolve = Effect.fn("cli.server-connection.resolve")(function* (arg
     return { endpoint: yield* Standalone.start(), standalone: true } satisfies Resolved
   }
 
-  const mismatch = args.mismatch ?? "ignore"
+  // OpenFork attaches to the OpenCode background service as it is: replacing it on a version
+  // mismatch would swap the user's OpenCode server for this fork (and OpenCode would swap it back).
+  const mismatch = args.mismatch === "error" ? "error" : "ignore"
   const options = yield* ServiceConfig.options({ checkVersion: mismatch !== "ignore" })
   if (args.autostart === false) {
     const endpoint = yield* Service.discover({ ...options, version: undefined })

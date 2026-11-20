@@ -24,6 +24,10 @@ const env = {
 const CHANNEL = await (async () => {
   if (env.OPENCODE_CHANNEL) return env.OPENCODE_CHANNEL
   if (env.OPENCODE_VERSION && !env.OPENCODE_VERSION.startsWith("0.0.0-")) return "latest"
+  // OpenFork: build on the "dev" channel, which upstream treats like stable for the background
+  // service (service.json, port 0xC0DE) and database (opencode.db). OpenFork then attaches to the
+  // same OpenCode server and sessions instead of running its own. Set OPENCODE_CHANNEL to opt out.
+  if (!process.env["OPENFORK_BRANCH_CHANNEL"]) return "dev"
   const branch = await $`git branch --show-current`.text().then((x) => x.trim())
   if (!branch) return "detached"
   const channel = branch.replace(/[^a-zA-Z0-9._-]/g, "-")

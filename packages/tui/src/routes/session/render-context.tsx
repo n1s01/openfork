@@ -9,6 +9,15 @@ import type { GroupKind } from "./grouping/session"
 
 export type PendingAction = "steer" | "queue" | "cancel"
 
+/** OpenFork: an expanded disclosure whose header pins to the top of the transcript while its body is on screen. */
+export type StickyGroup = {
+  /** The whole group (header + body). */
+  node: () => Renderable | undefined
+  icon: () => string
+  label: () => string
+  collapse: () => void
+}
+
 export const context = createContext<{
   /** Content width: terminal width minus vertical tabs, sidebar, and padding. */
   width: number
@@ -24,6 +33,8 @@ export const context = createContext<{
   groupExpanded: (groupID: string, kind: GroupKind) => boolean
   /** An anchor keeps its viewport row through the layout change the toggle causes. */
   setGroupExpanded: (groupID: string, expanded: boolean, anchor?: Renderable | null) => void
+  /** OpenFork: registers an expanded group for the sticky header; returns the unregister function. */
+  registerSticky?: (group: StickyGroup) => () => void
   thinkingMode: () => ThinkingMode
   markdownMode: () => "source" | "rendered"
   groupExploration: () => boolean

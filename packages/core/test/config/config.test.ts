@@ -353,14 +353,14 @@ describe("Config", () => {
 
   test("resolves the system configuration directory per platform", () => {
     expect(ConfigDiscovery.systemDirectory("darwin", {})).toBe(
-      AbsolutePath.make("/Library/Application Support/openfork"),
+      AbsolutePath.make("/Library/Application Support/opencode"),
     )
-    expect(ConfigDiscovery.systemDirectory("linux", {})).toBe(AbsolutePath.make("/etc/openfork"))
+    expect(ConfigDiscovery.systemDirectory("linux", {})).toBe(AbsolutePath.make("/etc/opencode"))
     expect(ConfigDiscovery.systemDirectory("win32", { ProgramData: "D:\\ProgramData" })).toBe(
-      AbsolutePath.make(path.join("D:\\ProgramData", "openfork")),
+      AbsolutePath.make(path.join("D:\\ProgramData", "opencode")),
     )
     expect(ConfigDiscovery.systemDirectory("win32", {})).toBe(
-      AbsolutePath.make(path.join("C:\\ProgramData", "openfork")),
+      AbsolutePath.make(path.join("C:\\ProgramData", "opencode")),
     )
   })
 
@@ -1710,7 +1710,7 @@ describe("Config", () => {
               {
                 type: "entries",
                 path: tmp.path,
-                names: [".agents", ".claude", ".opencode", ".openfork", "opencode.json", "opencode.jsonc", "openfork.json", "openfork.jsonc"],
+                names: [".agents", ".claude", ".opencode", "opencode.json", "opencode.jsonc"],
               },
             ])
           }).pipe(Effect.provide(testLayer(tmp.path, undefined, undefined, undefined, Watcher.testLayer)))
@@ -2296,7 +2296,7 @@ describe("Config", () => {
             expect(yield* watcher.subscriptions()).toContainEqual({
               path: tmp.path,
               type: "entries",
-              names: [".agents", ".claude", ".opencode", ".openfork", "opencode.json", "opencode.jsonc", "openfork.json", "openfork.jsonc"],
+              names: [".agents", ".claude", ".opencode", "opencode.json", "opencode.jsonc"],
             })
           }).pipe(Effect.provide(testLayer(tmp.path)))
         }),

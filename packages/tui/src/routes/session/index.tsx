@@ -129,7 +129,7 @@ import { SessionLocationMissing } from "./location-missing"
 import { isRecord } from "../../util/record"
 import { parseTodos } from "../../util/todo"
 import { createHistoryPrepend } from "./history"
-import { context, use, type PendingAction } from "./render-context"
+import { context, use, type PendingAction, type StickyGroup } from "./render-context"
 import { INLINE_TOOL_ICON_WIDTH, InlineToolRow, ReasoningPart, TextPart, toolDisplay } from "./message-parts"
 import { defaultVerbosity, type GroupKind, type SessionEntry } from "./grouping/session"
 import { SessionGroupView } from "./group-view"
@@ -533,7 +533,56 @@ export function Session(props: {
     if (visibleEnd() < rows.length) return true
     return scroll.scrollTop < Math.max(0, scroll.scrollHeight - scroll.viewport.height)
   }
+  // OpenFork: sticky header for the expanded group the reader is inside of.
+  const [stickyGroups, setStickyGroups] = createSignal<readonly StickyGroup[]>([])
+  const [sticky, setSticky] = createSignal<{ group: StickyGroup; offset: number }>()
+  const [stickyHovered, setStickyHovered] = createSignal(false)
+  function updateSticky() {
+    if (!scroll || scroll.isDestroyed) return setSticky(undefined)
+    const top = scroll.viewport.y
+    let best: { group: StickyGroup; y: number; x: number } | undefined
+    for (const group of stickyGroups()) {
+      const node = group.node()
+      if (!node || node.isDestroyed || node.height <= 1) continue
+      // The header has scrolled above the viewport while the body still fills the pinned row and below.
+      if (node.y >= top || node.y + node.height <= top + 1) continue
+      // Nested groups start further down; the innermost one wins.
+      if (!best || node.y > best.y) best = { group, y: node.y, x: node.x }
+    }
+    if (!best) return setSticky(undefined)
+    const offset = Math.max(0, best.x - scroll.x)
+    const current = sticky()
+    if (current?.group === best.group && current.offset === offset) return
+    setSticky({ group: best.group, offset })
+  }
+  const registerSticky = (group: StickyGroup) => {
+    setStickyGroups((list) => [...list, group])
+    afterLayout(updateSticky)
+    return () => {
+      setStickyGroups((list) => list.filter((item) => item !== group))
+      if (sticky()?.group === group) setSticky(undefined)
+      afterLayout(updateSticky)
+    }
+  }
+  function collapseSticky() {
+    const item = sticky()?.group
+    const node = item?.node()
+    if (!item || !node || !scroll || scroll.isDestroyed) return
+    // Collapse in place: the group's header lands on the row the pinned copy occupied.
+    const contentY = scroll.scrollTop + node.y - scroll.viewport.y
+    scroll.stickyScroll = false
+    setSticky(undefined)
+    setStickyHovered(false)
+    item.collapse()
+    afterLayout(() => {
+      scroll.scrollTop = Math.max(0, Math.min(contentY, scroll.scrollHeight - scroll.viewport.height))
+      updateSticky()
+      updateAwayFromBottom()
+    })
+  }
+
   function updateAwayFromBottom() {
+    updateSticky()
     const preserveWindow = revealingOlderRows || revealingNewerRows || !!ensureAllRowsPending || !!firstJump()
     if (isAwayFromBottom()) setHiddenRows((current) => current ?? hidden())
     if (awayTimer) clearTimeout(awayTimer)
@@ -1488,6 +1537,7 @@ export function Session(props: {
       value={{
         anchors,
         groupExpanded,
+        registerSticky,
         setGroupExpanded: (id, expanded, anchor) => {
           // A group that ends the transcript would open off screen while the reader follows the bottom.
           const last = rows.findLast((row) => row.type !== "assistant-footer" && row.type !== "turn-usage")
@@ -1581,6 +1631,32 @@ export function Session(props: {
                   {(height) => <box id={NAVIGATION_SLACK_ID} height={height()} flexShrink={0} />}
                 </Show>
               </scrollbox>
+              <Show when={sticky()}>
+                {(item) => (
+                  <box
+                    id="session-sticky-group"
+                    position="absolute"
+                    top={0}
+                    left={item().offset}
+                    right={showScrollbar() ? 2 : 0}
+                    height={1}
+                    zIndex={10}
+                    backgroundColor={theme.background.base}
+                  >
+                    <InlineToolRow
+                      icon={item().group.icon()}
+                      color={stickyHovered() ? theme.text.base : theme.text.muted}
+                      complete={true}
+                      pending={item().group.label()}
+                      onMouseOver={() => setStickyHovered(true)}
+                      onMouseOut={() => setStickyHovered(false)}
+                      onMouseUp={collapseSticky}
+                    >
+                      {item().group.label()}
+                    </InlineToolRow>
+                  </box>
+                )}
+              </Show>
             </box>
             <box height={1} flexShrink={0} flexDirection="row" justifyContent="flex-end">
               <Show when={firstJump()}>
