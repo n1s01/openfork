@@ -533,7 +533,9 @@ export function Session(props: {
     if (visibleEnd() < rows.length) return true
     return scroll.scrollTop < Math.max(0, scroll.scrollHeight - scroll.viewport.height)
   }
-  // OpenFork: sticky header for the expanded group the reader is inside of.
+  // OpenFork: sticky header for the expanded group the reader is inside of
+  // (one blank row above and below the header row).
+  const STICKY_HEIGHT = 3
   const [stickyGroups, setStickyGroups] = createSignal<readonly StickyGroup[]>([])
   const [sticky, setSticky] = createSignal<{ group: StickyGroup; offset: number }>()
   const [stickyHovered, setStickyHovered] = createSignal(false)
@@ -544,8 +546,8 @@ export function Session(props: {
     for (const group of stickyGroups()) {
       const node = group.node()
       if (!node || node.isDestroyed || node.height <= 1) continue
-      // The header has scrolled above the viewport while the body still fills the pinned row and below.
-      if (node.y >= top || node.y + node.height <= top + 1) continue
+      // The header has scrolled above the viewport while the body still fills the pinned rows and below.
+      if (node.y >= top || node.y + node.height <= top + STICKY_HEIGHT) continue
       // Nested groups start further down; the innermost one wins.
       if (!best || node.y > best.y) best = { group, y: node.y, x: node.x }
     }
@@ -575,7 +577,7 @@ export function Session(props: {
     setStickyHovered(false)
     item.collapse()
     afterLayout(() => {
-      scroll.scrollTop = Math.max(0, Math.min(contentY, scroll.scrollHeight - scroll.viewport.height))
+      scroll.scrollTop = Math.max(0, Math.min(contentY - 1, scroll.scrollHeight - scroll.viewport.height))
       updateSticky()
       updateAwayFromBottom()
     })
@@ -1639,7 +1641,9 @@ export function Session(props: {
                     top={0}
                     left={item().offset}
                     right={showScrollbar() ? 2 : 0}
-                    height={1}
+                    height={STICKY_HEIGHT}
+                    paddingTop={1}
+                    paddingBottom={1}
                     zIndex={10}
                     backgroundColor={theme.background.base}
                   >
