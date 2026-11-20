@@ -20,7 +20,7 @@ import {
   type Verbosity,
   defaultVerbosity,
 } from "./grouping/session"
-import { groupID } from "./anchors"
+import { firstRef, groupID } from "./anchors"
 export type { CacheUsage, PartRef, SessionRow } from "./grouping/session"
 
 /**
@@ -479,7 +479,7 @@ function rowBoundaryMessageID(row: SessionRow, messages: Map<string, SessionMess
     row.type === "part"
       ? row.ref.messageID
       : row.type === "group"
-        ? groupRefs(row)[0]?.messageID
+        ? firstRef(row.children)?.messageID
         : row.type === "assistant-footer"
           ? row.messageID
           : row.type === "turn-usage"

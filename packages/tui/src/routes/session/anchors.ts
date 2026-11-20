@@ -27,7 +27,7 @@ export function groupID(node: Extract<SessionNode, { type: "group" }>, level: nu
   return ref && JSON.stringify([ref.messageID, ref.partID, node.kind, level])
 }
 
-function firstRef(nodes: readonly SessionNode[]): PartRef | undefined {
+export function firstRef(nodes: readonly SessionNode[]): PartRef | undefined {
   for (const node of nodes) {
     const ref = node.type === "entry" ? entryRef(node.entry) : firstRef(node.children)
     if (ref) return ref

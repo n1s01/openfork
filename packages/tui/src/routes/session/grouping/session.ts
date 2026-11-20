@@ -125,6 +125,12 @@ export function append(
     // Permission-blocked tools remain at the end, just as the former refs/pending
     // partition did. Inserting a new ref must precede those blocked tools.
     const pending = previous.kind === "exploration" ? previous.pending.length : 0
+    if (pending === 0) {
+      previous.size += node.size
+      appendChain(previous.children as SessionNode[], node.children[0])
+      if (part.type === "reasoning") previous.completed &&= part.time?.completed !== undefined
+      return
+    }
     const [left, right] = splitGroups([previous], previous.size - pending)
     const [merged] = mergeGroups(mergeGroups(left, [node]), right)
     if (merged.type !== "group") throw new Error("Expected merged session group")
@@ -139,6 +145,23 @@ export function append(
     0,
     sessionGroup(node, node.kind === "reasoning" && part.type === "reasoning" && part.time?.completed !== undefined),
   )
+}
+
+/**
+ * Append a fresh single-leaf chain in place, descending the last-child seam while kinds match.
+ * Unlike mergeGroups, existing subgroups keep their object identity, so keyed renderers
+ * (`<For>`) extend them instead of remounting the subgroup the new part joins.
+ */
+function appendChain(nodes: SessionNode[], item: SessionNode) {
+  const last = nodes.at(-1)
+  if (last?.type !== "group" || item.type !== "group" || last.kind !== item.kind) {
+    nodes.push(item)
+    return
+  }
+  // The published tree is readonly; rows are only mutated here, inside the store's produce.
+  const group: { size: number } = last
+  group.size += item.size
+  appendChain(last.children as SessionNode[], item.children[0])
 }
 
 export function completePrevious(rows: SessionRow[], index = rows.length) {

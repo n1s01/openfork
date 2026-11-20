@@ -5,6 +5,7 @@ import {
   createSignal,
   For,
   Index,
+  mapArray,
   Match,
   on,
   onCleanup,
@@ -150,6 +151,8 @@ const BACKGROUND_TOOL_HINT_DELAY = 3_000
 // The tail comfortably overfills a tall viewport; older rows mount as the reader approaches them.
 const TRANSCRIPT_TAIL_ROWS = 40
 const TRANSCRIPT_BACKFILL_CHUNK = 60
+// Backfill chunks kept mounted while reading through history; the far edge unmounts beyond this.
+const TRANSCRIPT_WINDOW_CHUNKS = 3
 
 export function Session(props: {
   scrollRef?: (scroll: ScrollBoxRenderable | undefined) => void
@@ -310,13 +313,13 @@ export function Session(props: {
   const sessionTabs = useSessionTabs()
   const [awayFromBottom, setAwayFromBottom] = createSignal(false)
   const [latestHovered, setLatestHovered] = createSignal(false)
-  let ensureAllRowsPending: (() => void)[] | undefined
+  let mountRowsPending: (() => void)[] | undefined
   createEffect(() => {
     if (!awayFromBottom()) setLatestHovered(false)
   })
 
   const clearMessageNavigation = () => {
-    ensureAllRowsPending?.splice(0)
+    mountRowsPending?.splice(0)
     prependHistory.cancel()
     firstJump()?.()
     setFirstJump(undefined)
@@ -429,14 +432,12 @@ export function Session(props: {
   // at the bottom the hidden span follows appends; leaving the bottom pins it to preserve the viewport.
   const [hiddenRows, setHiddenRows] = createSignal<number>()
   const [visibleRowsEnd, setVisibleRowsEnd] = createSignal<number>()
-  const weights = createMemo(() =>
-    rows.map((row) =>
-      rowWeight(row, {
-        expanded: groupExpanded,
-        grouped: groupedKind,
-      }),
-    ),
+  // One memo per row: appending a part or toggling a group recomputes that row's weight only.
+  const rowWeights = mapArray(
+    () => rows,
+    (row) => createMemo(() => rowWeight(row, { expanded: groupExpanded, grouped: groupedKind })),
   )
+  const weights = createMemo(() => rowWeights().map((weight) => weight()))
   const hidden = createMemo(() =>
     Math.min(hiddenRows() ?? Infinity, rowsBefore(weights(), rows.length, TRANSCRIPT_TAIL_ROWS)),
   )
@@ -473,7 +474,12 @@ export function Session(props: {
     revealingOlderRows = true
     scroll.stickyScroll = false
     pinAbove()
-    setHiddenRows(rowsBefore(weights(), current, TRANSCRIPT_BACKFILL_CHUNK))
+    const next = rowsBefore(weights(), current, TRANSCRIPT_BACKFILL_CHUNK)
+    setHiddenRows(next)
+    // Reading back through history keeps a bounded window: rows far below the reader unmount
+    // and remount through revealNewerRows when they scroll back into reach.
+    const end = rowsAfter(weights(), next, TRANSCRIPT_WINDOW_CHUNKS * TRANSCRIPT_BACKFILL_CHUNK)
+    if (end < visibleEnd()) setVisibleRowsEnd(end)
     afterLayout(() => {
       scroll.scrollBy(scrollBy)
       scroll.stickyScroll = !navigationMessage()
@@ -494,6 +500,11 @@ export function Session(props: {
       return false
     revealingNewerRows = true
     const next = rowsAfter(weights(), current, TRANSCRIPT_BACKFILL_CHUNK)
+    const start = rowsBefore(weights(), next, TRANSCRIPT_WINDOW_CHUNKS * TRANSCRIPT_BACKFILL_CHUNK)
+    if (start > hidden()) {
+      pinAbove()
+      setHiddenRows(start)
+    }
     setVisibleRowsEnd(next === rows.length ? undefined : next)
     afterLayout(() => {
       revealingNewerRows = false
@@ -502,20 +513,24 @@ export function Session(props: {
     })
     return true
   }
-  /** Message navigation needs the full transcript mounted before walking or jumping. */
-  const ensureAllRows = (continuation: () => void) => {
+  /**
+   * Mounts rows [start, end) before continuing, so message navigation can read mounted anchors
+   * without mounting the whole transcript. Rows mounted above the viewport keep it pinned.
+   */
+  const mountRows = (start: number, end: number, continuation: () => void) => {
     if (firstJump()) clearMessageNavigation()
-    if (!ensureAllRowsPending && hidden() === 0 && visibleEnd() === rows.length) return continuation()
-    if (ensureAllRowsPending) {
-      ensureAllRowsPending.push(continuation)
+    if (!mountRowsPending && hidden() <= start && visibleEnd() >= end) return continuation()
+    if (mountRowsPending) {
+      mountRowsPending.push(() => mountRows(start, end, continuation))
       return
     }
     const pending = [continuation]
-    ensureAllRowsPending = pending
-    setHiddenRows(0)
-    setVisibleRowsEnd(undefined)
+    mountRowsPending = pending
+    if (start < hidden()) pinAbove()
+    setHiddenRows(start)
+    setVisibleRowsEnd(end >= rows.length ? undefined : end)
     afterLayout(() => {
-      if (ensureAllRowsPending === pending) ensureAllRowsPending = undefined
+      if (mountRowsPending === pending) mountRowsPending = undefined
       pending.forEach((continuation) => continuation())
       updateAwayFromBottom()
     })
@@ -525,7 +540,7 @@ export function Session(props: {
     if (
       revealingOlderRows ||
       revealingNewerRows ||
-      ensureAllRowsPending ||
+      mountRowsPending ||
       navigationMessage() ||
       navigationSlack() ||
       firstJump()
@@ -586,7 +601,7 @@ export function Session(props: {
 
   function updateAwayFromBottom() {
     updateSticky()
-    const preserveWindow = revealingOlderRows || revealingNewerRows || !!ensureAllRowsPending || !!firstJump()
+    const preserveWindow = revealingOlderRows || revealingNewerRows || !!mountRowsPending || !!firstJump()
     if (isAwayFromBottom()) setHiddenRows((current) => current ?? hidden())
     if (awayTimer) clearTimeout(awayTimer)
     awayTimer = setTimeout(() => {
@@ -921,7 +936,7 @@ export function Session(props: {
   }
 
   const scrollToMessage = (direction: "next" | "prev", dialog: ReturnType<typeof useDialog>, userOnly = false) =>
-    ensureAllRows(() => {
+    mountRows(hidden(), visibleEnd(), () => {
       const target = findMessageBoundary({
         direction,
         children: anchors.messagePositions(),
@@ -937,6 +952,12 @@ export function Session(props: {
         dialog.clear()
         return
       }
+      // The mounted window has no boundary that way; widen it by one chunk and look again.
+      const retry = () => scrollToMessage(direction, dialog, userOnly)
+      if (direction === "prev" && hidden() > 0)
+        return mountRows(rowsBefore(weights(), hidden(), TRANSCRIPT_BACKFILL_CHUNK), visibleEnd(), retry)
+      if (direction === "next" && visibleEnd() < rows.length)
+        return mountRows(hidden(), rowsAfter(weights(), visibleEnd(), TRANSCRIPT_BACKFILL_CHUNK), retry)
       if (direction === "prev" && data.session.message.more(route.sessionID)) {
         prependHistory(0, () => scrollToMessage(direction, dialog, userOnly))
         return
@@ -944,18 +965,24 @@ export function Session(props: {
       dialog.clear()
     })
 
-  const jumpToMessage = (messageID: string) =>
-    ensureAllRows(() => {
+  const jumpToMessage = (messageID: string) => {
+    // A target outside the mounted window gets a fresh window around it instead of the whole transcript.
+    const index = boundaries().indexOf(messageID)
+    const outside = index !== -1 && (index < hidden() || index >= visibleEnd())
+    const start = outside ? rowsBefore(weights(), index, TRANSCRIPT_BACKFILL_CHUNK) : hidden()
+    const end = outside ? rowsAfter(weights(), index, TRANSCRIPT_BACKFILL_CHUNK) : visibleEnd()
+    mountRows(start, end, () => {
       const child = anchors.forMessage(messageID)
       if (!child) return
       const y = scroll.scrollTop + child.node.y - scroll.viewport.y
       const message = data.session.message.get(route.sessionID, messageID)
       alignMessage(messageID, Math.max(0, y - (message?.type === "assistant" ? 1 : 0)))
     })
+  }
 
   function toBottom() {
     clearMessageNavigation()
-    ensureAllRowsPending = undefined
+    mountRowsPending = undefined
     if (awayTimer) clearTimeout(awayTimer)
     awayTimer = undefined
     setAwayFromBottom(false)
@@ -1043,7 +1070,7 @@ export function Session(props: {
         setFirstJump(() => cancel)
         const start = () => {
           if (firstJump() !== cancel || scroll.isDestroyed) return
-          if (revealingOlderRows || revealingNewerRows || ensureAllRowsPending) return afterLayout(start)
+          if (revealingOlderRows || revealingNewerRows || mountRowsPending) return afterLayout(start)
           const previous = { start: hiddenRows(), end: visibleRowsEnd() }
           const restore = () => {
             cancel()
@@ -1610,8 +1637,8 @@ export function Session(props: {
                 onMouseScroll={(event) => {
                   if (firstJump()) clearMessageNavigation()
                   if (event.scroll?.direction === "up" && revealOlderRows()) return
-                  if (event.scroll?.direction === "down" && revealNewerRows()) return
-                  updateAwayFromBottom()
+                  if (event.scroll?.direction === "down") revealNewerRows()
+                  // The scrollbar's change listener runs updateAwayFromBottom for the move itself.
                 }}
               >
                 <For each={visibleRows()}>
@@ -3185,7 +3212,10 @@ function ShellDisplay(props: {
       if (!response) break
       if (response.data.output)
         setBackgroundOutput((output) => {
-          const next = stripAnsi(output + response.data.output)
+          // The buffer is already stripped; re-strip only its tail with the new chunk so an escape
+          // sequence split across polls still joins, without rescanning up to 1 MB every second.
+          const cut = Math.max(0, output.length - 256)
+          const next = output.slice(0, cut) + stripAnsi(output.slice(cut) + response.data.output)
           if (next.length <= SHELL_DISPLAY_LIMIT) return next
           setOutputTruncated(true)
           return TextBoundary.tail(next, SHELL_DISPLAY_LIMIT)
@@ -3223,7 +3253,8 @@ function ShellDisplay(props: {
     if (props.shellID) {
       if (props.background && !expanded()) return ""
       if (props.status === "completed" && props.output !== undefined) return stripAnsi(props.output.trim())
-      const text = stripAnsi((backgroundOutput() || props.output || "").trim())
+      const background = backgroundOutput()
+      const text = background ? background.trim() : stripAnsi((props.output ?? "").trim())
       return outputTruncated() ? `[earlier output omitted]\n${text}` : text
     }
     return stripAnsi(props.output?.trim() ?? "")
