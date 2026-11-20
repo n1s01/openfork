@@ -1,4 +1,4 @@
-import { NodeSocket } from "@effect/platform-node"
+import { NodeSocket } from "@opencode/util/effect/node-platform"
 import { Effect, Schema, Stdio, Stream } from "effect"
 import { Socket } from "effect/socket"
 

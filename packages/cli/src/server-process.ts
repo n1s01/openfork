@@ -1,6 +1,6 @@
 export * as ServerProcess from "./server-process"
 
-import { NodeServices } from "@effect/platform-node"
+import { NodeServices } from "@opencode/util/effect/node-platform"
 import { Service } from "@opencode/client/effect/service"
 import { LayerNode } from "@opencode/util/effect/layer-node"
 import { Global } from "@opencode/util/global"

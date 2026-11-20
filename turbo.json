@@ -21,22 +21,30 @@
     // reference it, so those packages also wait for core. Package entries replace the generic one, so they repeat
     // `transit`.
     "typecheck:tsc": {
-      "dependsOn": ["transit"]
+      "dependsOn": ["transit"],
+      // tsc -b keeps declarations and build info here; restoring them on a cache hit lets dependents skip
+      // rebuilding core and lets reruns check incrementally.
+      "outputs": ["node_modules/.ts-dist/**"]
     },
     "@opencode/cli#typecheck:tsc": {
-      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"]
+      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"],
+      "outputs": ["node_modules/.ts-dist/**"]
     },
     "@opencode/sdk#typecheck:tsc": {
-      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"]
+      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"],
+      "outputs": ["node_modules/.ts-dist/**"]
     },
     "@opencode/server#typecheck:tsc": {
-      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"]
+      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"],
+      "outputs": ["node_modules/.ts-dist/**"]
     },
     "@opencode/simulation#typecheck:tsc": {
-      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"]
+      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"],
+      "outputs": ["node_modules/.ts-dist/**"]
     },
     "@opencode/tui#typecheck:tsc": {
-      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"]
+      "dependsOn": ["transit", "@opencode/core#typecheck:tsc"],
+      "outputs": ["node_modules/.ts-dist/**"]
     },
     "test:components": {
       "outputs": [],

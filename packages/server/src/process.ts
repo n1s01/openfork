@@ -1,6 +1,6 @@
 export * as ServerProcess from "./process"
 
-import { NodeHttpServer } from "@effect/platform-node"
+import { NodeHttpServer } from "@opencode/util/effect/node-platform"
 import { Bus } from "@opencode/core/bus"
 import { SessionRestart } from "@opencode/core/session/execution/restart"
 import { Automation } from "@opencode/core/automation"

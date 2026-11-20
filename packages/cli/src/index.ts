@@ -2,7 +2,7 @@
 
 import "./openfork-env"
 import { ensurePluginRuntime } from "@opencode/plugin/runtime"
-import { NodeRuntime, NodeServices } from "@effect/platform-node"
+import { NodeRuntime, NodeServices } from "@opencode/util/effect/node-platform"
 import { Cause, Effect } from "effect"
 import { defaultTeardown, getErrorReported } from "effect/Runtime"
 import { Commands } from "./commands/commands"
