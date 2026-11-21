@@ -8,6 +8,8 @@ import type {
 } from "@opencode/client"
 import { Spinner } from "../../component/spinner"
 import { createSyntaxStyleMemo, useTheme, useThemes } from "../../context/theme"
+import { useSmoothStreaming } from "../../config"
+import { createTextReveal } from "../../ui/animation"
 import { reasoningSummary } from "../../context/thinking"
 import { usePlugin } from "../../plugin/context"
 import { SplitBorder } from "../../ui/border"
@@ -113,6 +115,7 @@ export function ReasoningBody(props: { content: string; streaming: boolean; sour
   const theme = useTheme()
   const { currentSyntax: syntax } = useThemes()
   const renderer = useRenderer()
+  const reveal = createTextReveal(() => props.content, { live: () => props.streaming, enabled: useSmoothStreaming() })
   const thinkingSyntax = createSyntaxStyleMemo(() =>
     generateThinkingSyntax(syntax(), theme.text.muted, renderer.nativeScene),
   )
@@ -123,18 +126,18 @@ export function ReasoningBody(props: { content: string; streaming: boolean; sour
         <code
           filetype="markdown"
           drawUnstyledText={false}
-          streaming={props.sourceStreaming}
+          streaming={props.sourceStreaming || reveal.revealing()}
           syntaxStyle={thinkingSyntax()}
-          content={props.content}
+          content={reveal.text()}
           conceal={false}
           fg={theme.text.muted}
         />
       }
     >
       <markdown
-        streaming={props.streaming}
+        streaming={props.streaming || reveal.revealing()}
         syntaxStyle={thinkingSyntax()}
-        content={props.content}
+        content={reveal.text()}
         tableOptions={{ style: "grid", cellPaddingX: 1 }}
         conceal={true}
         fg={theme.text.muted}
@@ -206,6 +209,8 @@ export function TextPart(props: {
   const theme = useTheme()
   const { currentSyntax: syntax } = useThemes()
   const plugins = usePlugin()
+  const live = () => props.message.time.completed === undefined
+  const reveal = createTextReveal(() => props.part.text.trim(), { live, enabled: useSmoothStreaming() })
   return (
     <Show when={props.part.text.trim()}>
       <box paddingLeft={3} flexShrink={0}>
@@ -214,8 +219,8 @@ export function TextPart(props: {
           ref={useSessionLinks()}
           syntaxStyle={syntax()}
           renderBlock={plugins.markdown()}
-          content={props.part.text.trim()}
-          streaming={props.message.time.completed === undefined}
+          content={reveal.text()}
+          streaming={live() || reveal.revealing()}
           tableOptions={{ style: "grid", cellPaddingX: 1 }}
           conceal={ctx.markdownMode() === "rendered"}
           fg={theme.markdown.text}

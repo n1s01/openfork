@@ -1,6 +1,6 @@
 import type { CliRenderer } from "@opentui/core"
 import { useRenderer } from "@opentui/solid"
-import { createEffect, createSignal, onCleanup, type Accessor } from "solid-js"
+import { createEffect, createSignal, on, onCleanup, type Accessor } from "solid-js"
 
 type AnimatableValue = number | readonly number[]
 type AnimatableTarget = Record<string, AnimatableValue>
@@ -205,6 +205,120 @@ export function createAnimatable<T extends AnimatableTarget>(
   onCleanup(stop)
 
   return { value, animate, jump }
+}
+
+// Reveal pacing. The gap is the expected wait for the next streamed chunk, smoothed over recent arrivals and bounded
+// so a pause (a tool call, a slow first token) does not stretch the next reveal.
+const REVEAL_GAP_MIN = 16
+const REVEAL_GAP_MAX = 400
+const REVEAL_GAP_INITIAL = 80
+const REVEAL_GAP_SMOOTHING = 0.3
+// Once the stream ends, whatever is left lands within about this long.
+const REVEAL_FINISH = 150
+
+/**
+ * Reveals text that grows while `live` character by character, so a streamed chunk of several words flows in instead
+ * of landing at once. The pace follows the model: every chunk sets an even speed that lands the whole backlog over the
+ * recent gap between chunks, about when the next chunk arrives. A fast model types fast, a slow one types smoothly. Text that is already there when the reveal starts outside a stream, and any change that is
+ * not an append, shows at once.
+ */
+export function createTextReveal(
+  text: Accessor<string>,
+  options: { live: Accessor<boolean>; enabled: Accessor<boolean> },
+) {
+  const renderer = useRenderer()
+  // A part that mounts mid-stream types its first chunk too; history shows whole.
+  let position = options.enabled() && options.live() ? 0 : text().length
+  const [shown, setShown] = createSignal(position)
+  let previous = renderer.clock.now()
+  let arrival: number | undefined
+  let gap = REVEAL_GAP_INITIAL
+  // Characters per millisecond, set so the current backlog lands within the horizon, at an even pace.
+  let speed = 0
+  let running = false
+
+  const pace = (horizon: number) => {
+    speed = Math.max(speed, (text().length - position) / horizon)
+  }
+
+  const step: AnimationTask = (now) => {
+    const target = text().length
+    const elapsed = Math.min(50, now - previous)
+    previous = now
+    if (!options.enabled() || position >= target) {
+      position = target
+      setShown(target)
+      speed = 0
+      running = false
+      return false
+    }
+    if (speed === 0) pace(options.live() ? gap : REVEAL_FINISH)
+    position = Math.min(target, position + speed * elapsed)
+    setShown(Math.floor(position))
+    running = position < target
+    if (!running) speed = 0
+    return running
+  }
+
+  const start = () => {
+    if (running) return
+    running = true
+    previous = renderer.clock.now()
+    schedule(renderer, step)
+  }
+
+  // `on` with defer reports no previous value on its first run, so the last text is kept here.
+  let last = text()
+  createEffect(
+    on(
+      text,
+      (next) => {
+        const previousText = last
+        last = next
+        const now = renderer.clock.now()
+        if (!options.enabled() || !next.startsWith(previousText)) {
+          position = next.length
+          setShown(position)
+          return
+        }
+        if (arrival !== undefined)
+          gap = Math.min(REVEAL_GAP_MAX, Math.max(REVEAL_GAP_MIN, gap + (now - arrival - gap) * REVEAL_GAP_SMOOTHING))
+        arrival = now
+        // Re-pace on every chunk: the whole backlog should land about when the next chunk does.
+        speed = 0
+        pace(gap)
+        start()
+      },
+      { defer: true },
+    ),
+  )
+  // The stream ending speeds up the rest; disabling the reveal shows everything.
+  createEffect(
+    on(
+      [options.live, options.enabled],
+      () => {
+        if (position >= text().length) return
+        if (!options.live()) pace(REVEAL_FINISH)
+        start()
+      },
+      { defer: true },
+    ),
+  )
+  if (position < text().length) start()
+  onCleanup(() => unschedule(renderer, step))
+
+  return {
+    text: () => {
+      const full = text()
+      if (!options.enabled()) return full
+      const end = shown()
+      if (end >= full.length) return full
+      // Never split a surrogate pair.
+      const code = full.charCodeAt(end - 1)
+      return full.slice(0, code >= 0xd800 && code <= 0xdbff ? end + 1 : end)
+    },
+    revealing: () => options.enabled() && shown() < text().length,
+  }
 }
 
 function values(value: AnimatableValue) {

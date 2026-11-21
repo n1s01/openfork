@@ -24,6 +24,12 @@ export const experiments: Experiment[] = [
     default: true,
   },
   {
+    id: "smooth-streaming",
+    title: "Smooth streaming",
+    description: "Type streamed answers and thoughts out character by character at the model's pace",
+    default: true,
+  },
+  {
     id: "client-mcp",
     title: "TUI tools",
     description: "Let the agent open terminals in this TUI (requires server support)",

@@ -396,6 +396,12 @@ export function useNewDesigns() {
   return () => config.data.experimental?.["new-designs"] !== false
 }
 
+/** Reactive accessor for the temporary "smooth-streaming" experiment. On unless it or animations are turned off. */
+export function useSmoothStreaming() {
+  const config = useConfig()
+  return () => config.data.experimental?.["smooth-streaming"] !== false && (config.data.animations ?? true)
+}
+
 /** Reactive accessor for the temporary "client-mcp" experiment. */
 export function useClientMcpExperiment() {
   const config = useConfig()
