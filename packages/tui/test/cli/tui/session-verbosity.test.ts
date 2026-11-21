@@ -1,6 +1,6 @@
 import { expect, test } from "bun:test"
 import type { SessionMessageAssistant, SessionMessageAssistantTool, SessionMessageInfo } from "@opencode/client"
-import { activitySummary, busyLabel, summarizeActivity } from "../../../src/routes/session/activity-summary"
+import { activitySummary, summarizeActivity } from "../../../src/routes/session/activity-summary"
 import {
   append,
   groupRefs,
@@ -183,7 +183,7 @@ test("activity summary counts finished work by category", () => {
   })
 })
 
-test("running work is active but not counted, and failed tools are counted", () => {
+test("running work is counted and named after the totals, and failed tools are counted", () => {
   const open = { ...assistant("a", []), time: { created: 1 } }
   const summary = activitySummary(
     [
@@ -194,10 +194,10 @@ test("running work is active but not counted, and failed tools are counted", () 
     ],
     0,
   )
-  expect(summary).toEqual({ label: "1 read, 1 tool", active: true })
+  expect(summary).toEqual({ label: "2 reads, 1 tool · 1 read running, thinking", active: true })
 })
 
-test("execute counts its finished nested calls instead of itself", () => {
+test("execute counts its nested calls instead of itself", () => {
   const message = assistant("a", [])
   const execute: SessionMessageAssistantTool = {
     ...tool("x", "execute"),
@@ -216,7 +216,7 @@ test("execute counts its finished nested calls instead of itself", () => {
     },
   }
   expect(activitySummary([{ message, part: execute }], 0)).toEqual({
-    label: "2 reads, 1 tool",
+    label: "2 reads, 2 tools",
     active: false,
   })
 })
@@ -255,11 +255,11 @@ test("a thought still streaming counts as finished once a later row closes its g
     { message: open, part: { type: "reasoning" as const, text: "Planning", time: { created: 1 } } },
     { message: open, part: tool("r1", "read") },
   ]
-  expect(activitySummary(items, 0)).toEqual({ label: "1 read", active: true })
+  expect(activitySummary(items, 0)).toEqual({ label: "1 read · thinking", active: true })
   expect(activitySummary(items, 0, true)).toEqual({ label: "1 thought, 1 read", active: false })
 })
 
-test("until something finishes, the label is the first running item's status", () => {
+test("before anything finishes, the label counts the running work", () => {
   const open = {
     ...assistant("a", [tool("e1", "edit", "running"), tool("s1", "shell", "running")]),
     time: { created: 1 },
@@ -267,21 +267,30 @@ test("until something finishes, the label is the first running item's status", (
   const activity = reduceSessionRows([open], new Set(), false, "low")[0]
   if (activity.type !== "group") throw new Error("Expected activity")
   expect(summarizeActivity(activity, () => open, [], false)).toEqual({
-    label: "Running edit…",
+    label: "1 command, 1 edit · 1 command, 1 edit running",
     active: true,
   })
 })
 
-test("busy labels depend only on the tool and whether it is still being prepared", () => {
+test("a block with finished and running commands names both", () => {
+  const open = { ...assistant("a", []), time: { created: 1 } }
   const streaming: SessionMessageAssistantTool = {
-    ...tool("s", "bash", "running"),
+    ...tool("s3", "bash", "running"),
     state: { status: "streaming", input: "" },
   }
-  expect(busyLabel(streaming)).toBe("Preparing command…")
-  expect(busyLabel(tool("s", "shell", "running"))).toBe("Running command…")
-  expect(busyLabel(tool("r", "read", "running"))).toBe("Running read…")
-  expect(busyLabel(tool("x", "execute", "running"))).toBe("Running code…")
-  expect(busyLabel({ type: "reasoning", text: "", time: { created: 1 } })).toBe("Thinking…")
+  expect(
+    activitySummary(
+      [
+        { message: open, part: tool("s1", "shell") },
+        { message: open, part: tool("s2", "shell", "running") },
+      ],
+      0,
+    ).label,
+  ).toBe("2 commands · 1 command running")
+  expect(activitySummary([{ message: open, part: streaming }], 0).label).toBe("1 command · 1 command preparing")
+  expect(activitySummary([{ message: open, part: tool("x", "execute", "running") }], 0).label).toBe(
+    "1 tool · code running",
+  )
 })
 
 test("a finished execute with no nested calls counts as one tool", () => {

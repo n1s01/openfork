@@ -15,10 +15,7 @@ type Item = {
   part: SessionMessageAssistantReasoning | SessionMessageAssistantTool
 }
 
-/**
- * Summary for an activity group's subtree; permission-blocked tools are left out.
- * Until something finishes, the label is the first running item's status, e.g. "Running command…".
- */
+/** Summary for an activity group's subtree; permission-blocked tools are left out. */
 export function summarizeActivity(
   node: Extract<SessionNode, { type: "group" }>,
   message: (messageID: string) => SessionMessageInfo | undefined,
@@ -38,60 +35,80 @@ export function summarizeActivity(
   const files = new Set(
     entries.flatMap((entry) => (entry.type === "message" ? instructionPaths(message(entry.messageID)) : [])),
   )
-  const summary = activitySummary(items, files.size, closed)
-  const current = items.find((item) => isActive(item, closed))
-  return { ...summary, label: summary.label || (current ? busyLabel(current.part) : "") }
+  return activitySummary(items, files.size, closed)
 }
 
-/** Status for a running item, independent of its details, so it doesn't flicker as they arrive. */
-export function busyLabel(part: Item["part"]) {
-  if (part.type === "reasoning") return "Thinking…"
-  const name = canonicalToolName(part.name)
-  const noun = name === "shell" ? "command" : name === "execute" ? "code" : name
-  return `${part.state.status === "streaming" ? "Preparing" : "Running"} ${noun}…`
-}
+type Noun = "command" | "edit" | "read" | "tool"
 
 /**
- * Low verbosity's activity summary, e.g. "3 commands, 1 edit, 2 thoughts, 4 reads".
- * The label counts only finished work; running items are reported through `active`.
- * Code-mode `execute` counts its finished nested calls rather than itself.
+ * Low verbosity's activity summary: everything in the group, then what is still in flight, e.g.
+ * "2 commands, 1 edit, 4 reads · 1 command running". Tools the model is still writing are "preparing",
+ * and an open thought is "thinking"; it counts as a thought once it finishes.
+ * Code-mode `execute` counts its nested calls rather than itself, unless it has none yet.
  * Instructions count distinct loaded files, matching the instruction subgroup.
  * Once a later row closes the group, its thoughts count as finished, as in Medium.
  */
 export function activitySummary(items: readonly Item[], instructions: number, closed = false) {
   const counts = { command: 0, edit: 0, thought: 0, read: 0, tool: 0, instruction: instructions }
+  const running: Record<Noun, number> = { command: 0, edit: 0, read: 0, tool: 0 }
+  const preparing: Record<Noun, number> = { command: 0, edit: 0, read: 0, tool: 0 }
+  let code = false
+  let thinking = false
   items.forEach((item) => {
     if (item.part.type === "reasoning") {
+      if (isActive(item, closed)) thinking = true
       // Redacted-only reasoning renders nothing, so it isn't a visible thought.
-      if (!isActive(item, closed) && reasoningContent(item.part)) counts.thought++
+      else if (reasoningContent(item.part)) counts.thought++
       return
     }
     const name = canonicalToolName(item.part.name)
+    const active = isActive(item, closed)
     if (name === "execute") {
       const calls = executeCalls(
         item.part.state.status === "streaming" ? undefined : item.part.state.metadata?.toolCalls,
-      ).filter((call) => call.status !== "running")
+      )
       calls.forEach((call) => {
-        if (canonicalToolName(call.tool) === "read") counts.read++
-        else counts.tool++
+        const noun = canonicalToolName(call.tool) === "read" ? "read" : "tool"
+        counts[noun]++
+        if (active && call.status === "running") running[noun]++
       })
-      // With no finished nested calls to count, a finished execute counts as itself.
-      if (calls.length === 0 && !isActive(item, closed)) counts.tool++
+      // With no nested calls to count, execute counts as itself.
+      if (calls.length === 0) counts.tool++
+      if (active && !calls.some((call) => call.status === "running")) code = true
       return
     }
-    if (isActive(item, closed)) return
-    if (name === "shell") counts.command++
-    else if (name === "read") counts.read++
-    else if (name === "edit" || name === "write" || name === "patch") counts.edit++
-    else counts.tool++
+    const noun = toolNoun(name)
+    counts[noun]++
+    if (!active) return
+    if (item.part.state.status === "streaming") preparing[noun]++
+    else running[noun]++
   })
+  const flight = [
+    nouns(running) && `${nouns(running)} running`,
+    nouns(preparing) && `${nouns(preparing)} preparing`,
+    code && "code running",
+    thinking && "thinking",
+  ].filter(Boolean)
+  const total = nouns(counts)
   return {
-    label: Object.entries(counts)
-      .filter(([, count]) => count > 0)
-      .map(([name, count]) => `${count} ${name}${count === 1 ? "" : "s"}`)
-      .join(", "),
+    label: [total, flight.join(", ")].filter(Boolean).join(" · "),
     active: items.some((item) => isActive(item, closed)),
   }
+}
+
+function toolNoun(name: string): Noun {
+  if (name === "shell") return "command"
+  if (name === "read") return "read"
+  if (name === "edit" || name === "write" || name === "patch") return "edit"
+  return "tool"
+}
+
+/** "2 commands, 1 read" for the non-zero counts, in their declaration order. */
+function nouns(counts: Readonly<Record<string, number>>) {
+  return Object.entries(counts)
+    .filter(([, count]) => count > 0)
+    .map(([name, count]) => `${count} ${name}${count === 1 ? "" : "s"}`)
+    .join(", ")
 }
 
 function isActive(item: Item, closed: boolean) {

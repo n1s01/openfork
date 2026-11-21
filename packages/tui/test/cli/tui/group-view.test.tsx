@@ -241,7 +241,7 @@ test("a low activity group with nothing finished stays collapsed behind a status
   })
   try {
     app.renderer.start()
-    await app.waitForFrame((frame) => frame.includes("Running command…"))
+    await app.waitForFrame((frame) => frame.includes("2 commands · 2 commands running"))
     expect(app.captureCharFrame()).not.toContain("Shell one")
     expect(app.captureCharFrame()).not.toContain("Shell two")
   } finally {
